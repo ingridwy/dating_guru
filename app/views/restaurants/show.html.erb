@@ -1,8 +1,8 @@
-<% Restaurant show page %>
+<h2>Restaurant show page</h2>
 <%= @restaurant.name %>
 <%= @restaurant.category %>
 <%= @restaurant.address %>
 <%= @restaurant.price %>
-<%= @restaurant.open_hour %>
+<%= @restaurant.opening_hour %>
 <%= @restaurant.phone_number %>
 <%= link_to "Add to booking", set_restaurant(@restaurant), method: :patch %>
