@@ -1,0 +1,19 @@
+<%= Booking show page%>
+<%= @booking.date %>
+<% next unless @booking.restaurant %>
+<%= Restaurant Details%>
+<%= @booking.restaurant.name %>
+<%= @booking.restaurant.address%>
+<%= @booking.restaurant.price%>
+<%= @booking.restaurant.open_hour%>
+<%= @booking.restaurant.phone_number%>
+<%= @booking.restaurant.category%>
+<% next unless booking.activities %>
+<%= Activities Details %>
+<%= @booking.activity.name %>
+<%= @booking.activity.address %>
+<%= @booking.activity.open_hour %>
+<%= @booking.activity.phone_number %>
+<% end %>
+
+<% need a map this page %>

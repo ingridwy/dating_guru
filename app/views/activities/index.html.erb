@@ -1,4 +1,11 @@
 <h2>Activities</h2>
+
+<h3>Category</h3>
+
+
+
 <% @activities.each do |activity| %>
-<%= activity.name %>
+  <%= link_to activity.name, activity_path(activity) %>
 <% end %>
+
+

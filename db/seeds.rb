@@ -19,7 +19,9 @@ eighth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v15832
 ninth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241704/nqq1j4shbdvxajvyj0jt.jpg")
 
 User.destroy_all
+Activity.destroy_all
 User.create! email: "test@gmail.com", password: "123456"
+
 
     first_restaurant = Restaurant.create(
   name: "McDonalds",
@@ -110,3 +112,30 @@ User.create! email: "test@gmail.com", password: "123456"
   phone_number: "0208 983 9862"
   )
     ninth_restaurant.photo.attach(io: ninth_file, filename: "nqq1j4shbdvxajvyj0jt.jpg" , content_type: 'image/jpg')
+
+Activity.create(
+  name: "British Museum",
+  address: "London",
+  open_hour: "9:00-18:00",
+  phone_number: "74987918374938",
+  category: "Museum"
+)
+
+
+Activity.create(
+  name: "Natural Museum",
+  address: "London",
+  open_hour: "10:00-15:00",
+  phone_number: "0000000000000",
+  category: "Museum"
+)
+
+Activity.create(
+  name: "Theatre",
+  address: "London",
+  open_hour: "11:00-0:00",
+  phone_number: "52798739284",
+  category: "Cinema"
+)
+
+
