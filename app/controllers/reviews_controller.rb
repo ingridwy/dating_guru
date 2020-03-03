@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @activity = Activity.find(parmas[:activity_id])
+    @activity = Activity.find(params[:activity_id])
     @review.restaurant = @restaurant if @restaurant
     @review.activity = @activity if @activity
     @review.user = current_user

@@ -5,4 +5,10 @@
 <%= @activity.open_hour %>
 <%= @activity.phone_number %>
 <%= @activity.category %>
-<% link_to "Add activity to plan", set_activity(@activity), method: :patch %>
+<% link_to "Add activity to plan", set_activity_path(@activity), method: :patch %>
+
+<%=  simple_form_for [@review] do |f| %>
+  <% f.input :rating %>
+  <% f.input :content %>
+  <% f.submit %>
+<% end %>

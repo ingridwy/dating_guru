@@ -3,11 +3,11 @@
 <%= @restaurant.category %>
 <%= @restaurant.address %>
 <%= @restaurant.price %>
-<%= @restaurant.opening_hour %>
+<%= @restaurant.open_hour %>
 <%= @restaurant.phone_number %>
-<%= link_to "Add to booking", set_restaurant(@restaurant), method: :patch %>
+<%= link_to "Add to booking", set_restaurant_path(@restaurant), method: :patch %>
 
-<%=  simple_form_for [@restaurant,@review] do |f| %>
+<%=  simple_form_for [@review] do |f| %>
   <% f.input :rating %>
   <% f.input :content %>
   <% f.submit %>
