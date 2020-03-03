@@ -11,7 +11,7 @@ User.create! email: "test@gmail.com", password: "123456"
 
 10.times do
   Activity.create(
-  name: "park"
+  name: "park",
   address: "London"
   )
 end
