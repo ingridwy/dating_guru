@@ -20,6 +20,7 @@ ninth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v158324
 
 User.destroy_all
 Activity.destroy_all
+Restaurant.destroy_all
 User.create! email: "test@gmail.com", password: "123456"
 
 
