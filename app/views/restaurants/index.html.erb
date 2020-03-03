@@ -1,5 +1,8 @@
-<%= Restaurant Index Page %>
+<h2>Restaurant Index Page</h2>
+
+
 <% @restaurants.each do |restaurant| %>
 <%= restaurant.category %>
-<%= restaurant.name %>
+<%#= restaurant.name %>
+<%= link_to restaurant.name, restaurant_path(restaurant) %>
 <% end %>

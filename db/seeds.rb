@@ -11,7 +11,25 @@ User.create! email: "test@gmail.com", password: "123456"
 
 10.times do
   Activity.create(
-  name: "park"
+  name: "park",
   address: "London"
   )
 end
+
+  Restaurant.create(
+  name: "McDonalds",
+  address: "Bethnal Green Road",
+  category: "Burgers"
+  )
+
+    Restaurant.create(
+  name: "KFC",
+  address: "Barking Road",
+  category: "Fried chicken"
+  )
+
+    Restaurant.create(
+  name: "Pho house",
+  address: "Kingsland Road",
+  category: "Vietnamese"
+  )
