@@ -1,8 +1,33 @@
 <h2>Restaurant show page</h2>
-<%= @restaurant.name %>
-<%= @restaurant.category %>
-<%= @restaurant.address %>
-<%= @restaurant.price %>
-<%= @restaurant.open_hour %>
-<%= @restaurant.phone_number %>
-<%#= link_to "Add to booking", set_restaurant(@restaurant), method: :patch %>
+
+<div>
+  <%= @restaurant.name %>
+  <%= @restaurant.category %>
+  <%= @restaurant.address %>
+  <%= @restaurant.price %>
+  <%= @restaurant.open_hour %>
+  <%= @restaurant.phone_number %>
+<%= link_to "Add to booking", set_restaurant_path(restaurant_id: @restaurant.id), method: :patch %>
+</div>
+
+<div>
+  <h4>Reviews</h4>
+  <% if @restaurant.reviews.blank? %>
+    Be the first one to leave a comment for <%= @restaurant.name %>
+  <% else %>
+    <% @restaurant.reviews.each do |review| %>
+      <%= review.content %>
+      <%= review.rating %>
+      <% end %>
+  <% end %>
+</div>
+
+<br>
+<div>
+<%=  simple_form_for [@review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= hidden_field_tag :restaurant, @restaurant.id %>
+  <%= f.submit %>
+<% end %>
+</div>

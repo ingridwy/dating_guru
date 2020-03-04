@@ -6,9 +6,8 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @review = Review.new
   end
-
-  private
 
   # def activity_params
   #   params.require(:Activity).permit(:name, :address, :open_hour, :phone_number, :category)
