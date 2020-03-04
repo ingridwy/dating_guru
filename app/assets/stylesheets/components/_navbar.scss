@@ -1,6 +1,19 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(26, 23, 23, 0.9);
+  position: fixed;
+  text-decoration: none;
+  width: 100%;
+  position: inherit;
+}
+
+.nav-item, nav {
+  padding: 0 10px;
+}
+
+.navbar-lewagon a:hover {
+  background: #ddd;
+  color: grey;
 }
 
 .navbar-lewagon .navbar-collapse {
