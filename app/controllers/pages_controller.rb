@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   end
 
   def category
+    # @category_activities = Restaurant.all.where(category: @activity.category)
 
+
+    @title = params[:category]
+
+    @activities = Activity.where(category: params[:category])
   end
 end
