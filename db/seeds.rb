@@ -33,7 +33,7 @@ User.create! email: "test@gmail.com", password: "123456"
   )
     first_restaurant.photo.attach(io: first_file, filename: "ouwjhb1yhx76g4ainbdp.jpg" , content_type: 'image/jpg')
 
-    second_restaurant = Restaurant.create(
+  second_restaurant = Restaurant.create(
   name: "KFC",
   address: "Barking Road",
   category: "Fried chicken",
@@ -113,29 +113,107 @@ User.create! email: "test@gmail.com", password: "123456"
   )
     ninth_restaurant.photo.attach(io: ninth_file, filename: "nqq1j4shbdvxajvyj0jt.jpg" , content_type: 'image/jpg')
 
-Activity.create(
+# activity seeding(museum picture)
+
+a_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583271187/Untitled_design_rtvzta.png")
+# a_two = URI.open()
+# a_three = URI.open()
+# a_four = URI.open()
+# a_five = URI.open()
+# a_six = URI.open()
+
+
+# activity seeding(museum data)
+
+a_one = Activity.create(
+  name: "Cromwell Rd, Knightsbridge, London SW7 2RL",
+  address: "Cromwell Rd, Knightsbridge, London",
+  open_hour: "10:00-17:45",
+  phone_number: "020 7942 2000",
+  category: "Museum"
+)
+# a_one.photo.attach(io: a_one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+
+a_two = Activity.create(
   name: "British Museum",
-  address: "London",
-  open_hour: "9:00-18:00",
-  phone_number: "74987918374938",
+  address: "Great Russell St, Bloomsbury, London WC1B 3DG",
+  open_hour: "10:00-17:30",
+  phone_number: "020 7323 8299",
   category: "Museum"
 )
 
 
-Activity.create(
-  name: "Natural Museum",
-  address: "London",
-  open_hour: "10:00-15:00",
-  phone_number: "0000000000000",
+
+a_three = Activity.create(
+  name: "Tate Modern",
+  address: "Bankside, London SE1 9TG",
+  open_hour: "10:00-18:00",
+  phone_number: "020 7887 8888",
   category: "Museum"
 )
 
-Activity.create(
-  name: "Theatre",
-  address: "London",
-  open_hour: "11:00-0:00",
-  phone_number: "52798739284",
-  category: "Cinema"
+
+
+a_four = Activity.create(
+  name: "Natural History Museum",
+  address: "Cromwell Rd, South Kensington, London SW7 5BD",
+  open_hour: "10:00-17:50",
+  phone_number: "020 7942 5000",
+  category: "Museum"
 )
+
+
+
+a_five = Activity.create(
+  name: "The National Gallery",
+  address: "Trafalgar Square, Charing Cross, London WC2N 5DN",
+  open_hour: "10:00-18:00",
+  phone_number: "020 7747 2885",
+  category: "Museum"
+)
+
+
+
+a_six = Activity.create(
+  name: "Design Museum",
+  address: "224-238 Kensington High St, Kensington, London W8 6AG",
+  open_hour: "10:00-18:00",
+  phone_number: "020 3862 5900",
+  category: "Museum"
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

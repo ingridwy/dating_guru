@@ -3,6 +3,10 @@
 <%= @restaurant.category %>
 <%= @restaurant.address %>
 <%= @restaurant.price %>
-<%= @restaurant.opening_hour %>
+<%= @restaurant.open_hour %>
 <%= @restaurant.phone_number %>
-<%= link_to "Add to booking", set_restaurant(@restaurant), method: :patch %>
+
+<%= link_to "Add to booking", set_restaurant_path(restaurant_id: @restaurant.id), method: :patch %>
+
+<%#= link_to "Add to cart", {:controller => "bookings", :action => "set_restaurant", :restaurant_id => @restaurant.id }, method: :patch%>
+
