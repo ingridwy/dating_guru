@@ -5,8 +5,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-  end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
