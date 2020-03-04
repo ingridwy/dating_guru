@@ -1,8 +1,9 @@
 <h2> Booking Index Page </h2>
 <% @bookings.each do |booking| %>
-  <%= booking.restaurant_id %>
-  <%= booking.activity_id %>
-  <%= link_to  booking_path(booking),method: :delete do%>
+  <div><%= booking.restaurant.name %></div>
+  <div><%= booking.activity.name %></div>
+  <%= link_to "booking details", booking_path(booking) %>
+  <%= link_to booking_path(booking), method: :delete do%>
     <i class="bin fas fa-trash-alt"></i>
   <% end %>
 <% end %>
