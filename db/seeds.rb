@@ -115,7 +115,7 @@ User.create! email: "test@gmail.com", password: "123456"
 
 # activity seeding(museum picture)
 
-a_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583271187/Untitled_design_rtvzta.png")
+one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583271187/Untitled_design_rtvzta.png")
 # a_two = URI.open()
 # a_three = URI.open()
 # a_four = URI.open()
@@ -126,14 +126,14 @@ a_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583271187/
 # activity seeding(museum data)
 
 a_one = Activity.create(
-  name: "Cromwell Rd, Knightsbridge, London SW7 2RL",
-  address: "Cromwell Rd, Knightsbridge, London",
+  name: "Victoria and Albert Museum",
+  address: "Cromwell Rd, South Kensington, London SW7 5BD",
   open_hour: "10:00-17:45",
   phone_number: "020 7942 2000",
   category: "Museum"
 )
-# a_one.photo.attach(io: a_one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
+a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
 a_two = Activity.create(
@@ -184,7 +184,59 @@ a_six = Activity.create(
   category: "Museum"
 )
 
+# weekend market
 
+a_seven = Activity.create(
+  name: "Broadway Market",
+  address: "Broadway Market, E8 4QJ",
+  open_hour: "Saturdays 9:00-17:00.",
+  phone_number: "",
+  category: "Market"
+)
+
+a_eight = Activity.create(
+  name: "Netil Market",
+  address: "13-23 Westgate Street, E8 3RL",
+  open_hour: "Saturdays, 11:00-18:00",
+  phone_number: "",
+  category: "Market"
+)
+
+
+a_nine = Activity.create(
+  name: "Victoria Park Market",
+  address: "56-57, Gore Rd, London E9 7HN",
+  open_hour: "Sundays 10:00-16:00",
+  phone_number: "",
+  category: "Market"
+)
+
+
+a_ten = Activity.create(
+  name: "Brick Lane Market",
+  address: "Brick Ln, Spitalfields, London E1 6QR",
+  open_hour: "10:00-18:00",
+  phone_number: "",
+  category: "Market"
+)
+
+
+a_eleven = Activity.create(
+  name: "Old Spitalfields Market",
+  address: "16 Commercial St, Spitalfields, London E1 6EW",
+  open_hour: "10:00-18:00",
+  phone_number: "",
+  category: "Market"
+)
+
+#sport
+a_twelve = Activity.create(
+  name: "Bounce Old Street",
+  address: "241 Old St, Old Street, London EC1V 9EY",
+  open_hour: "16:00-0:00",
+  phone_number: "",
+  category: "Sport"
+)
 
 
 

@@ -1,0 +1,40 @@
+.activity-index-heading{
+  margin: 40px;
+  text-align: center;
+}
+
+
+.activity-index-image{
+  padding: 0px 0px 0px 0px;
+  img {
+    padding: 20px 10px;
+    border-radius: 15px;
+  }
+}
+
+// each activity card
+.activity-index-card{
+  text-align: bottom;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-collapse: collapse;
+  border-radius: 5px;}
+
+// activity cards and map
+.activity-grid-index {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+}
+
+
+// geocoding map
+#map {
+  position: sticky;
+  margin-right: 35px;
+  top:0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
