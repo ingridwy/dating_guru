@@ -1,5 +1,6 @@
 <h2>Restaurant show page</h2>
 
+
 <div>
   <%= @restaurant.name %>
   <%= @restaurant.category %>
@@ -7,7 +8,7 @@
   <%= @restaurant.price %>
   <%= @restaurant.open_hour %>
   <%= @restaurant.phone_number %>
-  <%= link_to "Add to booking", set_restaurant_path(@restaurant), method: :patch %>
+<%= link_to "Add to booking", set_restaurant_path(restaurant_id: @restaurant.id), method: :patch %>
 </div>
 
 <div>

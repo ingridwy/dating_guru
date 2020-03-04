@@ -6,7 +6,7 @@
   <%= @activity.open_hour %>
   <%= @activity.phone_number %>
   <%= @activity.category %>
-  <% link_to "Add activity to plan", set_activity_path(@activity), method: :patch %>
+  <%= link_to "Add to booking", set_activity_path(activity_id: @activity.id), method: :patch %>
 </div>
 
 <div>
@@ -31,4 +31,3 @@
     <%= f.submit %>
   <% end %>
 </div>
-
