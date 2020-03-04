@@ -5,19 +5,44 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-  end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @booking = Booking.where(user: current_user).last
-    @booking.update(restaurant: @restaurant)
+
+    if current_user.bookings.where(confirmed: false).empty?
+      @booking = Booking.new
+      @booking.restaurant = @restaurant
+      @booking.user = current_user
+      @booking.save
+    else
+      @booking = current_user.bookings.where(confirmed: false).last
+      @booking.update(restaurant_id: @restaurant.id)
+    end
+
+    if @booking.activity_id
+      redirect_to bookings_path
+    else
+      redirect_to activities_path
+    end
   end
 
   def set_activity
-    @activity = Activity.find(params[:activity_id])
-    @booking = Booking.where(user: current_user).last
-    @booking.update(activity: @activity)
+   @activity = Activity.find(params[:activity_id])
+    if current_user.bookings.where(confirmed: false).empty?
+      @booking = Booking.new
+      @booking.activity = @activity
+      @booking.user = current_user
+      @booking.save
+    else
+      @booking = current_user.bookings.where(confirmed: false).last
+      @booking.update(activity_id: @activity.id)
+    end
+
+    if @booking.restaurant_id
+      redirect_to bookings_path
+    else
+      redirect_to restaurants_path
+    end
   end
 
   def destroy
@@ -28,6 +53,9 @@ class BookingsController < ApplicationController
   private
 
   def find_booking
-    @booking = Book.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
+
+
+
 end
