@@ -1,8 +1,9 @@
 <% if user_signed_in? %>
-<div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0.4)' if params[:action] == 'home' %>>
 
+<div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0.1)' if params[:action] == 'home' %>>
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "datinglogo.png" %>
+
   <% end %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -37,7 +38,7 @@
 <% else %>
 <div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0.4)' if params[:action] == 'home' %>>
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "datinglogo.png" %>
   <% end %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
