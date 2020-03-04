@@ -1,4 +1,23 @@
-<h2>Activities</h2>
-<% @activities.each do |activity| %>
-<%= activity.name %>
+<h1>Activities</h1>
+<hr>
+<h4>Filter by Category</h4>
+  <%#= link_to "Museum", category(category: Museum) %>
+<% @categories.each do |category| %>
+  <form action="/category" method="GET">
+    <%= hidden_field_tag :category, category  %>
+    <%= submit_tag "#{category}" %>
+  </form>
 <% end %>
+
+
+
+<hr>
+
+<ul>
+<% @activities.each do |activity| %>
+  <li>
+    <%= link_to activity.name, activity_path(activity) %>
+  </li>
+<% end %>
+</ul>
+

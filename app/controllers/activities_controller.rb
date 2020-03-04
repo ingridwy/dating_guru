@@ -1,13 +1,13 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
+    @categories = @activities.pluck(:category)
   end
 
   def show
-    @Activity = Activity.find(params[:id])
+    @activity = Activity.find(params[:id])
+    @review = Review.new
   end
-
-  private
 
   # def activity_params
   #   params.require(:Activity).permit(:name, :address, :open_hour, :phone_number, :category)

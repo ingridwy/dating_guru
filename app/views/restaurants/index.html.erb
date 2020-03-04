@@ -1,5 +1,13 @@
-<%= Restaurant Index Page %>
+<h2>Restaurant Index Page</h2>
+
+
 <% @restaurants.each do |restaurant| %>
 <%= restaurant.category %>
-<%= restaurant.name %>
+    <%# if restaurant.photo.attached? %>
+    <%= cl_image_tag restaurant.photo.key, height: 350, width: 250, crop: :fill %>
+
+        <%# else %>
+        <% #end %>
+<%#= restaurant.name %>
+<%= link_to restaurant.name, restaurant_path(restaurant) %>
 <% end %>

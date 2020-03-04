@@ -1,0 +1,12 @@
+<h2> Booking Index Page </h2>
+<% @bookings.each do |booking| %>
+  <%= booking.restaurant_id %>
+  <%= booking.activity_id %>
+  <%= link_to  booking_path(booking),method: :delete do%>
+    <i class="bin fas fa-trash-alt"></i>
+  <% end %>
+<% end %>
+
+
+
+
