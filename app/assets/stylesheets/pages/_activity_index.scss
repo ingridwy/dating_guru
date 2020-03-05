@@ -12,16 +12,9 @@
   }
 }
 
-// each activity card
-.activity-index-card{
-  text-align: bottom;
-  background: #fff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-collapse: collapse;
-  border-radius: 5px;}
 
 // activity cards and map
-.activity-grid-index {
+.activity-grid-index-with-map {
   width: 100%;
   margin: 0 auto;
   display: grid;
@@ -29,6 +22,41 @@
   grid-gap: 20px;
 }
 
+// all activity cards
+.activity-index-cards{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+
+// each activity card
+.activity-index-card{
+  display: flex;
+  text-align: bottom;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-collapse: collapse;
+  border-radius: 5px;}
+
+// category
+
+.activity-category-cards{
+  margin: 20px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.activity-category-card{
+  width: 50px;
+}
+
+.activity-category-text{
+  font-size: 20px;
+  background: none;
+  border: none;
+}
 
 // geocoding map
 #map {
@@ -36,5 +64,18 @@
   margin-right: 35px;
   top:0;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
 }
+
+#map-activity-name{
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
