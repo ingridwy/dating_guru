@@ -26,6 +26,7 @@
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right dropdown-items" id="dropdown-text" aria-labelledby="navbarDropdown">
           <%= link_to "Settings", "#", class: "dropdown-item", style:'color:black' %>
+          <%= link_to "Edit", edit_user_registration_path, class: "dropdown-item", style:'color:black' %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item", style:'color:black' %>
         </div>
       </li>

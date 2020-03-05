@@ -1,0 +1,84 @@
+.restaurant-index-heading{
+  margin: 40px;
+  text-align: center;
+}
+
+.restaurant-card-pic {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+  transition: transform .5s;
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.restaurant-index-image{
+  padding: 0px 0px 0px 0px;
+  img {
+    padding: 20px 10px;
+    border-radius: 15px;
+  }
+}
+
+.resto-name-review{
+  justify-content: space-between;
+  display: flex;
+}
+
+
+
+.restaurant-category {
+  text-align: center;
+}
+
+// restaurant cards and map
+.restaurant-grid-index-with-map {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+}
+
+// all restaurant cards
+.restaurant-index-cards{
+  display: grid;
+  grid-gap: 20px;
+}
+
+// each restaurant card
+.restaurant-index-card{
+  display: flex;
+  text-align: bottom;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  border-collapse: collapse;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+// category
+
+.restaurant-category-cards{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.restaurant-category-text{
+  font-size: 20px;
+  background: none;
+  border: none;
+}
+
+// geocoding map
+#map {
+  position: sticky;
+  top:0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#map-activity-name{
+  font-size: 20px;
+}
+

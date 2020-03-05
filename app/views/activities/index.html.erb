@@ -3,37 +3,37 @@
   <div class="activity-whole-page">
     <h2 class="activity-index-heading">Choose An Activity</h2>
 
-    <h4>Looking for something else? (filtered by category)</h4>
+    <h4>Looking for something else?</h4>
 
     <div class="activity-category-cards">
-        <form class="activity-category" action="/category" method="GET">
+        <form class="activity-category" action="/activities" method="GET">
           <%= hidden_field_tag :category, "Museum"  %>
           <input class="activity-card-pic" type="image" value="Museum" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", category_path(category: "Sport") %>
+        <%= link_to "Museum", activities_path(category: "Museum") %>
         </form>
 
-        <form class="activity-category" action="/category" method="GET">
+        <form class="activity-category" action="/activities" method="GET">
           <%= hidden_field_tag :category, "Sport"  %>
           <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", category_path(category: "Sport") %>
+        <%= link_to "Sport", activities_path(category: "Sport") %>
         </form>
 
-        <form class="activity-category" action="/category" method="GET">
+        <form class="activity-category" action="/activities" method="GET">
           <%= hidden_field_tag :category, "Market"  %>
           <input class="activity-card-pic" type="image" value="Market" name="market" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", category_path(category: "Market") %>
+        <%= link_to "Museum", activities_path(category: "Market") %>
         </form>
 
-        <form class="activity-category" action="/category" method="GET">
+        <form class="activity-category" action="/activities" method="GET">
           <%= hidden_field_tag :category, "Theatre"  %>
           <input class="activity-card-pic" type="image" value="Theatre" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", category_path(category: "Theatre") %>
+        <%= link_to "Museum", activities_path(category: "Theatre") %>
         </form>
 
-        <form class="activity-category" action="/category" method="GET">
+        <form class="activity-category" action="/activities" method="GET">
           <%= hidden_field_tag :category, "Theatre"  %>
           <input class="activity-card-pic" type="image" value="Theatre" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", category_path(category: "Theatre") %>
+        <%= link_to "Museum", activities_path(category: "Theatre") %>
         </form>
     </div>
 

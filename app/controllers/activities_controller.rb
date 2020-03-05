@@ -1,15 +1,26 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.geocoded
-    @markers = @activities.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
-      }
+    if params[:category]
+      @activities = Activity.where(category: params[:category]).geocoded
+      @markers = @activities.map do |activity|
+        {
+          lat: activity.latitude,
+          lng: activity.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+        }
+      end
+    else
+      @activities = Activity.geocoded
+      @markers = @activities.map do |activity|
+        {
+          lat: activity.latitude,
+          lng: activity.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+        }
+      end
+    # @categories = @activities.pluck(:category)
+    # @categories_unique = @categories.uniq
     end
-    @categories = @activities.pluck(:category)
-    @categories_unique = @categories.uniq
   end
 
 
