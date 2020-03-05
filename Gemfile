@@ -25,8 +25,10 @@ gem 'redis', '~> 4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-#geocoding
 gem 'geocoder'
+
+#bootstrap-sass is a Sass-powered version of Bootstrap 3
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

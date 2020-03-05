@@ -1,11 +1,9 @@
 <% if user_signed_in? %>
 
-<div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0.4)' if params[:action] == 'home' %>>
+<div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0.1)' if params[:action] == 'home' %>>
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "datinglogo.png" %>
   <% end %>
-
-
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
@@ -17,19 +15,14 @@
         <%= link_to "Restaurants", restaurants_path, class: "nav-link" %>
       </li>
     </ul>
-
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
       </li>
-
 
       <li class="nav-item dropdown">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -41,17 +34,12 @@
     </ul>
   </div>
 </div>
-
-
 <!-- repetition -->
-
 <% else %>
-
 <div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0.4)' if params[:action] == 'home' %>>
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "datinglogo.png" %>
   <% end %>
-
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
@@ -63,31 +51,21 @@
         <%= link_to "Restaurants", restaurants_path, class: "nav-link" %>
       </li>
     </ul>
-
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
       </li>
-
       <li class="nav-item">
         <%= link_to "Login", user_session_path, class: "nav-link" %>
       </li>
-
       <li class="nav-item">
         <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
       </li>
-
-
-
     </ul>
   </div>
 </div>
-
 <% end %>
