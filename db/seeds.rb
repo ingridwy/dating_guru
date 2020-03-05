@@ -8,10 +8,10 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# first_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240779/ouwjhb1yhx76g4ainbdp.jpg")
-# second_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240984/md3cimqoxws8cy9boyfj.png")
-# third_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240341/jwqhc0n6qge1o0apmcsm.jpg")
-# fourth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246331/c700x420_eycdpw.jpg")
+first_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240779/ouwjhb1yhx76g4ainbdp.jpg")
+second_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240984/md3cimqoxws8cy9boyfj.png")
+third_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240341/jwqhc0n6qge1o0apmcsm.jpg")
+fourth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246331/c700x420_eycdpw.jpg")
 # fifth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241727/ivi8abpmkq3durbxc6sx.jpg")
 # sixth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246174/Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg")
 # seventh_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583245930/169591_qxwjwp.jpg")
@@ -19,49 +19,53 @@ require "open-uri"
 # ninth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241704/nqq1j4shbdvxajvyj0jt.jpg")
 
 User.destroy_all
+Restaurant.destroy_all
 Activity.destroy_all
-User.create! email: "test@gmail.com", password: "123456"
+User.create! user_name: "test", email: "test@gmail.com", password: "123456"
 
 
-  #   first_restaurant = Restaurant.create(
-  # name: "McDonalds",
-  # address: "Bethnal Green Road",
-  # category: "Burgers",
-  # price: 1,
-  # open_hour: "11:30am - 9:30pm",
-  # phone_number: "0208 983 9862"
-  # )
-  #   first_restaurant.photo.attach(io: first_file, filename: "ouwjhb1yhx76g4ainbdp.jpg" , content_type: 'image/jpg')
+    first_restaurant = Restaurant.create(
+  name: "McDonalds",
+  address: "Bethnal Green Road",
+  category: "Burgers",
+  price: 1,
+  open_hour: "11:30am - 9:30pm",
+  phone_number: "0208 983 9862",
+  description: "A hamburger (also burger for short) is a food consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun."
+  )
+    first_restaurant.photo.attach(io: first_file, filename: "ouwjhb1yhx76g4ainbdp.jpg" , content_type: 'image/jpg')
 
-  # second_restaurant = Restaurant.create(
-  # name: "KFC",
-  # address: "Barking Road",
-  # category: "Fried chicken",
-  # price: 1,
-  # open_hour: "11:30am - 9:30pm",
-  # phone_number: "0208 983 9862"
-  # )
-  #   second_restaurant.photo.attach(io: second_file, filename: "md3cimqoxws8cy9boyfj.png" , content_type: 'image/jpg')
+  second_restaurant = Restaurant.create(
+  name: "KFC",
+  address: "Barking Road",
+  category: "Fried chicken",
+  price: 1,
+  open_hour: "11:30am - 9:30pm",
+  phone_number: "0208 983 9862",
+  description: "A hamburger (also burger for short) is a food consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun."
+  )
+    second_restaurant.photo.attach(io: second_file, filename: "md3cimqoxws8cy9boyfj.png" , content_type: 'image/jpg')
 
-  #   third_restaurant = Restaurant.create(
-  # name: "Pho house",
-  # address: "Kingsland Road",
-  # category: "Vietnamese",
-  # price: 2,
-  # open_hour: "11:30am - 9:30pm",
-  # phone_number: "0208 983 9862"
-  # )
-  #   third_restaurant.photo.attach(io: third_file, filename: "jwqhc0n6qge1o0apmcsm.jpg" , content_type: 'image/jpg')
+    third_restaurant = Restaurant.create(
+  name: "Pho house",
+  address: "Kingsland Road",
+  category: "Vietnamese",
+  price: 2,
+  open_hour: "11:30am - 9:30pm",
+  phone_number: "0208 983 9862",
+  description: "A hamburger (also burger for short) is a food consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun."
+  )
+    third_restaurant.photo.attach(io: third_file, filename: "jwqhc0n6qge1o0apmcsm.jpg" , content_type: 'image/jpg')
 
-  #   fourth_restaurant = Restaurant.create(
-  # name: "Preto",
-  # address: "Shaftsbury Avenue",
-  # category: "Brazilian grill",
-  # price: 3,
-  # open_hour: "11:30am - 9:30pm",
-  # phone_number: "0208 983 9862"
-  # )
-  #   fourth_restaurant.photo.attach(io: fourth_file, filename: "c700x420_eycdpw.jpg" , content_type: 'image/jpg')
+    fourth_restaurant = Restaurant.create(
+  name: "Preto",
+  address: "Shaftsbury Avenue",
+  category: "Brazilian grill",
+  price: 3,
+  open_hour: "11:30am - 9:30pm",
+  phone_number: "0208 983 9862"
+  )
+    fourth_restaurant.photo.attach(io: fourth_file, filename: "c700x420_eycdpw.jpg" , content_type: 'image/jpg')
 
   #   fifth_restaurant = Restaurant.create(
   # name: "The Ned",
@@ -144,22 +148,22 @@ a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London
 
 
 a_two = Activity.create(
-  name: "British Museum",
+  name: "British Museum Theatre",
   address: "Great Russell St, Bloomsbury, London WC1B 3DG",
   open_hour: "10:00-17:30",
   phone_number: "020 7323 8299",
-  category: "Museum"
+  category: "Theatre"
 )
 
 a_two.photo.attach(io: two, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
 
 a_three = Activity.create(
-  name: "Tate Modern",
+  name: "Tate Modern Sport",
   address: "Bankside, London SE1 9TG",
   open_hour: "10:00-18:00",
   phone_number: "020 7887 8888",
-  category: "Museum"
+  category: "Sport"
 )
 
 a_three.photo.attach(io: three, filename: "03_muse_RIB-0019996-1360x765_zma1gz.jpg" , content_type: 'image/jpg')

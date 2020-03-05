@@ -1,13 +1,25 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.geocoded
+    if params[:category]
+      @restaurants = restaurant.where(category: params[:category]).geocoded
+      @markers = @restaurants.map do |activity|
+        {
+          lat: restaurant.latitude,
+          lng: restaurant.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+        }
+      end
 
-    @markers = @restaurants.map do |restaurant|
-      {
-        lat: restaurant.latitude,
-        lng: restaurant.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
-      }
+    else
+      @restaurants = Restaurant.geocoded
+
+      @markers = @restaurants.map do |restaurant|
+        {
+          lat: restaurant.latitude,
+          lng: restaurant.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+        }
+      end
     end
   end
 
@@ -16,8 +28,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @markers =
       {
-        lat: @activity.latitude,
-        lng: @activity.longitude,
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @restaurant })
       }
     @review = Review.new

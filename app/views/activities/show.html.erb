@@ -1,71 +1,73 @@
 <div class="container">
-<h2 id="activity-header">Activities</h2>
-<!--
-div of activity-image and map -->
-<div class="activity-image-map">
+  <h2 class="activity-header m-5 text-center">Activities</h2>
 
+<!-- div of activity-image and map -->
+  <div class="activity-image-map mb-5">
     <%= cl_image_tag @activity.photo.key, height: 500, width: 750 %>
-
-  <div id="map" class="map-nonsticky"
-    style="height: 600px !important; width: 400px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="map" class="map-nonsticky"
+      style="height: 500px !important; width: 330px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-</div>
 
 <!-- class for information  -->
+<div class="activity-centering">
   <div class="activity-information">
     <h5 class="pb-4"><%= @activity.name %></h5>
-    <ol>
-      <li>
-        <%= @activity.address %>
-      </li>
-      <li>
-        <%= @activity.open_hour %>
-      </li>
-      <li>
-        <%= @activity.phone_number %>
-      </li>
-      <li>
-        <%= @activity.category %>
-      </li>
-    </ol>
+      <ol style="list-style: none">
+        <li>
+          <b>Address: </b><%= @activity.address %>
+        </li>
+        <li>
+          <b>Opening hours: </b> <%= @activity.open_hour %>
+        </li>
+        <li>
+          <b>Contact number: </b><%= @activity.phone_number %>
+        </li>
+        <li>
+          <b>Category: </b><%= @activity.category %>
+        </li>
+      </ol>
     <%= link_to "Add to booking", set_activity_path(activity_id: @activity.id), method: :patch %>
+  <p class="pt-4">The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects.[4] It was founded in 1852 and named after Queen Victoria and Prince Albert.
+
+The V&A is located in the Brompton district of the Royal Borough of Kensington and Chelsea, in an area that has become known as "Albertopolis" because of its association with Prince Albert, the Albert Memorial and the major cultural institutions with which he was associated. These include the Natural History Museum, the Science Museum, the Royal Albert Hall and Imperial College London. The museum is a non-departmental public body sponsored by the Department for Digital, Culture, Media and Sport. As with other national British museums, entrance is free.
+
+The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,000 years of art, from ancient times to the present day, from the cultures of Europe, North America, Asia and North Africa. However, the art of antiquity in most areas is not collected. The holdings of ceramics, glass, textiles, costumes, silver, ironwork, jewellery, furniture, medieval objects, sculpture, prints and printmaking, drawings and photographs are among the largest and most comprehensive in the world.</p>
   </div>
 
-
-</div>
-
-  <div class="show-ratings pt-5">
+  <div class="show-ratings">
     <h3>User Reviews</h3>
     <% @activity.reviews.each do |review|%>
-      <div class="border ratings-table">
+<!--       <div class="border ratings-table"> -->
         <p><%= "⭐" * (review.rating.to_i) %></p>
         <p><%= review.content %></p>
       </div>
     <% end %>
 
-  <% if @activity.reviews.blank? %>
-    Be the first one to leave a comment for <%= @activity.name %>
-  <% else %>
-    <% @activity.reviews.each do |review| %>
-      <%= review.content %>
-      <%= review.rating %>
+    <% if @activity.reviews.blank? %>
+      Be the first one to leave a comment for <%= @activity.name %>
+    <% else %>
+      <% @activity.reviews.each do |review| %>
+        <%= review.content %>
+        <%= review.rating %>
       <% end %>
-  <% end %>
-</div>
+    <% end %>
+<!--   </div> -->
+<br>
 
 <br>
-<div class="activity-review-form">
-  <%= simple_form_for [@review] do |f| %>
-    <%= f.input :rating %>
-    <%= f.input :content %>
-    <% hidden_field_tag :activity, @activity.id %>
-    <%= f.submit %>
-  <% end %>
-</div>
 
+  <div class="activity-review-form">
+    <%= simple_form_for [@review] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :content %>
+      <% hidden_field_tag :activity, @activity.id %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
-
+</div>
 
 
