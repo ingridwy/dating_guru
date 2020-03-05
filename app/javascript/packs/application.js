@@ -27,3 +27,10 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
+
+// geocoding
+import { initMapbox } from './init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
