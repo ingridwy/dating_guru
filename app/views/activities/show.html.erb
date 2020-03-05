@@ -1,4 +1,5 @@
-<h2>Activity show page</h2>
+<div class="container">
+<h2 id="activity-header">Activities</h2>
 <!--
 div of activity-image and map -->
 <div class="activity-image-map">
@@ -14,11 +15,21 @@ div of activity-image and map -->
 
 <!-- class for information  -->
   <div class="activity-information">
-    <%= @activity.name %>
-    <%= @activity.address %>
-    <%= @activity.open_hour %>
-    <%= @activity.phone_number %>
-    <%= @activity.category %>
+    <h5 class="pb-4"><%= @activity.name %></h5>
+    <ol>
+      <li>
+        <%= @activity.address %>
+      </li>
+      <li>
+        <%= @activity.open_hour %>
+      </li>
+      <li>
+        <%= @activity.phone_number %>
+      </li>
+      <li>
+        <%= @activity.category %>
+      </li>
+    </ol>
     <%= link_to "Add to booking", set_activity_path(activity_id: @activity.id), method: :patch %>
   </div>
 
@@ -26,14 +37,13 @@ div of activity-image and map -->
 </div>
 
   <div class="show-ratings pt-5">
-        <h3>User Reviews</h3>
-          <% @activity.reviews.each do |review|%>
-          <p></p>
-            <div class="border ratings-table">
-              <p><%= "⭐" * (review.rating.to_i) %></p>
-              <p><%= review.content %></p>
-            </div>
-          <% end %>
+    <h3>User Reviews</h3>
+    <% @activity.reviews.each do |review|%>
+      <div class="border ratings-table">
+        <p><%= "⭐" * (review.rating.to_i) %></p>
+        <p><%= review.content %></p>
+      </div>
+    <% end %>
 
   <% if @activity.reviews.blank? %>
     Be the first one to leave a comment for <%= @activity.name %>
@@ -46,7 +56,7 @@ div of activity-image and map -->
 </div>
 
 <br>
-<div>
+<div class="activity-review-form">
   <%= simple_form_for [@review] do |f| %>
     <%= f.input :rating %>
     <%= f.input :content %>
@@ -55,7 +65,7 @@ div of activity-image and map -->
   <% end %>
 </div>
 
-
+</div>
 
 
 
