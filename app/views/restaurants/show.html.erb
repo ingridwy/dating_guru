@@ -1,7 +1,5 @@
 <h2>Restaurant show page</h2>
 
-
-
 <div>
   <%= @restaurant.name %>
   <%= @restaurant.category %>
@@ -27,7 +25,7 @@
 <br>
 <div>
 <%=  simple_form_for [@review] do |f| %>
-  <%= f.input :rating %>
+  <%= f.input :rating, collection: 1..5 %>
   <%= f.input :content %>
   <% hidden_field_tag :restaurant, @restaurant.id %>
   <%= f.submit %>
