@@ -28,7 +28,7 @@ gem 'redis', '~> 4.0'
 gem 'geocoder'
 
 #bootstrap-sass is a Sass-powered version of Bootstrap 3
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'bootstrap-sass', '~> 3.4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
