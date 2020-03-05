@@ -1,22 +1,27 @@
-<h2>Booking show page</h2>
-<h4>Restaurant Details</h4>
+<h1>Booking show page</h1>
 
+<div>
 <% if @booking.restaurant_id %>
-  <%= @booking.restaurant.name %>
-  <%= @booking.restaurant.address %>
-  <%= @booking.restaurant.price %>
-  <%= @booking.restaurant.open_hour %>
-  <%= @booking.restaurant.phone_number %>
-  <%= @booking.restaurant.category %>
+  <h2>Restaurant Details</h2>
+  <p><%= @booking.restaurant.name %></p>
+  <p><%= @booking.restaurant.address %></p>
+  <p><%= @booking.restaurant.price %></p>
+  <p><%= @booking.restaurant.open_hour %></p>
+  <p><%= @booking.restaurant.phone_number %></p>
+  <p><%= @booking.restaurant.category %></p>
+<% end %>
+</div>
+
+<div>
+<% if @booking.activity_id %>
+  <h2>Activities Details</h2>
+  <p><%= @booking.activity.name %></p>
+  <p><%= @booking.activity.address %></p>
+  <p><%= @booking.activity.open_hour %></p>
+  <p><%= @booking.activity.phone_number %></p>
 <% end %>
 
-<% if @booking.activity_id %>
-  <h4>Activities Details</h4>
-  <%= @booking.activity.name %>
-  <%= @booking.activity.address %>
-  <%= @booking.activity.open_hour %>
-  <%= @booking.activity.phone_number %>
-<% end %>
+</div>
 
 <% if @booking.confirmed %>
   <p>Booking confirmed</p>
