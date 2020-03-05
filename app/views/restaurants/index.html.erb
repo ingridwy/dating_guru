@@ -1,13 +1,73 @@
-<h2>Restaurant Index Page</h2>
+<div class="container">
 
+  <div class="restaurant-whole-page">
+    <h2 class="restaurant-index-heading">Choose A Restaurant</h2>
 
-<% @restaurants.each do |restaurant| %>
-<%= restaurant.category %>
-    <%# if restaurant.photo.attached? %>
-    <%= cl_image_tag restaurant.photo.key, height: 350, width: 250, crop: :fill %>
+    <h4>Looking for something else?</h4>
 
-        <%# else %>
-        <% #end %>
-<%#= restaurant.name %>
-<%= link_to restaurant.name, restaurant_path(restaurant) %>
-<% end %>
+    <div class="restaurant-category-cards">
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Italian"  %>
+          <input class="restaurant-card-pic" type="image" name="Italian" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Italian", restaurants_path(category: "Italian") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Pub"  %>
+          <input class="restaurant-card-pic" type="image" name="Pub" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Pub",restaurants_path(category: "Pub") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Japanese"  %>
+          <input class="restaurant-card-pic" type="image"  name="Japanese" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Japanese", restaurants_path(category: "Japanese") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Seafood"  %>
+          <input class="restaurant-card-pic" type="image" name="Seafood" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Seafood", restaurants_path(category: "Seafood") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Vegan"  %>
+          <input class="restaurant-card-pic" type="image" name="Vegan" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Vegan", restaurants_path(category: "Vegan") %>
+        </form>
+    </div>
+
+  <hr>
+
+  <div class="restaurant-grid-index-with-map">
+    <div class="restaurant-index-cards">
+      <% @restaurants.each do |restaurant| %>
+        <div class="restaurant-index-card">
+          <% if restaurant.photo.attached? %>
+            <div class="restaurant-index-image text-center grid-photo">
+              <%= link_to restaurant_path(restaurant) do %>
+                <%= cl_image_tag restaurant.photo.key, height: 220, width: 300 %>
+              <% end %>
+            </div>
+
+            <div class="restaurant-index-info text-left">
+              <div class="resto-name-review">
+                <h3 id="resto-name"><%= link_to restaurant.name, restaurant_path(restaurant)  %></h3>
+                <p id="resto-review">⭐⭐⭐⭐</p>
+              </div>
+                <p><%= restaurant.category %></p>
+                <p><%= restaurant.description %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="map"
+      style="height: 600px !important; width: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
+</div>
