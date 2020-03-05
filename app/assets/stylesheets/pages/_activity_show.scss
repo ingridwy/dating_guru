@@ -1,19 +1,23 @@
-
-
-
-.activity-image-map{
+.activity-image-map {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
   text-align: center;
 }
 
-.activity-review-form{
-  width: 100px;
-
+.activity-information {
+  text-align: left;
 }
 
-#activity-header{
-text-align: center;
-padding: 20px 20px;
+.activity-information, .show-ratings, .activity-review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity-centering {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
 }
