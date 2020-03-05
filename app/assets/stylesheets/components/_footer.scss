@@ -1,5 +1,5 @@
 .footer-distributed{
-  background-color: #B7BBCC;
+  background-color: #c4d3d3;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
@@ -9,6 +9,12 @@
   padding: 50px 60px 40px;
   margin-top: 80px;
   overflow: hidden;
+}
+a {
+  color: #000;
+}
+a:active {
+  color: #000;
 }
 
 /* Footer left */
@@ -26,7 +32,7 @@
 }
 
 .footer-distributed h3 span{
-  color:  #5383d3;
+  color:  #8f9296;
 }
 
 /* Footer links */
@@ -35,6 +41,7 @@
   color:  #ffffff;
   margin: 0 0 10px;
   padding: 0;
+
 }
 
 .footer-distributed .footer-links a{
@@ -56,6 +63,17 @@
 .footer-distributed .footer-icons{
   margin-top: 40px;
 }
+ a {
+    color: #000;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover {
+    color: #707070;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 
 .footer-distributed .footer-icons a{
   display: inline-block;
@@ -72,6 +90,10 @@
 
   margin-right: 3px;
   margin-bottom: 5px;
+}
+
+.fab:hover {
+    color: #707070;
 }
 
 /* Footer Right */
