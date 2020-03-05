@@ -27,7 +27,7 @@
 <%=  simple_form_for [@review] do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>
-  <%= hidden_field_tag :restaurant, @restaurant.id %>
+  <% hidden_field_tag :restaurant, @restaurant.id %>
   <%= f.submit %>
 <% end %>
 </div>

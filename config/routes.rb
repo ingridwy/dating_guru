@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :activities, only:[ :index, :show ]
   resources :restaurants, only:[:index, :show]
   resources :reviews, only: [:create, :destroy]
-  resources :bookings, only: [:index,:show,:destroy]
+  resources :bookings, only: [:index,:show,:update,:destroy]
 
   get "category", to: "pages#category", as: :category
   patch "set_restaurant", to: "bookings#set_restaurant", as: :set_restaurant

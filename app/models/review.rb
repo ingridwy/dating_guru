@@ -8,7 +8,7 @@ class Review < ApplicationRecord
 
   def activity_or_restaurant
     # if it was activity or (||) restaurant, then if you had BOTH there would be no error
-    unless activity ^ restaurant
+    unless activity.blank? ^ restaurant.blank?
       errors.add(:base, "Must have either activity or restaurant but not both")
     end
   end
