@@ -1,6 +1,32 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  background: rgba(26, 23, 23, 0.9);
+  position: fixed;
+  text-decoration: none;
+  width: 100%;
+  position: inherit;
+  z-index: 1;
+}
+
+.navbar-lewagon a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.nav-item, nav {
+  padding: 0 10px;
+}
+
+.navbar-lewagon a:hover {
+  background: #ddd;
+  color: grey;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +36,4 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+

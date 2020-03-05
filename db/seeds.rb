@@ -8,114 +8,121 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-first_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240779/ouwjhb1yhx76g4ainbdp.jpg")
-second_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240984/md3cimqoxws8cy9boyfj.png")
-third_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240341/jwqhc0n6qge1o0apmcsm.jpg")
-fourth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246331/c700x420_eycdpw.jpg")
-fifth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241727/ivi8abpmkq3durbxc6sx.jpg")
-sixth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246174/Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg")
-seventh_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583245930/169591_qxwjwp.jpg")
-eighth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246102/rsz_firezza_-1_lpckbq.png")
-ninth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241704/nqq1j4shbdvxajvyj0jt.jpg")
+# first_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240779/ouwjhb1yhx76g4ainbdp.jpg")
+# second_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240984/md3cimqoxws8cy9boyfj.png")
+# third_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583240341/jwqhc0n6qge1o0apmcsm.jpg")
+# fourth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246331/c700x420_eycdpw.jpg")
+# fifth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241727/ivi8abpmkq3durbxc6sx.jpg")
+# sixth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246174/Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg")
+# seventh_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583245930/169591_qxwjwp.jpg")
+# eighth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246102/rsz_firezza_-1_lpckbq.png")
+# ninth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241704/nqq1j4shbdvxajvyj0jt.jpg")
 
 User.destroy_all
 Activity.destroy_all
 User.create! email: "test@gmail.com", password: "123456"
 
 
-    first_restaurant = Restaurant.create(
-  name: "McDonalds",
-  address: "Bethnal Green Road",
-  category: "Burgers",
-  price: 1,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    first_restaurant.photo.attach(io: first_file, filename: "ouwjhb1yhx76g4ainbdp.jpg" , content_type: 'image/jpg')
+  #   first_restaurant = Restaurant.create(
+  # name: "McDonalds",
+  # address: "Bethnal Green Road",
+  # category: "Burgers",
+  # price: 1,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   first_restaurant.photo.attach(io: first_file, filename: "ouwjhb1yhx76g4ainbdp.jpg" , content_type: 'image/jpg')
 
-  second_restaurant = Restaurant.create(
-  name: "KFC",
-  address: "Barking Road",
-  category: "Fried chicken",
-  price: 1,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    second_restaurant.photo.attach(io: second_file, filename: "md3cimqoxws8cy9boyfj.png" , content_type: 'image/jpg')
+  # second_restaurant = Restaurant.create(
+  # name: "KFC",
+  # address: "Barking Road",
+  # category: "Fried chicken",
+  # price: 1,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   second_restaurant.photo.attach(io: second_file, filename: "md3cimqoxws8cy9boyfj.png" , content_type: 'image/jpg')
 
-    third_restaurant = Restaurant.create(
-  name: "Pho house",
-  address: "Kingsland Road",
-  category: "Vietnamese",
-  price: 2,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    third_restaurant.photo.attach(io: third_file, filename: "jwqhc0n6qge1o0apmcsm.jpg" , content_type: 'image/jpg')
+  #   third_restaurant = Restaurant.create(
+  # name: "Pho house",
+  # address: "Kingsland Road",
+  # category: "Vietnamese",
+  # price: 2,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   third_restaurant.photo.attach(io: third_file, filename: "jwqhc0n6qge1o0apmcsm.jpg" , content_type: 'image/jpg')
 
-    fourth_restaurant = Restaurant.create(
-  name: "Preto",
-  address: "Shaftsbury Avenue",
-  category: "Brazilian grill",
-  price: 3,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    fourth_restaurant.photo.attach(io: fourth_file, filename: "c700x420_eycdpw.jpg" , content_type: 'image/jpg')
+  #   fourth_restaurant = Restaurant.create(
+  # name: "Preto",
+  # address: "Shaftsbury Avenue",
+  # category: "Brazilian grill",
+  # price: 3,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   fourth_restaurant.photo.attach(io: fourth_file, filename: "c700x420_eycdpw.jpg" , content_type: 'image/jpg')
 
-    fifth_restaurant = Restaurant.create(
-  name: "The Ned",
-  address: "Bank",
-  category: "Seafood",
-  price: 4,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    fifth_restaurant.photo.attach(io: fifth_file, filename: "ivi8abpmkq3durbxc6sx.jpg" , content_type: 'image/jpg')
+  #   fifth_restaurant = Restaurant.create(
+  # name: "The Ned",
+  # address: "Bank",
+  # category: "Seafood",
+  # price: 4,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   fifth_restaurant.photo.attach(io: fifth_file, filename: "ivi8abpmkq3durbxc6sx.jpg" , content_type: 'image/jpg')
 
-    sixth_restaurant = Restaurant.create(
-  name: "Cafe Papaya",
-  address: "Shoreditch",
-  category: "Vegan",
-  price: 2,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    sixth_restaurant.photo.attach(io: sixth_file, filename: "Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg" , content_type: 'image/jpg')
+  #   sixth_restaurant = Restaurant.create(
+  # name: "Cafe Papaya",
+  # address: "Shoreditch",
+  # category: "Vegan",
+  # price: 2,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   sixth_restaurant.photo.attach(io: sixth_file, filename: "Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg" , content_type: 'image/jpg')
 
-    seventh_restaurant = Restaurant.create(
-  name: "Sushi Salsa",
-  address: "Camden Town",
-  category: "Sushi",
-  price: 2,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    seventh_restaurant.photo.attach(io: seventh_file, filename: "169591_qxwjwp.jpg" , content_type: 'image/jpg')
+  #   seventh_restaurant = Restaurant.create(
+  # name: "Sushi Salsa",
+  # address: "Camden Town",
+  # category: "Sushi",
+  # price: 2,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   seventh_restaurant.photo.attach(io: seventh_file, filename: "169591_qxwjwp.jpg" , content_type: 'image/jpg')
 
-    eighth_restaurant = Restaurant.create(
-  name: "Brxton Italian",
-  address: "Bow",
-  category: "Italian",
-  price: 2,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    eighth_restaurant.photo.attach(io: eighth_file, filename: "rsz_firezza_-1_lpckbq.png" , content_type: 'image/jpg')
+  #   eighth_restaurant = Restaurant.create(
+  # name: "Brxton Italian",
+  # address: "Bow",
+  # category: "Italian",
+  # price: 2,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   eighth_restaurant.photo.attach(io: eighth_file, filename: "rsz_firezza_-1_lpckbq.png" , content_type: 'image/jpg')
 
-    ninth_restaurant = Restaurant.create(
-  name: "Burger and Lobster",
-  address: "Canary Wharf",
-  category: "Seafood",
-  price: 3,
-  open_hour: "11:30am - 9:30pm",
-  phone_number: "0208 983 9862"
-  )
-    ninth_restaurant.photo.attach(io: ninth_file, filename: "nqq1j4shbdvxajvyj0jt.jpg" , content_type: 'image/jpg')
+  #   ninth_restaurant = Restaurant.create(
+  # name: "Burger and Lobster",
+  # address: "Canary Wharf",
+  # category: "Seafood",
+  # price: 3,
+  # open_hour: "11:30am - 9:30pm",
+  # phone_number: "0208 983 9862"
+  # )
+  #   ninth_restaurant.photo.attach(io: ninth_file, filename: "nqq1j4shbdvxajvyj0jt.jpg" , content_type: 'image/jpg')
 
 # activity seeding(museum picture)
 
-a_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583271187/Untitled_design_rtvzta.png")
+one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583356609/01_muse_Victoria-and-Albert-museum-London_yqxpqc.jpg")
+two = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359769/02_replace_british_museum_cim7lu.jpg")
+three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359073/03_muse_RIB-0019996-1360x765_zma1gz.jpg")
+four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359073/4_muse_Natural-History-Museum_bddygg.jpg")
+five = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583360402/05_national-gallery-view-from-trafalgar-square-p3346_007_w3faci.jpg")
+six = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359073/4_muse_Natural-History-Museum_bddygg.jpg")
+
+
 # a_two = URI.open()
 # a_three = URI.open()
 # a_four = URI.open()
@@ -126,13 +133,13 @@ a_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583271187/
 # activity seeding(museum data)
 
 a_one = Activity.create(
-  name: "Cromwell Rd, Knightsbridge, London SW7 2RL",
-  address: "Cromwell Rd, Knightsbridge, London",
+  name: "Victoria and Albert Museum",
+  address: "Cromwell Rd, South Kensington, London SW7 5BD",
   open_hour: "10:00-17:45",
   phone_number: "020 7942 2000",
   category: "Museum"
 )
-# a_one.photo.attach(io: a_one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London_yqxpqc.jpg" , content_type: 'image/jpg')
 
 
 
@@ -144,6 +151,7 @@ a_two = Activity.create(
   category: "Museum"
 )
 
+a_two.photo.attach(io: two, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
 
 a_three = Activity.create(
@@ -153,6 +161,8 @@ a_three = Activity.create(
   phone_number: "020 7887 8888",
   category: "Museum"
 )
+
+a_three.photo.attach(io: three, filename: "03_muse_RIB-0019996-1360x765_zma1gz.jpg" , content_type: 'image/jpg')
 
 
 
@@ -164,6 +174,7 @@ a_four = Activity.create(
   category: "Museum"
 )
 
+a_four.photo.attach(io: four, filename: "4_muse_Natural-History-Museum_bddygg.jpg" , content_type: 'image/jpg')
 
 
 a_five = Activity.create(
@@ -174,6 +185,7 @@ a_five = Activity.create(
   category: "Museum"
 )
 
+a_five.photo.attach(io: five, filename: "05_national-gallery-view-from-trafalgar-square-p3346_007_w3faci.jpg" , content_type: 'image/jpg')
 
 
 a_six = Activity.create(
@@ -184,7 +196,82 @@ a_six = Activity.create(
   category: "Museum"
 )
 
+a_six.photo.attach(io: six, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
+# weekend market
+
+a_seven = Activity.create(
+  name: "Broadway Market",
+  address: "Broadway Market, E8 4QJ",
+  open_hour: "Saturdays 9:00-17:00.",
+  phone_number: "",
+  category: "Market"
+)
+
+# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+a_eight = Activity.create(
+  name: "Netil Market",
+  address: "13-23 Westgate Street, E8 3RL",
+  open_hour: "Saturdays, 11:00-18:00",
+  phone_number: "",
+  category: "Market"
+)
+
+# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+a_nine = Activity.create(
+  name: "Victoria Park Market",
+  address: "56-57, Gore Rd, London E9 7HN",
+  open_hour: "Sundays 10:00-16:00",
+  phone_number: "",
+  category: "Market"
+)
+
+# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+a_ten = Activity.create(
+  name: "Brick Lane Market",
+  address: "Brick Ln, Spitalfields, London E1 6QR",
+  open_hour: "10:00-18:00",
+  phone_number: "",
+  category: "Market"
+)
+
+# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+a_eleven = Activity.create(
+  name: "Old Spitalfields Market",
+  address: "16 Commercial St, Spitalfields, London E1 6EW",
+  open_hour: "10:00-18:00",
+  phone_number: "",
+  category: "Market"
+)
+# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+#sport
+a_twelve = Activity.create(
+  name: "Bloomsbury Lanes",
+  address: "Tavistock Hotel Bedford Way London WC1H 9EU",
+  open_hour: "12:00-0:00",
+  phone_number: "020 7183 1979",
+  category: "Sport"
+)
+
+# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+a_thirteen = Activity.create(
+  name: "Bounce Old Street",
+  address: "241 Old St, Old Street, London EC1V 9EY",
+  open_hour: "16:00-0:00",
+  phone_number: "",
+  category: "Sport"
+)
 
 
 
