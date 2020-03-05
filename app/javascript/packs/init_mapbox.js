@@ -11,8 +11,14 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers)
-    fitMapToMarkers(map, markers)
+    console.log(markers)
+    if (Array.isArray(markers)) {
+      addMarkersToMap(map, markers)
+      fitMapToMarkers(map, markers)
+    } else {
+      addMarkersToMap(map, [markers])
+      fitMapToMarkers(map, [markers])
+    }
   }
 };
 
