@@ -8,31 +8,31 @@
     <div class="restaurant-category-cards">
         <form class="restaurant-category" action="/restaurants" method="GET">
           <%= hidden_field_tag :category, "Italian"  %>
-          <input class="restaurant-card-pic" type="image" name="Italian" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Italian", restaurants_path(category: "Italian") %>
+          <input class="restaurant-card-pic" type="image" name="All" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496782/category_resto_all_cvbqtn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "All", restaurants_path %>
         </form>
 
         <form class="restaurant-category" action="/restaurants" method="GET">
           <%= hidden_field_tag :category, "Pub"  %>
-          <input class="restaurant-card-pic" type="image" name="Pub" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Pub",restaurants_path(category: "Pub") %>
+          <input class="restaurant-card-pic" type="image" name="Italian" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496400/category_resto_italian_fhgvbn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Italian",restaurants_path(category: "Italian") %>
         </form>
 
         <form class="restaurant-category" action="/restaurants" method="GET">
           <%= hidden_field_tag :category, "Japanese"  %>
-          <input class="restaurant-card-pic" type="image"  name="Japanese" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <input class="restaurant-card-pic" type="image"  name="Japanese" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496400/category-resto-japanese_qjxudr.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "Japanese", restaurants_path(category: "Japanese") %>
         </form>
 
         <form class="restaurant-category" action="/restaurants" method="GET">
           <%= hidden_field_tag :category, "Seafood"  %>
-          <input class="restaurant-card-pic" type="image" name="Seafood" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <input class="restaurant-card-pic" type="image" name="Seafood" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496770/category_resto_seafoodrevised_orpu7e.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "Seafood", restaurants_path(category: "Seafood") %>
         </form>
 
         <form class="restaurant-category" action="/restaurants" method="GET">
           <%= hidden_field_tag :category, "Vegan"  %>
-          <input class="restaurant-card-pic" type="image" name="Vegan" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <input class="restaurant-card-pic" type="image" name="Vegan" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496407/category_resto_vegan_boevbv.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "Vegan", restaurants_path(category: "Vegan") %>
         </form>
     </div>
@@ -46,7 +46,7 @@
           <% if restaurant.photo.attached? %>
             <div class="restaurant-index-image text-center grid-photo">
               <%= link_to restaurant_path(restaurant) do %>
-                <%= cl_image_tag restaurant.photo.key, height: 220, width: 300 %>
+                <%= cl_image_tag restaurant.photo.key, height: 200, width: 300 %>
               <% end %>
             </div>
 
