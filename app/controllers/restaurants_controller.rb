@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
     if params[:category]
-      @restaurants = restaurant.where(category: params[:category]).geocoded
+      @restaurants = Restaurant.where(category: params[:category]).geocoded
       @markers = @restaurants.map do |activity|
         {
           lat: restaurant.latitude,
@@ -35,4 +35,3 @@ class RestaurantsController < ApplicationController
     @review = Review.new
   end
 end
-

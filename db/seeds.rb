@@ -21,6 +21,7 @@ fourth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v15832
 User.destroy_all
 Restaurant.destroy_all
 Activity.destroy_all
+Book.destroy_all
 User.create! user_name: "test", email: "test@gmail.com", password: "123456"
 
 
