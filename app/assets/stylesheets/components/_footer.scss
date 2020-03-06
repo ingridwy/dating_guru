@@ -1,22 +1,18 @@
 .footer-distributed{
-  background-color: #c4d3d3;
+  background-color: #eaf2f2;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
   font: bold 16px sans-serif;
   text-align: left;
-  color: #4b4c4f;
+  color: #3a3a3a;
   padding: 50px 60px 40px;
   margin-top: 80px;
   overflow: hidden;
+  a {
+    color: #3a3a3a;
+  }
 }
-a {
-  color: #4b4c4f;
-}
-a:active {
-  color: #4b4c4f;
-}
-
 /* Footer left */
 
 .footer-distributed .footer-left{
