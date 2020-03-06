@@ -27,9 +27,11 @@ thirteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v158349
 User.destroy_all
 Restaurant.destroy_all
 Activity.destroy_all
+Booking.destroy_all
+Review.destroy_all
 user_1 = User.create! user_name: "test", email: "test@gmail.com", password: "123456"
-Book.destroy_all
-User.create! user_name: "test", email: "test@gmail.com", password: "123456"
+
+User.create! user_name: "cat", email: "cat@gmail.com", password: "123456"
 
 
     first_restaurant = Restaurant.create(
@@ -245,7 +247,7 @@ a_three = Activity.create(
   address: "Bankside, London SE1 9TG",
   open_hour: "10:00-18:00",
   phone_number: "020 7887 8888",
-  category: "Sport",
+  category: "Museum",
   description: "Modern-art gallery with international works on display, plus a cafe with panoramic river views.",
   price:0
 )
@@ -416,28 +418,28 @@ a_fourteen.photo.attach(io: fourteen, filename: "Untitled_design_rtvzta.png" , c
 # a_thirteen.photo.attach(io: thirteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
-# Activity.all.each do |dress|
-#   3.times do
-#   Review.create(
-#     content: ["Nice staff and atmosphere, cool exhibitions and very easy to reach location", "A place to remember.We had great time there! Interesting people, cool atmosphere"].sample,
-#     rating: [3,4,5].sample,
-#     activity: activity,
-#     user: user_1
-#     )
-#   end
-# end
+Activity.all.each do |activity|
+  1.times do
+  Review.create(
+    content: ["Nice staff and atmosphere, cool exhibitions and very easy to reach location", "A place to remember.We had great time there! Interesting people, cool atmosphere"].sample,
+    rating: [3,4,5].sample,
+    activity: activity,
+    user: user_1
+    )
+  end
+end
 
-# Restaurant.all.each do |dress|
-#   3.times do
-#   Review.create(
-#     content: ["Delicious restaurant!!! The food is really interesting, a culinary experience at an af-fordable price! The mix of cuisines is surprisingly perfect and the owners are abso-lutely lovely. I very strongly recommend!! (This is my first ever food review, it shows how much i liked this place),
-#       The food is amazing! The burger is incredible!! The place is very nice and the peo-ple working there are very friendly. It has been such a great experience! I recomendit to everybody!!!"].sample,
-#     rating: [3,4,5].sample,
-#     restaurant: restaurant,
-#     user: user_1
-#     )
-#   end
-# end
+Restaurant.all.each do |restaurant|
+  1.times do
+  Review.create(
+    content: ["Delicious restaurant!!! The food is really interesting, a culinary experience at an af-fordable price! The mix of cuisines is surprisingly perfect and the owners are abso-lutely lovely. I very strongly recommend!! (This is my first ever food review, it shows how much i liked this place),
+      The food is amazing! The burger is incredible!! The place is very nice and the peo-ple working there are very friendly. It has been such a great experience! I recomendit to everybody!!!"].sample,
+    rating: [3,4,5].sample,
+    restaurant: restaurant,
+    user: user_1
+    )
+  end
+end
 
 
 
