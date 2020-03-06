@@ -7,13 +7,12 @@
 
     <div class="restaurant-category-cards">
         <form class="restaurant-category" action="/restaurants" method="GET">
-          <%= hidden_field_tag :category, "Italian"  %>
           <input class="restaurant-card-pic" type="image" name="All" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496782/category_resto_all_cvbqtn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "All", restaurants_path %>
         </form>
 
         <form class="restaurant-category" action="/restaurants" method="GET">
-          <%= hidden_field_tag :category, "Pub"  %>
+          <%= hidden_field_tag :category, "Italian"  %>
           <input class="restaurant-card-pic" type="image" name="Italian" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496400/category_resto_italian_fhgvbn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "Italian",restaurants_path(category: "Italian") %>
         </form>

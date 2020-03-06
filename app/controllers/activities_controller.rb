@@ -9,6 +9,7 @@ class ActivitiesController < ApplicationController
           infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
         }
       end
+
     else
       @activities = Activity.geocoded
       @markers = @activities.map do |activity|

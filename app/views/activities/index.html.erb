@@ -7,33 +7,32 @@
 
     <div class="activity-category-cards">
         <form class="activity-category" action="/activities" method="GET">
-          <%= hidden_field_tag :category, "Museum"  %>
-          <input class="activity-card-pic" type="image" value="Museum" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", activities_path(category: "Museum") %>
+          <input class="activity-card-pic" type="image" value="All" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500331/priscilla-du-preez-gGmSBAps6K0-unsplash_zp4pto.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "All", activities_path%>
         </form>
 
         <form class="activity-category" action="/activities" method="GET">
           <%= hidden_field_tag :category, "Sport"  %>
-          <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500350/bruno-nascimento-PHIgYUGQPvU-unsplash_sxrbge.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "Sport", activities_path(category: "Sport") %>
         </form>
 
         <form class="activity-category" action="/activities" method="GET">
           <%= hidden_field_tag :category, "Market"  %>
           <input class="activity-card-pic" type="image" value="Market" name="market" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", activities_path(category: "Market") %>
+        <%= link_to "Market", activities_path(category: "Market") %>
         </form>
 
         <form class="activity-category" action="/activities" method="GET">
-          <%= hidden_field_tag :category, "Theatre"  %>
-          <input class="activity-card-pic" type="image" value="Theatre" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", activities_path(category: "Theatre") %>
+          <%= hidden_field_tag :category, "Museum"  %>
+          <input class="activity-card-pic" type="image" name="Museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Museum", activities_path(category: "Museum") %>
         </form>
 
         <form class="activity-category" action="/activities" method="GET">
-          <%= hidden_field_tag :category, "Theatre"  %>
-          <input class="activity-card-pic" type="image" value="Theatre" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358559/peter-lewicki-Wfh650C1OHU-unsplash_ftvxnd.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Museum", activities_path(category: "Theatre") %>
+          <%= hidden_field_tag :category, "Outdoor"  %>
+          <input class="activity-card-pic" type="image" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583499938/category_act_outdoor_qxtayc.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Outdoor", activities_path(category: "Outdoor") %>
         </form>
     </div>
 
@@ -50,9 +49,13 @@
               <% end %>
             </div>
 
-            <div class="activity-index-info text-center">
-              <%= link_to activity.name, activity_path(activity)  %>
-              <%= activity.category %>
+            <div class="activity-index-info text-left">
+              <div class="activity-name-review">
+                <h3 id="activity-name"><%= link_to activity.name, activity_path(activity)  %></h3>
+                <p id="activity-review">⭐⭐⭐</p>
+              </div>
+                <p><%= activity.category %></p>
+                <p><%= activity.description %></p>
             </div>
           <% end %>
         </div>
