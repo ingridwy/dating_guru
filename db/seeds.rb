@@ -28,6 +28,8 @@ User.destroy_all
 Restaurant.destroy_all
 Activity.destroy_all
 user_1 = User.create! user_name: "test", email: "test@gmail.com", password: "123456"
+Book.destroy_all
+User.create! user_name: "test", email: "test@gmail.com", password: "123456"
 
 
     first_restaurant = Restaurant.create(

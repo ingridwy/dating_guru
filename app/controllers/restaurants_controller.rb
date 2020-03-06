@@ -35,4 +35,3 @@ class RestaurantsController < ApplicationController
     @review = Review.new
   end
 end
-
