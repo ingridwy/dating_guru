@@ -22,15 +22,15 @@
     transition: transform .5s;
     &:hover {
       transform: scale(1.08);
+      background-color: rgba(240,240,240,0.3);
     }
   }
     a {
   text-decoration: none;
   color: white;
-
   &:hover {
   text-decoration: none;
-  color: darkgray;
+  // color: darkgray;
   }
 }
 }

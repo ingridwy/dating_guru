@@ -1,0 +1,23 @@
+.restaurant-image-map {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
+}
+
+.restaurant-information {
+  text-align: left;
+}
+
+.restaurant-information, .show-ratings, .restaurant-review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-centering {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
+}
