@@ -27,10 +27,11 @@ thirteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v158349
 User.destroy_all
 Restaurant.destroy_all
 Activity.destroy_all
+Booking.destroy_all
+puts "all old data deleted"
 user_1 = User.create! user_name: "test", email: "test@gmail.com", password: "123456"
-Book.destroy_all
-User.create! user_name: "test", email: "test@gmail.com", password: "123456"
-
+user_2 = User.create! user_name: "cat", email: "cat@gmail.com", password: "123456"
+puts "creating new restaurant"
 
     first_restaurant = Restaurant.create(
   name: "Passo Shoreditch",
@@ -178,6 +179,7 @@ thirteenth_restaurant = Restaurant.create(
 
 
 # activity seeding(museum picture)
+puts "creating new activity"
 
 one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583356609/01_muse_Victoria-and-Albert-museum-London_yqxpqc.jpg")
 two = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359769/02_replace_british_museum_cim7lu.jpg")
