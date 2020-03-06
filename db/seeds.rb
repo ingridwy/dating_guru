@@ -27,7 +27,7 @@ thirteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v158349
 User.destroy_all
 Restaurant.destroy_all
 Activity.destroy_all
-User.create! user_name: "test", email: "test@gmail.com", password: "123456"
+user_1 = User.create! user_name: "test", email: "test@gmail.com", password: "123456"
 
 
     first_restaurant = Restaurant.create(
@@ -183,12 +183,17 @@ three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359073/
 four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359073/4_muse_Natural-History-Museum_bddygg.jpg")
 five = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583360402/05_national-gallery-view-from-trafalgar-square-p3346_007_w3faci.jpg")
 six = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583359073/4_muse_Natural-History-Museum_bddygg.jpg")
-
-
-# a_two = URI.open()
-# a_three = URI.open()
-# a_four = URI.open()
-# a_five = URI.open()
+seven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/07_broadway_market_kappn6.jpg")
+eight = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501020/08_netil_market_w04g78.jpg")
+nine = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/09_victoria_park_market_pbknhf.jpg")
+ten = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/10_bricklane_market_boxwli.jpg")
+eleven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/11_oldspitalfield_market_bdvidp.jpg")
+twelve = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501020/12_bloombury_lane_n3ezx0.jpg")
+thirteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/13_bounce_old_street_tixjez.jpg")
+fourteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/14_tenniscourt_gff5ee.jpg")
+fifteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/15_climbing_ipqkb1.jpg")
+# a_six = URI.open()
+# a_six = URI.open()
 # a_six = URI.open()
 
 
@@ -199,7 +204,7 @@ a_one = Activity.create(
   address: "Cromwell Rd, South Kensington, London SW7 5BD",
   open_hour: "10:00-17:45",
   price: 0,
-  description:"test",
+  description:"Blockbuster exhibitions and permanent decorative arts collection, with design shop and ornate cafe.",
   phone_number: "020 7942 2000",
   category: "Museum"
 )
@@ -208,22 +213,39 @@ a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London
 
 
 a_two = Activity.create(
-  name: "British Museum Theatre",
+  name: "British Museum",
   address: "Great Russell St, Bloomsbury, London WC1B 3DG",
   open_hour: "10:00-17:30",
   phone_number: "020 7323 8299",
-  category: "Theatre"
+  category: "Theatre",
+  description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
+  price: 0
 )
 
 a_two.photo.attach(io: two, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
+a_ten = Activity.create(
+  name: "Brick Lane Market",
+  address: "Brick Ln, Spitalfields, London E1 6QR",
+  open_hour: "10:00-18:00",
+  phone_number: "020 7770 6028",
+  category: "Market",
+  description: "London street running from London Fields to the Regent's Canal in the London Borough of Hackney.",
+  price:0
+)
+
+a_ten.photo.attach(io: ten, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
 
 a_three = Activity.create(
-  name: "Tate Modern Sport",
+  name: "Tate Modern",
   address: "Bankside, London SE1 9TG",
   open_hour: "10:00-18:00",
   phone_number: "020 7887 8888",
-  category: "Sport"
+  category: "Sport",
+  description: "Modern-art gallery with international works on display, plus a cafe with panoramic river views.",
+  price:0
 )
 
 a_three.photo.attach(io: three, filename: "03_muse_RIB-0019996-1360x765_zma1gz.jpg" , content_type: 'image/jpg')
@@ -235,7 +257,9 @@ a_four = Activity.create(
   address: "Cromwell Rd, South Kensington, London SW7 5BD",
   open_hour: "10:00-17:50",
   phone_number: "020 7942 5000",
-  category: "Museum"
+  category: "Museum",
+  description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
+  price:0
 )
 
 a_four.photo.attach(io: four, filename: "4_muse_Natural-History-Museum_bddygg.jpg" , content_type: 'image/jpg')
@@ -246,10 +270,25 @@ a_five = Activity.create(
   address: "Trafalgar Square, Charing Cross, London WC2N 5DN",
   open_hour: "10:00-18:00",
   phone_number: "020 7747 2885",
-  category: "Museum"
+  category: "Museum",
+  description: "Modern-art gallery with international works on display, plus a cafe with panoramic river views.",
+  price:0
 )
 
 a_five.photo.attach(io: five, filename: "05_national-gallery-view-from-trafalgar-square-p3346_007_w3faci.jpg" , content_type: 'image/jpg')
+
+
+a_fifteen = Activity.create(
+  name: "Mile End Climbing Wal",
+  address: "Haverfield Rd, London E3 5BE",
+  open_hour: "11:00-21:00",
+  phone_number: "020 7183 1979",
+  category: "Sport",
+  description: "Bringing London's climbers together since 1986. Gift Vouchers. Give the gift of climbing to your loved ones.",
+  price: 30
+)
+
+a_fifteen.photo.attach(io: fifteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
 a_six = Activity.create(
@@ -257,7 +296,9 @@ a_six = Activity.create(
   address: "224-238 Kensington High St, Kensington, London W8 6AG",
   open_hour: "10:00-18:00",
   phone_number: "020 3862 5900",
-  category: "Museum"
+  category: "Museum",
+  description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
+  price:0
 )
 
 a_six.photo.attach(io: six, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
@@ -268,54 +309,54 @@ a_seven = Activity.create(
   name: "Broadway Market",
   address: "Broadway Market, E8 4QJ",
   open_hour: "Saturdays 9:00-17:00.",
-  phone_number: "",
-  category: "Market"
+  phone_number: "020 7770 6028",
+  category: "Market",
+  description: "London street running from London Fields to the Regent's Canal in the London Borough of Hackney.",
+  price:0
 )
 
-# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+a_seven.photo.attach(io: seven, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
 a_eight = Activity.create(
   name: "Netil Market",
   address: "13-23 Westgate Street, E8 3RL",
   open_hour: "Saturdays, 11:00-18:00",
-  phone_number: "",
-  category: "Market"
+  phone_number: "020 7770 6028",
+  category: "Market",
+  description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
+  price:0
 )
 
-# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
 a_nine = Activity.create(
   name: "Victoria Park Market",
   address: "56-57, Gore Rd, London E9 7HN",
   open_hour: "Sundays 10:00-16:00",
-  phone_number: "",
-  category: "Market"
+  phone_number: "020 7770 6028",
+  category: "Market",
+  description: "Brick Lane Market is a London market centred on Brick Lane, in Tower Hamlets in east London.",
+  price:0
 )
 
-# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+a_nine.photo.attach(io: nine, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
-a_ten = Activity.create(
-  name: "Brick Lane Market",
-  address: "Brick Ln, Spitalfields, London E1 6QR",
-  open_hour: "10:00-18:00",
-  phone_number: "",
-  category: "Market"
-)
-
-# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
 a_eleven = Activity.create(
   name: "Old Spitalfields Market",
   address: "16 Commercial St, Spitalfields, London E1 6EW",
   open_hour: "10:00-18:00",
-  phone_number: "",
-  category: "Market"
+  phone_number: "020 7770 6028",
+  category: "Market",
+  description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
+  price:0
 )
-# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+a_eleven.photo.attach(io: eleven, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
 #sport
@@ -324,20 +365,77 @@ a_twelve = Activity.create(
   address: "Tavistock Hotel Bedford Way London WC1H 9EU",
   open_hour: "12:00-0:00",
   phone_number: "020 7183 1979",
-  category: "Sport"
+  category: "Sport",
+  description: "8 bowling lanes and DJ plus pizzas and burgers in American diner, with private karaoke booths.",
+  price: 30
 )
 
-# a_one.photo.attach(io: one, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+a_twelve.photo.attach(io: twelve, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
-a_thirteen = Activity.create(
-  name: "Bounce Old Street",
-  address: "241 Old St, Old Street, London EC1V 9EY",
-  open_hour: "16:00-0:00",
-  phone_number: "",
-  category: "Sport"
+a_fourteen = Activity.create(
+  name: "Tower Hamlets Tennis",
+  address: "Victoria Park, London E9 5DY",
+  open_hour: "9:00-21:00",
+  phone_number: "020 7183 1979",
+  category: "Sport",
+  description: "Community Tennis club online court booking. Shadwell, Victoria Park, Canary Wharf - East London.",
+  price: 20
 )
 
+a_fourteen.photo.attach(io: fourteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
+
+
+
+
+# a_thirteen = Activity.create(
+#   name: "Bounce Old Street",
+#   address: "241 Old St, Old Street, London EC1V 9EY",
+#   open_hour: "16:00-0:00",
+#   phone_number: "020 7183 1979",
+#   category: "Sport",
+#   description: "Bounce is Europe's largest purpose-built 'Social Ping Pong Club' in London's most fun & vibrant destinations",
+#   price: 40
+# )
+
+# a_thirteen.photo.attach(io: thirteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+# a_thirteen = Activity.create(
+#   name: "Bounce Old Street",
+#   address: "241 Old St, Old Street, London EC1V 9EY",
+#   open_hour: "16:00-0:00",
+#   phone_number: "020 7183 1979",
+#   category: "Sport",
+#   description: "Bounce is Europe's largest purpose-built 'Social Ping Pong Club' in London's most fun & vibrant destinations",
+#   price: 40
+# )
+
+# a_thirteen.photo.attach(io: thirteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+# Activity.all.each do |dress|
+#   3.times do
+#   Review.create(
+#     content: ["Nice staff and atmosphere, cool exhibitions and very easy to reach location", "A place to remember.We had great time there! Interesting people, cool atmosphere"].sample,
+#     rating: [3,4,5].sample,
+#     activity: activity,
+#     user: user_1
+#     )
+#   end
+# end
+
+# Restaurant.all.each do |dress|
+#   3.times do
+#   Review.create(
+#     content: ["Delicious restaurant!!! The food is really interesting, a culinary experience at an af-fordable price! The mix of cuisines is surprisingly perfect and the owners are abso-lutely lovely. I very strongly recommend!! (This is my first ever food review, it shows how much i liked this place),
+#       The food is amazing! The burger is incredible!! The place is very nice and the peo-ple working there are very friendly. It has been such a great experience! I recomendit to everybody!!!"].sample,
+#     rating: [3,4,5].sample,
+#     restaurant: restaurant,
+#     user: user_1
+#     )
+#   end
+# end
 
 
 
