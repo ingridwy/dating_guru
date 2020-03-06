@@ -27,6 +27,7 @@ thirteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v158349
 User.destroy_all
 Restaurant.destroy_all
 Activity.destroy_all
+Book.destroy_all
 User.create! user_name: "test", email: "test@gmail.com", password: "123456"
 
 
