@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="restaurant-header m-5 text-center">Restaurants</h2>
+  <h2 class="restaurant-header m-5 text-center"><%= @restaurant.name %></h2>
 
 <!-- div of restaurant-image and map -->
   <div class="restaurant-image-map mb-5">
@@ -30,14 +30,14 @@
         </li>
       </ol>
 
-    <%= link_to "Add to booking", set_restaurant_path(restaurant_id: @restaurant.id), method: :patch, class: 'add-booking-button mb-4' %>
+    <%= link_to "Add to plan", set_restaurant_path(restaurant_id: @restaurant.id), method: :patch, class: 'add-booking-button mb-4' %>
   <p class="pt-4">The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects.[4] It was founded in 1852 and named after Queen Victoria and Prince Albert.
 The V&A is located in the Brompton district of the Royal Borough of Kensington and Chelsea, in an area that has become known as "Albertopolis" because of its association with Prince Albert, the Albert Memorial and the major cultural institutions with which he was associated. These include the Natural History Museum, the Science Museum, the Royal Albert Hall and Imperial College London. The museum is a non-departmental public body sponsored by the Department for Digital, Culture, Media and Sport. As with other national British museums, entrance is free.
 The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,000 years of art, from ancient times to the present day, from the cultures of Europe, North America, Asia and North Africa. However, the art of antiquity in most areas is not collected. The holdings of ceramics, glass, textiles, costumes, silver, ironwork, jewellery, furniture, medieval objects, sculpture, prints and printmaking, drawings and photographs are among the largest and most comprehensive in the world.</p>
   </div>
 
-  <div class="show-ratings">
-    <h3>User Reviews</h3>
+  <div class="show-ratings ml-4">
+    <h3>Reviews</h3>
     <% @restaurant.reviews.each do |review|%>
 <!--       <div class="border ratings-table"> -->
         <p><%= "⭐" * (review.rating.to_i) %></p>
