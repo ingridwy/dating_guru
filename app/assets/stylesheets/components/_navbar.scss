@@ -5,6 +5,7 @@
   width: 100%;
   position: inherit;
   z-index: 1;
+  transition: transform .5s;
 }
 
 .navbar-lewagon a {
@@ -17,7 +18,7 @@
 }
 
 .navbar-nav .nav-link {
-    color: white;
+  color: white;
 }
 
 .nav-item, nav {
@@ -25,8 +26,8 @@
 }
 
 .navbar-lewagon a:hover {
-  background: #ddd;
-  color: grey;
+  background: none;
+  transform: scale(1.04);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -36,4 +37,3 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
