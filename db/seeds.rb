@@ -427,22 +427,25 @@ Activity.all.each do |activity|
   review = Review.new(
     content: ["Nice staff and atmosphere, cool exhibitions and very easy to reach location", "A place to remember.We had great time there! Interesting people, cool atmosphere"].sample,
     rating: [3,4,5].sample,
-    activity: activity
+
+    activity: activity,
     )
   review.user = user_1
-  review.save
+  review.save!
+
   end
 end
 
 Restaurant.all.each do |restaurant|
   1.times do
-  Review.create(
+ review2 = Review.new(
     content: ["Delicious restaurant!!! The food is really interesting, a culinary experience at an af-fordable price! The mix of cuisines is surprisingly perfect and the owners are abso-lutely lovely. I very strongly recommend!! (This is my first ever food review, it shows how much i liked this place),
       The food is amazing! The burger is incredible!! The place is very nice and the peo-ple working there are very friendly. It has been such a great experience! I recomendit to everybody!!!"].sample,
     rating: [3,4,5].sample,
     restaurant: restaurant,
-    user: user_1
     )
+   review2.user = user_1
+   review2.save!
   end
 end
 
