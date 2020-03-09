@@ -1,10 +1,10 @@
 <div class="booking-title">
-  <h1> Dating plans </h1>
-</div>
-
+    <h1> Dating plans </h1>
+  </div>
 <div class= "book-index-container">
   <% @bookings.each do |booking| %>
-    <div class = "book-cards">
+<div class = "book-cards m-5">
+   
       <%= link_to booking_path(booking) do %>
       <p><%= booking.date %></p>
       <% if booking.restaurant %>
@@ -12,12 +12,14 @@
           <%= booking.restaurant.name %>
           <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
         </div>
+
       <% end %>
       <% if booking.activity %>
         <div class="d-flex justify-content-between b-card-item">
           <%= booking.activity.name %>
           <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 150, width: 200 %>
         </div>
+
         <% if booking.confirmed %>
           <p>Booking confirmed</p>
           <% else %>
