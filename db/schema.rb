@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2020_03_09_122202) do
 
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_122202) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
-    t.string "address"
+    t.integer "address"
     t.string "open_hour"
     t.string "phone_number"
     t.string "category"
@@ -54,8 +56,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_122202) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.bigint "user_id", null: false
-    t.bigint "activity_id"
-    t.bigint "restaurant_id"
+    t.bigint "activity_id", null: false
+    t.bigint "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "confirmed", default: false
