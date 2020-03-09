@@ -6,14 +6,18 @@
   <% @bookings.each do |booking| %>
     <div class = "book-cards">
       <%= link_to booking_path(booking) do %>
-      <div class="d-flex justify-content-between b-card-item">
-        <%= booking.restaurant.name %>
-        <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
-      </div>
-      <div class="d-flex justify-content-between b-card-item">
-        <%= booking.activity.name %>
-        <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 150, width: 200 %>
-      </div>
+      <% if booking.restaurant %>
+        <div class="d-flex justify-content-between b-card-item">
+          <%= booking.restaurant.name %>
+          <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
+        </div>
+      <% end %>
+      <% if booking.activity %>
+        <div class="d-flex justify-content-between b-card-item">
+          <%= booking.activity.name %>
+          <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 150, width: 200 %>
+        </div>
+      <% end %>
           <%= link_to booking_path(booking), method: :delete do %>
             <i class="fas fa-trash"></i>
           <% end %>
