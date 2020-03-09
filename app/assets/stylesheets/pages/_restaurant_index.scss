@@ -59,6 +59,11 @@
   padding-left: 10px;
 }
 
+// .resto-card-info{
+//   margin-top: 20px !important;
+// }
+
+
 // category
 
 .restaurant-category-cards{
@@ -84,4 +89,16 @@
 #map-activity-name{
   font-size: 20px;
 }
+
+#resto-name{
+  a {
+    padding-left: 0;
+  }
+}
+
+#resto-review{
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
 
