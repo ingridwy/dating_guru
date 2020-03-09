@@ -52,9 +52,12 @@
             <div class="restaurant-index-info text-left">
               <div class="resto-name-review">
                 <h3 id="resto-name"><%= link_to restaurant.name, restaurant_path(restaurant)  %></h3>
-                <p id="resto-review">⭐⭐⭐⭐</p>
               </div>
-                <p><%= restaurant.category %></p>
+                  <div id="resto-review">
+                    <% rand(1...5).times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  </div>
                 <p><%= restaurant.description %></p>
             </div>
           <% end %>
