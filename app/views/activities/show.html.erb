@@ -30,11 +30,14 @@
         </li>
         <li>
           <b>Budget : </b>
-          <%= @average_price = @activity.price/10 %>
-          <%= @average_price.times do %>
-            <i class=“fas fa-star”></i>
+          <% @average_price = @activity.price/40 %>
+          <% if @average_price == 0 %>
+            <i class="fas fa-pound-sign"></i>
+          <% else %>
+            <% @average_price.times do %>
+              <i class="fas fa-pound-sign"></i>
+            <% end %>
           <% end %>
-
         </li>
       </ol>
     <%= link_to "Add to plan", set_activity_path(activity_id: @activity.id), method: :patch, class: 'add-booking-button mb-4' %>
