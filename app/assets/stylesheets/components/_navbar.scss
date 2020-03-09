@@ -1,6 +1,35 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  background: rgba(26, 23, 23, 0.9);
+  position: fixed;
+  text-decoration: none;
+  width: 100%;
+  position: inherit;
+  z-index: 1;
+  transition: transform .5s;
+}
+
+.navbar-lewagon a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.nav-item, nav {
+  padding: 0 10px;
+}
+
+.navbar-lewagon a:hover {
+  background: none;
+  transform: scale(1.04);
+  border-bottom: 3px solid white;
 }
 
 .navbar-lewagon .navbar-collapse {

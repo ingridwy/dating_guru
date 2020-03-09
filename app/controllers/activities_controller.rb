@@ -1,16 +1,41 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
-    @categories = @activities.pluck(:category)
+    if params[:category]
+      @activities = Activity.where(category: params[:category]).geocoded
+      @markers = @activities.map do |activity|
+        {
+          lat: activity.latitude,
+          lng: activity.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+        }
+      end
+
+    else
+      @activities = Activity.geocoded
+      @markers = @activities.map do |activity|
+        {
+          lat: activity.latitude,
+          lng: activity.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+        }
+      end
+    # @categories = @activities.pluck(:category)
+    # @categories_unique = @categories.uniq
+    end
   end
+
 
   def show
     @activity = Activity.find(params[:id])
+     @markers =
+      {
+        lat: @activity.latitude,
+        lng: @activity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: @activity })
+      }
     @review = Review.new
+    # raise
   end
-
-  # def activity_params
-  #   params.require(:Activity).permit(:name, :address, :open_hour, :phone_number, :category)
-  # end
 end
+
 

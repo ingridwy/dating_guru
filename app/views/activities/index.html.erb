@@ -1,23 +1,83 @@
-<h1>Activities</h1>
-<hr>
-<h4>Filter by Category</h4>
-  <%#= link_to "Museum", category(category: Museum) %>
-<% @categories.each do |category| %>
-  <form action="/category" method="GET">
-    <%= hidden_field_tag :category, category  %>
-    <%= submit_tag "#{category}" %>
-  </form>
-<% end %>
+<div class="container">
 
+  <div class="activity-whole-page">
+    <h2 class="activity-index-heading">Choose An Activity</h2>
 
+    <h4>Looking for something else?</h4>
 
-<hr>
+    <div class="activity-category-cards">
+        <form class="activity-category" action="/activities" method="GET">
+          <input class="activity-card-pic" type="image" value="All" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500331/priscilla-du-preez-gGmSBAps6K0-unsplash_zp4pto.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "All", activities_path%>
+        </form>
 
-<ul>
-<% @activities.each do |activity| %>
-  <li>
-    <%= link_to activity.name, activity_path(activity) %>
-  </li>
-<% end %>
-</ul>
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Sport"  %>
+          <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500350/bruno-nascimento-PHIgYUGQPvU-unsplash_sxrbge.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Sport", activities_path(category: "Sport") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Market"  %>
+          <input class="activity-card-pic" type="image" value="Market" name="market" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Market", activities_path(category: "Market") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Museum"  %>
+          <input class="activity-card-pic" type="image" name="Museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Museum", activities_path(category: "Museum") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Outdoor"  %>
+          <input class="activity-card-pic" type="image" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583499938/category_act_outdoor_qxtayc.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Outdoor", activities_path(category: "Outdoor") %>
+        </form>
+    </div>
+
+  <hr>
+
+  <div class="activity-grid-index-with-map">
+    <div class="activity-index-cards">
+      <% @activities.each do |activity| %>
+        <div class="activity-index-card">
+          <% if activity.photo.attached? %>
+            <div class="activity-index-image text-center grid-photo">
+              <%= link_to activity_path(activity) do %>
+                <%= cl_image_tag activity.photo.key, height: 200, width: 300 %>
+              <% end %>
+            </div>
+
+            <div class="activity-index-info text-left">
+              <div class="activity-name-review">
+                <h3 id="activity-name"><%= link_to activity.name, activity_path(activity)  %></h3>
+                <p id="activity-review">⭐⭐⭐</p>
+              </div>
+                <p><%= activity.category %></p>
+                <p><%= activity.description %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="map"
+      style="height: 600px !important; width: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- DO NOT DELETE following code here
+ -->  <%#= link_to "Museum", category(category: Museum) %>
+  <%# @categories_unique.each do |category| %>
+     <!--  <form id="category" action="/category" method="GET"> -->
+      <%#= hidden_field_tag :category, category  %>
+      <!-- <input type="image" value="#{category}" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 50px;" />
+<%#= submit_tag  "#{category}"  %> -->
+    <!-- </form>-->
+  <%# end %>
 

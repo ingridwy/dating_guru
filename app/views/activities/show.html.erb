@@ -1,33 +1,77 @@
-<h2>Activity show page</h2>
-<div>
-  <div>
-    <%= @activity.name %>
-    <%= @activity.address %>
-    <%= @activity.open_hour %>
-    <%= @activity.phone_number %>
-    <%= @activity.category %>
-    <%= link_to "Add to booking", set_activity_path(activity_id: @activity.id), method: :patch %>
+
+<div class="container">
+  <h2 class="activity-header m-5 text-center"><%= @activity.name %></h2>
+
+<!-- div of activity-image and map -->
+  <div class="activity-image-map mb-5">
+    <%= cl_image_tag @activity.photo.key, height: 500, width: 750 %>
+    <div id="map" class="map-nonsticky"
+      style="height: 500px !important; width: 330px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 
-  <div>
-    <h4>Reviews</h4>
+<!-- class for information  -->
+<div class="activity-centering">
+  <div class="activity-information">
+    <h4 class="pb-4"><%= @activity.name %></h4>
+      <ol style="list-style: none">
+        <li>
+          <b>Address: </b><%= @activity.address %>
+        </li>
+        <li>
+          <b>Opening hours: </b> <%= @activity.open_hour %>
+        </li>
+        <li>
+          <b>Contact number: </b><%= @activity.phone_number %>
+        </li>
+        <li>
+          <b>Category: </b><%= @activity.category %>
+        </li>
+      </ol>
+    <%= link_to "Add to plan", set_activity_path(activity_id: @activity.id), method: :patch, class: 'add-booking-button mb-4' %>
+  <p class="pt-4">The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects.[4] It was founded in 1852 and named after Queen Victoria and Prince Albert.
+
+The V&A is located in the Brompton district of the Royal Borough of Kensington and Chelsea, in an area that has become known as "Albertopolis" because of its association with Prince Albert, the Albert Memorial and the major cultural institutions with which he was associated. These include the Natural History Museum, the Science Museum, the Royal Albert Hall and Imperial College London. The museum is a non-departmental public body sponsored by the Department for Digital, Culture, Media and Sport. As with other national British museums, entrance is free.
+
+The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,000 years of art, from ancient times to the present day, from the cultures of Europe, North America, Asia and North Africa. However, the art of antiquity in most areas is not collected. The holdings of ceramics, glass, textiles, costumes, silver, ironwork, jewellery, furniture, medieval objects, sculpture, prints and printmaking, drawings and photographs are among the largest and most comprehensive in the world.</p>
+  </div>
+
+
+  <div class="show-ratings mb-4">
+    <h3 class="mb-4">User Reviews</h3>
+    <div class="activity-review-form mb-5">
+      <%= simple_form_for [@review] do |f| %>
+        <%= f.input :rating %>
+        <%= f.input :content %>
+        <%= f.input :activity_id, as: :hidden, input_html: { value:  @activity.id }%>
+        <%= f.submit %>
+      <% end %>
+    </div>
 
     <% if @activity.reviews.blank? %>
       Be the first one to leave a comment for <%= @activity.name %>
     <% else %>
-      <% @activity.reviews.each do |review| %>
-        <%= review.content %>
-        <%= review.rating %>
-        <% end %>
+      <% @activity.reviews.each do |review|%>
+  <!--       <div class="border ratings-table"> -->
+          <p><%= "⭐" * (review.rating.to_i) %></p>
+          <p><%= review.content %></p>
+          <p><%= review.user.user_name %></p>
+          <% if review.user.profile_photo.attached?%>
+            <p><%= cl_image_tag review.user.profile_photo.key,height: 50, width: 20%></p>
+          <% else %>
+            <p><i class="fas fa-user"></i></p>
+          <% end %>
+      <% end %>
     <% end %>
   </div>
+<!--   </div> -->
+<br>
 
-  <div>
-    <%= simple_form_for [@review] do |f| %>
-      <%= f.input :rating %>
-      <%= f.input :content %>
-      <%= hidden_field_tag :activity, @activity.id %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+<br>
+
+
 </div>
+</div>
+

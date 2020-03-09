@@ -1,19 +1,30 @@
-<%= Booking show page%>
-<%= @booking.date %>
-<% next unless @booking.restaurant %>
-<%= Restaurant Details%>
-<%= @booking.restaurant.name %>
-<%= @booking.restaurant.address%>
-<%= @booking.restaurant.price%>
-<%= @booking.restaurant.open_hour%>
-<%= @booking.restaurant.phone_number%>
-<%= @booking.restaurant.category%>
-<% next unless booking.activities %>
-<%= Activities Details %>
-<%= @booking.activity.name %>
-<%= @booking.activity.address %>
-<%= @booking.activity.open_hour %>
-<%= @booking.activity.phone_number %>
-<% end %>
+<h1>Date details</h1>
 
-<% need a map this page %>
+<div class = "booking-container">
+  <% if @booking.restaurant_id %>
+    <h2>Restaurant Details</h2>
+    <p><%= @booking.restaurant.name %></p>
+    <p><%= @booking.restaurant.address %></p>
+    <p><%= @booking.restaurant.price %></p>
+    <p><%= @booking.restaurant.open_hour %></p>
+    <p><%= @booking.restaurant.phone_number %></p>
+    <p><%= @booking.restaurant.category %></p>
+  <% end %>
+
+  <% if @booking.activity_id %>
+    <h2>Activities Details</h2>
+    <p><%= @booking.activity.name %></p>
+    <p><%= @booking.activity.address %></p>
+    <p><%= @booking.activity.open_hour %></p>
+    <p><%= @booking.activity.phone_number %></p>
+  <% end %>
+
+  <% if @booking.confirmed %>
+      <p>Booking confirmed</p>
+  <% else %>
+    <%= simple_form_for @booking do |f| %>
+      <%= f.submit "Confirm" %>
+    <% end %>
+  <% end %>
+
+</div>
