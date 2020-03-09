@@ -21,8 +21,10 @@
 
   <% if @booking.confirmed %>
       <p>Booking confirmed</p>
+      <p><%=@booking.date %></p>
   <% else %>
     <%= simple_form_for @booking do |f| %>
+      <%= f.input :date, html5: true, input_html: { value: Date.today } %>
       <%= f.submit "Confirm" %>
     <% end %>
   <% end %>
