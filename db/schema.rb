@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2020_03_09_122202) do
 
-ActiveRecord::Schema.define(version: 2020_03_05_151456) do
 
 
   # These are extensions that must be enabled in order to support this database
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_151456) do
     t.float "longitude"
     t.string "description"
     t.integer "price"
+    t.integer "minimum_price"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_151456) do
     t.float "latitude"
     t.float "longitude"
     t.string "description"
+    t.integer "minimum_price"
   end
 
   create_table "reviews", force: :cascade do |t|
