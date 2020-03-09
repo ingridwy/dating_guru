@@ -46,10 +46,8 @@
     <h3>Estimated Budget for the date</h3>
     <p>Minimum price<%= @booking.activity.minimum_price + @booking.restaurant.minimum_price %></p>
     <p>Maximum price<%= @booking.activity.price + @booking.restaurant.price %></p>
-
-
   <div id="map" class="map-nonsticky"
-      style="height: 500px !important; width: 330px;"
+      style="height: 400px !important; width: 1000px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
