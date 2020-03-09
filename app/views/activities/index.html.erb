@@ -5,7 +5,12 @@
 
     <h4>Looking for something else?</h4>
 
+    <i class="fas fa-arrow-alt-circle-left arrows" id="carouselTriggerLeft"></i>
+    <br>
+    <i class="fas fa-arrow-circle-right arrows" id="carouselTriggerRight"></i>
     <div class="activity-category-cards">
+
+
         <form class="activity-category" action="/activities" method="GET">
           <input class="activity-card-pic" type="image" value="All" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500331/priscilla-du-preez-gGmSBAps6K0-unsplash_zp4pto.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "All", activities_path%>
@@ -34,6 +39,65 @@
           <input class="activity-card-pic" type="image" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583499938/category_act_outdoor_qxtayc.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
         <%= link_to "Outdoor", activities_path(category: "Outdoor") %>
         </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <input class="activity-card-pic" type="image" value="All" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500331/priscilla-du-preez-gGmSBAps6K0-unsplash_zp4pto.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "All", activities_path%>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Sport"  %>
+          <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500350/bruno-nascimento-PHIgYUGQPvU-unsplash_sxrbge.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <%= link_to "Sport", activities_path(category: "Sport") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Market"  %>
+          <input class="activity-card-pic" type="image" value="Market" name="market" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Market", activities_path(category: "Market") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Museum"  %>
+          <input class="activity-card-pic" type="image" name="Museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Museum", activities_path(category: "Museum") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Outdoor"  %>
+          <input class="activity-card-pic" type="image" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583499938/category_act_outdoor_qxtayc.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Outdoor", activities_path(category: "Outdoor") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <input class="activity-card-pic" type="image" value="All" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500350/bruno-nascimento-PHIgYUGQPvU-unsplash_sxrbge.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "All", activities_path%>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Sport"  %>
+          <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500350/bruno-nascimento-PHIgYUGQPvU-unsplash_sxrbge.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <%= link_to "Sport", activities_path(category: "Sport") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Market"  %>
+          <input class="activity-card-pic" type="image" value="Market" name="market" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Market", activities_path(category: "Market") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Museum"  %>
+          <input class="activity-card-pic" type="image" name="Museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Museum", activities_path(category: "Museum") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Outdoor"  %>
+          <input class="activity-card-pic" type="image" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583499938/category_act_outdoor_qxtayc.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Outdoor", activities_path(category: "Outdoor") %>
+
+        </form>
     </div>
 
   <hr>
@@ -52,9 +116,13 @@
             <div class="activity-index-info text-left">
               <div class="activity-name-review">
                 <h3 id="activity-name"><%= link_to activity.name, activity_path(activity)  %></h3>
-                <p id="activity-review">⭐⭐⭐</p>
+
               </div>
-                <p><%= activity.category %></p>
+                <div id="resto-review">
+                  <% rand(1...5).times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  </div>
                 <p><%= activity.description %></p>
             </div>
           <% end %>
@@ -80,4 +148,25 @@
 <%#= submit_tag  "#{category}"  %> -->
     <!-- </form>-->
   <%# end %>
+
+  <script>
+    const grid = document.querySelector('.activity-category-cards')
+    const left = document.getElementById('carouselTriggerLeft')
+    const right = document.getElementById('carouselTriggerRight')
+    right.addEventListener('click', (event) => {
+      // Spread syntax, turns a DOMTokenList into an array
+      if ([...grid.classList].includes('middle-position')) {
+        grid.classList.add('right-position')
+      } else {
+        grid.classList.add('middle-position')
+      }
+    })
+    left.addEventListener('click', (event) => {
+      if ([...grid.classList].includes('right-position')) {
+        grid.classList.remove('right-position')
+      } else {
+        grid.classList.remove('middle-position')
+      }
+    })
+  </script>
 

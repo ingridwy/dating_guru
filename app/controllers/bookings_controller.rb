@@ -7,6 +7,16 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+
+
+    @markers = [ @booking.restaurant, @booking.activity].map do |thing|
+      next if thing.nil?
+      {
+        lat: thing.latitude,
+        lng: thing.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { thing: thing })
+      }
+    end
   end
 
   def set_restaurant
@@ -49,7 +59,7 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(confirmed: true)
+    @booking.update(confirmed: true, date: params[:booking][:date])
     redirect_to booking_path(@booking)
   end
 
