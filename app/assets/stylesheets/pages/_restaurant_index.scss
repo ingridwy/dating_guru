@@ -1,3 +1,7 @@
+.restaurant-whole-page {
+  overflow-x: hidden
+}
+
 .restaurant-index-heading{
   margin: 40px;
   text-align: center;
@@ -64,8 +68,9 @@
 .restaurant-category-cards{
   margin-top: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
+  transition: margin-left 1s;
 }
 
 .restaurant-category-text{
@@ -84,4 +89,16 @@
 #map-activity-name{
   font-size: 20px;
 }
+
+
+
+// Fake Carousel
+.middle-position {
+  margin-left: -1100px
+}
+
+.right-position {
+  margin-left: -2200px
+}
+
 

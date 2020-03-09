@@ -1,23 +1,28 @@
-<h1>Date details</h1>
+<h1 class="text-center m-4">Date details</h1>
 
-<div class = "booking-container">
-  <% if @booking.restaurant_id %>
-    <h2>Restaurant Details</h2>
-    <p><%= @booking.restaurant.name %></p>
-    <p><%= @booking.restaurant.address %></p>
-    <p><%= @booking.restaurant.price %></p>
-    <p><%= @booking.restaurant.open_hour %></p>
-    <p><%= @booking.restaurant.phone_number %></p>
-    <p><%= @booking.restaurant.category %></p>
-  <% end %>
+<div class = "d-flex container text-center flex-grow">
+  <div class="restaurant-details">
+    <% if @booking.restaurant_id %>
+      <h2>Restaurant Details</h2>
+      <p><%= @booking.restaurant.name %></p>
+      <p><%= @booking.restaurant.address %></p>
+      <p><%= @booking.restaurant.price %></p>
+      <p><%= @booking.restaurant.open_hour %></p>
+      <p><%= @booking.restaurant.phone_number %></p>
+      <p><%= @booking.restaurant.category %></p>
+    <% end %>
+  </div>
 
-  <% if @booking.activity_id %>
-    <h2>Activities Details</h2>
-    <p><%= @booking.activity.name %></p>
-    <p><%= @booking.activity.address %></p>
-    <p><%= @booking.activity.open_hour %></p>
-    <p><%= @booking.activity.phone_number %></p>
-  <% end %>
+  <div class="activity-details">
+    <% if @booking.activity_id %>
+      <h2>Activities Details</h2>
+      <p><%= @booking.activity.name %></p>
+      <p><%= @booking.activity.address %></p>
+      <p><%= @booking.activity.open_hour %></p>
+      <p><%= @booking.activity.phone_number %></p>
+    <% end %>
+  </div>
+</div>
 
   <% if @booking.confirmed %>
       <p>Booking confirmed</p>
@@ -28,11 +33,10 @@
   <% end %>
 
   <div id="map" class="map-nonsticky"
-      style="height: 500px !important; width: 330px;"
+      style="height: 400px !important; width: 1000px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
 
 
-</div>
