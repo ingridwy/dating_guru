@@ -37,13 +37,23 @@ The V&A is located in the Brompton district of the Royal Borough of Kensington a
 The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,000 years of art, from ancient times to the present day, from the cultures of Europe, North America, Asia and North Africa. However, the art of antiquity in most areas is not collected. The holdings of ceramics, glass, textiles, costumes, silver, ironwork, jewellery, furniture, medieval objects, sculpture, prints and printmaking, drawings and photographs are among the largest and most comprehensive in the world.</p>
   </div>
 
-  <div class="show-ratings ml-4">
-    <h3>Reviews</h3>
+
+  <div class="show-ratings mb-4">
+    <h3 class="mb-4">User Reviews</h3>
+    <div class="activity-review-form mb-5">
+      <%= simple_form_for [@review] do |f| %>
+        <%= f.input :rating %>
+        <%= f.input :content %>
+        <%= f.input :activity_id, as: :hidden, input_html: { value:  @activity.id }%>
+        <%= f.submit %>
+      <% end %>
+    </div>
+
     <% @activity.reviews.each do |review|%>
 <!--       <div class="border ratings-table"> -->
         <p><%= "⭐" * (review.rating.to_i) %></p>
         <p><%= review.content %></p>
-      </div>
+
     <% end %>
 
     <% if @activity.reviews.blank? %>
@@ -54,19 +64,13 @@ The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,
         <%= review.rating %>
       <% end %>
     <% end %>
+  </div>
 <!--   </div> -->
 <br>
 
 <br>
 
-  <div class="activity-review-form">
-    <%= simple_form_for [@review] do |f| %>
-      <%= f.input :rating %>
-      <%= f.input :content %>
-      <%= f.input :activity_id, as: :hidden, input_html: { value:  @activity.id }%>
-      <%= f.submit %>
-    <% end %>
-  </div>
+
 </div>
 </div>
 
