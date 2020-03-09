@@ -28,6 +28,14 @@
         <li>
           <b>Category: </b><%= @activity.category %>
         </li>
+        <li>
+          <b>Budget : </b>
+          <%= @average_price = @activity.price/10 %>
+          <%= @average_price.times do %>
+            <i class=“fas fa-star”></i>
+          <% end %>
+
+        </li>
       </ol>
     <%= link_to "Add to plan", set_activity_path(activity_id: @activity.id), method: :patch, class: 'add-booking-button mb-4' %>
   <p class="pt-4">The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects.[4] It was founded in 1852 and named after Queen Victoria and Prince Albert.
