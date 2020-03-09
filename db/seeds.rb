@@ -30,7 +30,7 @@ Activity.destroy_all
 Booking.destroy_all
 Review.destroy_all
 puts "all old data deleted"
-user_1 = User.create! user_name: "test", email: "test@gmail.com", password: "123456"
+user_1 = User.create! user_name: "vicky", email: "vicky@gmail.com", password: "123456"
 user_2 = User.create! user_name: "cat", email: "cat@gmail.com", password: "123456"
 puts "creating new restaurant"
 
@@ -424,12 +424,13 @@ a_fourteen.photo.attach(io: fourteen, filename: "Untitled_design_rtvzta.png" , c
 
 Activity.all.each do |activity|
   1.times do
-  Review.create(
+  review = Review.new(
     content: ["Nice staff and atmosphere, cool exhibitions and very easy to reach location", "A place to remember.We had great time there! Interesting people, cool atmosphere"].sample,
     rating: [3,4,5].sample,
-    activity: activity,
-    user: user_1
+    activity: activity
     )
+  review.user = user_1
+  review.save
   end
 end
 
