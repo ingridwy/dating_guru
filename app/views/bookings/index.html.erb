@@ -1,39 +1,53 @@
 <div class="booking-title">
     <h1> Dating plans </h1>
-  </div>
-<div class= "book-index-container">
+</div>
+
+<h2>Your Dating plans</h2>
+
+
+
+<!-- if your date plan is false OR confirmed and past date
+ --><div class= "book-index-container">
   <% @bookings.each do |booking| %>
-<div class = "book-cards m-5">
 
-      <%= link_to booking_path(booking) do %>
+  <%# if booking.where(confirmed: false) %>
 
-      <p><%= booking.date %></p>
-      <% if booking.restaurant %>
-        <div class="d-flex justify-content-between b-card-item">
-          <%= booking.restaurant.name %>
-          <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
+    <div class = "book-cards m-5">
+          <%= link_to booking_path(booking) do %>
+          <p><%= booking.date %></p>
+          <% if booking.restaurant %>
+            <div class="d-flex justify-content-between b-card-item">
+              <%= booking.restaurant.name %>
+              <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
+            </div>
+          <% end %>
+
+          <% if booking.activity %>
+            <div class="d-flex justify-content-between b-card-item">
+              <%= booking.activity.name %>
+              <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 150, width: 200 %>
+            </div>
+
+            <% if booking.confirmed %>
+              <p>Booking confirmed</p>
+              <% else %>
+              <p>Require confirmation</p>
+            <% end %>
+          <% end %>
+          <i class="fas fa-trash" id="sweet-alert-demo"></i>
+          <%= link_to booking_path(booking), method: :delete, class: 'd-none target'  do %>
+            <i class="fas fa-trash" id="sweet-alert-demo"></i>
+          <% end %>
         </div>
-      <% end %>
-
-      <% if booking.activity %>
-        <div class="d-flex justify-content-between b-card-item">
-          <%= booking.activity.name %>
-          <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 150, width: 200 %>
-        </div>
-
-        <% if booking.confirmed %>
-          <p>Booking confirmed</p>
-          <% else %>
-          <p>Require confirmation</p>
-        <% end %>
-      <% end %>
-      <i class="fas fa-trash" id="sweet-alert-demo"></i>
-      <%= link_to booking_path(booking), method: :delete, class: 'd-none target'  do %>
-        <i class="fas fa-trash" id="sweet-alert-demo"></i>
       <% end %>
     </div>
-  <% end %>
-</div>
-<% end %>
+    <% end %>
+
+
+    <h2>What you've been</h2>
+<!-- if your date is confirmed and past date
+ -->
+  <%# end %>
+
 
 
