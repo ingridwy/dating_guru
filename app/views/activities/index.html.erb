@@ -5,7 +5,7 @@
 
     <h4>Looking for something else?</h4>
 
-    <div class="wrapper">
+    <div class="wrapper" style=" overflow-x: hidden">
       <i class="fas fa-arrow-alt-circle-left arrows" id="carouselTriggerLeft"></i>
       <i class="fas fa-arrow-circle-right arrows" id="carouselTriggerRight"></i>
       <div class="activity-category-cards">
@@ -62,23 +62,25 @@
   <%# end %>
 
   <script>
-    const grid = document.querySelector('.activity-category-cards')
-    const left = document.getElementById('carouselTriggerLeft')
-    const right = document.getElementById('carouselTriggerRight')
-    right.addEventListener('click', (event) => {
-      // Spread syntax, turns a DOMTokenList into an array
-      if ([...grid.classList].includes('middle-position')) {
-        grid.classList.add('right-position')
-      } else {
-        grid.classList.add('middle-position')
-      }
-    })
-    left.addEventListener('click', (event) => {
-      if ([...grid.classList].includes('right-position')) {
-        grid.classList.remove('right-position')
-      } else {
-        grid.classList.remove('middle-position')
-      }
+    document.addEventListener('turbolinks:load', () => {
+      const grid = document.querySelector('.activity-category-cards')
+      const left = document.getElementById('carouselTriggerLeft')
+      const right = document.getElementById('carouselTriggerRight')
+      right.addEventListener('click', (event) => {
+        // Spread syntax, turns a DOMTokenList into an array
+        if ([...grid.classList].includes('middle-position')) {
+          grid.classList.add('right-position')
+        } else {
+          grid.classList.add('middle-position')
+        }
+      })
+      left.addEventListener('click', (event) => {
+        if ([...grid.classList].includes('right-position')) {
+          grid.classList.remove('right-position')
+        } else {
+          grid.classList.remove('middle-position')
+        }
+      })
     })
   </script>
 

@@ -1,34 +1,42 @@
-.booking-title{
-  padding:10px;
-  margin-bottom: 10px;
-  text-align: center;
-  color: #2a2a2a;
-}
 .book-index-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  background-color: rgb(254, 255, 254);
+  width: 50%;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  border-radius: 3%;
 }
-.book-cards{
-  width:700px;
-  height: auto;
-  padding:10px;
-  margin-bottom: 20px;
-  font-family: 'Quicksand', sans-serif;
+
+.booking-date {
+  text-align: center;
+  font-weight: 700;
   font-size: 20px;
-  font-weight: bold;
-  color: black;
-  border-top: solid 1px #bdbdbd;
+  padding-bottom: 10px;
+}
+
+.book-cards{
+  width: 500px;
+  height: auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   border-bottom: solid 1px #bdbdbd;
 }
+
 .book-cards i{
   font-size: 18px;
 }
+
 .b-card-item{
   margin-bottom:15px;
 }
+
 .b-photo{
    border-radius:5px;
    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
 }
+
+.plan-confirm {
+  font-weight: 700;
+}
+
