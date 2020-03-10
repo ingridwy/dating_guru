@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="text-center plan-confirm">
       <% if @booking.confirmed %>
         <p>Plans confirmed for: </p>
         <p><%= @booking.date %></p>
@@ -38,11 +38,10 @@
           <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
         <% end %>
       <% end %>
+        <p>Estimated cost of your date:</p>
+        <p>Between £<%= "#{@booking.activity.minimum_price + @booking.restaurant.minimum_price} - #{@booking.activity.price + @booking.restaurant.price}" %></p>
     </div>
 
-    <p><b>Estimated cost of your date:</b></p>
-
-    <p>Between £<%= "#{@booking.activity.minimum_price + @booking.restaurant.minimum_price} - #{@booking.activity.price + @booking.restaurant.price}" %></p>
 
   <div id="map" class="map-nonsticky mt-5"
       style="height: 400px !important; width: 1000px;"
