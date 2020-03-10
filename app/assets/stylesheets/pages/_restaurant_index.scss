@@ -34,6 +34,9 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 // all restaurant cards
@@ -60,6 +63,11 @@
 .restaurant-index-info{
   padding-left: 10px;
 }
+
+// .resto-card-info{
+//   margin-top: 20px !important;
+// }
+
 
 // category
 
@@ -88,6 +96,17 @@
   font-size: 20px;
 }
 
+#resto-name{
+  a {
+    padding-left: 0;
+  }
+}
+
+#resto-review{
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #E7711B;
+}
 
 
 // Fake Carousel
@@ -97,6 +116,7 @@
 
 .right-position {
   margin-left: -2200px
+
 }
 
 
