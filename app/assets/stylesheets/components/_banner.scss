@@ -8,9 +8,9 @@
     h1 {
     padding-top: 200px;
     padding-bottom: 30px;
-    font-size: 50px;
+    font-size: 60px;
     color: white;
-    margin-left: 290px;
+    margin-left: 275px;
   }
     p {
     margin-bottom: 30px;
@@ -18,10 +18,10 @@
     margin-left: 333px;
   }
     .home-button {
-    margin-left: 342px;
+    margin-left: 350px;
     transition: transform .5s;
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
       background-color: rgba(240,240,240,0.3);
     }
   }
