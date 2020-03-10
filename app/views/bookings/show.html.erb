@@ -34,7 +34,7 @@
         <p><%= @booking.date %></p>
       <% else %>
         <%= simple_form_for @booking do |f| %>
-          <%= f.input :date, html5: true, input_html: { value: Date.today } %>
+          <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today } %>
           <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
         <% end %>
       <% end %>

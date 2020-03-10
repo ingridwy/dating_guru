@@ -40,7 +40,8 @@
           <% end %>
         </li>
       </ol>
-    <%= link_to "Add to plan", set_activity_path(activity_id: @activity.id), method: :patch, class: 'add-booking-button mb-4' %>
+      <%= render partial: "shared/activity_modal" %>
+
   <p class="pt-4">The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects.[4] It was founded in 1852 and named after Queen Victoria and Prince Albert.
 
 The V&A is located in the Brompton district of the Royal Borough of Kensington and Chelsea, in an area that has become known as "Albertopolis" because of its association with Prince Albert, the Albert Memorial and the major cultural institutions with which he was associated. These include the Natural History Museum, the Science Museum, the Royal Albert Hall and Imperial College London. The museum is a non-departmental public body sponsored by the Department for Digital, Culture, Media and Sport. As with other national British museums, entrance is free.
