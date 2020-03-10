@@ -5,35 +5,12 @@
 
     <h4>Looking for something else?</h4>
 
-    <div class="restaurant-category-cards">
-        <form class="restaurant-category" action="/restaurants" method="GET">
-          <input class="restaurant-card-pic" type="image" name="All" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496782/category_resto_all_cvbqtn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "All", restaurants_path %>
-        </form>
-
-        <form class="restaurant-category" action="/restaurants" method="GET">
-          <%= hidden_field_tag :category, "Italian"  %>
-          <input class="restaurant-card-pic" type="image" name="Italian" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496400/category_resto_italian_fhgvbn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Italian",restaurants_path(category: "Italian") %>
-        </form>
-
-        <form class="restaurant-category" action="/restaurants" method="GET">
-          <%= hidden_field_tag :category, "Japanese"  %>
-          <input class="restaurant-card-pic" type="image"  name="Japanese" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496400/category-resto-japanese_qjxudr.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Japanese", restaurants_path(category: "Japanese") %>
-        </form>
-
-        <form class="restaurant-category" action="/restaurants" method="GET">
-          <%= hidden_field_tag :category, "Seafood"  %>
-          <input class="restaurant-card-pic" type="image" name="Seafood" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496770/category_resto_seafoodrevised_orpu7e.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Seafood", restaurants_path(category: "Seafood") %>
-        </form>
-
-        <form class="restaurant-category" action="/restaurants" method="GET">
-          <%= hidden_field_tag :category, "Vegan"  %>
-          <input class="restaurant-card-pic" type="image" name="Vegan" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496407/category_resto_vegan_boevbv.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
-        <%= link_to "Vegan", restaurants_path(category: "Vegan") %>
-        </form>
+    <div class="wrapper">
+      <i class="fas fa-arrow-alt-circle-left arrows" id="carouselTriggerLeft"></i>
+      <i class="fas fa-arrow-circle-right arrows" id="carouselTriggerRight"></i>
+      <div class="restaurant-category-cards">
+          <%= render "restaurants-carousel" %>
+      </div>
     </div>
 
   <hr>
@@ -73,3 +50,24 @@
   </div>
 </div>
 </div>
+
+  <script>
+    const grid = document.querySelector('.restaurant-category-cards')
+    const left = document.getElementById('carouselTriggerLeft')
+    const right = document.getElementById('carouselTriggerRight')
+    right.addEventListener('click', (event) => {
+      // Spread syntax, turns a DOMTokenList into an array
+      if ([...grid.classList].includes('middle-position')) {
+        grid.classList.add('right-position')
+      } else {
+        grid.classList.add('middle-position')
+      }
+    })
+    left.addEventListener('click', (event) => {
+      if ([...grid.classList].includes('right-position')) {
+        grid.classList.remove('right-position')
+      } else {
+        grid.classList.remove('middle-position')
+      }
+    })
+  </script>

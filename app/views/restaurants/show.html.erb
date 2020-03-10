@@ -11,6 +11,7 @@
     </div>
   </div>
 
+
 <!-- class for information  -->
 <div class="restaurant-centering">
   <div class="restaurant-information">
@@ -27,6 +28,17 @@
         </li>
         <li>
           <b>Category: </b><%= @restaurant.category %>
+        </li>
+        <li>
+          <b>Budget : </b>
+          <% @average_price = @restaurant.price/40 %>
+          <% if @average_price == 0 %>
+            <i class="fas fa-pound-sign"></i>
+          <% else %>
+            <% @average_price.times do %>
+              <i class="fas fa-pound-sign"></i>
+            <% end %>
+          <% end %>
         </li>
       </ol>
       <%= render partial: "shared/restaurant_modal" %>
@@ -80,7 +92,7 @@ The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,
 <br>
 
 
-</div>
+  </div>
 </div>
 
 

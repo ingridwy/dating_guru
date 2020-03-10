@@ -8,10 +8,13 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= require sweetalert2-rails
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -30,7 +33,22 @@ import "bootstrap";
 
 // geocoding
 import { initMapbox } from './init_mapbox';
+import { initSweetalert } from './init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
+  initSweetalert('#sweet-alert-demo', {
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'No, cancel!',
+    reverseButtons: true,
+    timer: 6000
+  });
+});
+
+// SweetAlert2
+
+
