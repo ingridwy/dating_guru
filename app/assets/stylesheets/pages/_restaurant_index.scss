@@ -40,6 +40,9 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 // all restaurant cards

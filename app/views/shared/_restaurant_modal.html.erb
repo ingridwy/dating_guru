@@ -13,9 +13,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>
-        <%= link_to "Create new plan", restaurant_new_booking_path(restaurant_id: @restaurant.id), method: :post, class: 'small-booking-button' %>
-        </p>
+        <div>
+          <%= link_to "Go to plan", restaurant_new_booking_path(restaurant_id: @restaurant.id), method: :post, class: 'booking-button' %>
+        </div>
+        <div>
+          <%= link_to "Choose an activity",  activities_path, class: 'booking-button' %>
+        </div>
         <% current_user.bookings.where(restaurant: nil).each do |booking| %>
           <div class="d-flex justify-content-between b-card-item">
             <div style="flex: 1" class="b-name">
