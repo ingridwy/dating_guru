@@ -25,6 +25,15 @@
   border: solid 1px;
   border-radius: 5px;
   padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.booking-button{
+ width:200px;
+ border: solid 1px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display : flex;
+  margin-bottom: 10px;
 }
 .b-photo{
   margin-right: 10px;
@@ -33,3 +42,7 @@
   display: flex;
   align-items: center;
 }
+.b-card-item{
+  align-items: center;
+}
+
