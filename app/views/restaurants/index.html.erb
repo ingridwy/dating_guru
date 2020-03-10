@@ -31,7 +31,8 @@
                 <h3 id="resto-name"><%= link_to restaurant.name, restaurant_path(restaurant)  %></h3>
               </div>
                   <div id="resto-review">
-                    <% rand(3..5).times do %>
+                    <% rand(3...5).times do %>
+
                       <i class="fas fa-star"></i>
                     <% end %>
                   </div>
