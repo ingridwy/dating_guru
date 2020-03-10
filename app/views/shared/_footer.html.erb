@@ -23,17 +23,17 @@
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
         <p>
-          <a href="#!">Home</a>
+          <%= link_to "Home", root_path, class: "footer-link" %>
         </p>
 
         <p>
-          <a href="#!">Restaurants</a>
+          <%= link_to "Restaurants", restaurants_path, class: "footer-link" %>
         </p>
         <p>
-          <a href="#!">Activities</a>
+          <%= link_to "Activities", activities_path, class: "footer-link" %>
         </p>
         <p>
-          <a href="#!">Categories</a>
+          <%= link_to "Dating Plan", bookings_path, class: "footer-link" %>
         </p>
 
       </div>
@@ -45,16 +45,14 @@
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
         <p>
-          <a href="#!">Your Account</a>
+          <%= link_to "Sign Up", new_user_registration_path, class: "footer-link" %>
         </p>
         <p>
-          <a href="#!">Sign up</a>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item", style:'color:black' %>
         </p>
         <p>
-          <a href="#!">Forgot password?</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
+
+          <%= link_to "Settings", "#", class: "dropdown-item", style:'color:black' %>
         </p>
       </div>
 
@@ -84,8 +82,8 @@
 
         <!--Copyright-->
         <p class="text-center text-md-left">© 2020 Copyright:
-          <a href="https://mdbootstrap.com/">
-            <strong> datingguru.com</strong>
+          <a href="https://dating-guru.site/">
+            <strong> dating-guru.site</strong>
           </a>
         </p>
 
