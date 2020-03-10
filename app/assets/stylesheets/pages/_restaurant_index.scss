@@ -63,6 +63,11 @@
   padding-left: 10px;
 }
 
+// .resto-card-info{
+//   margin-top: 20px !important;
+// }
+
+
 // category
 
 .restaurant-category-cards{
@@ -90,6 +95,16 @@
   font-size: 20px;
 }
 
+#resto-name{
+  a {
+    padding-left: 0;
+  }
+}
+
+#resto-review{
+  font-size: 12px;
+  margin-bottom: 20px;
+}
 
 
 // Fake Carousel
@@ -99,6 +114,7 @@
 
 .right-position {
   margin-left: -2200px
+
 }
 
 

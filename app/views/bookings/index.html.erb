@@ -4,16 +4,17 @@
 <div class= "book-index-container">
   <% @bookings.each do |booking| %>
 <div class = "book-cards m-5">
-   
+
       <%= link_to booking_path(booking) do %>
+
       <p><%= booking.date %></p>
       <% if booking.restaurant %>
         <div class="d-flex justify-content-between b-card-item">
           <%= booking.restaurant.name %>
           <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
         </div>
-
       <% end %>
+
       <% if booking.activity %>
         <div class="d-flex justify-content-between b-card-item">
           <%= booking.activity.name %>
@@ -26,12 +27,13 @@
           <p>Require confirmation</p>
         <% end %>
       <% end %>
-          <%= link_to booking_path(booking), method: :delete do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
+      <i class="fas fa-trash" id="sweet-alert-demo"></i>
+      <%= link_to booking_path(booking), method: :delete, class: 'd-none target'  do %>
+        <i class="fas fa-trash" id="sweet-alert-demo"></i>
       <% end %>
     </div>
   <% end %>
 </div>
+<% end %>
 
 

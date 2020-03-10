@@ -22,4 +22,18 @@
 
 .btn-dark:hover {
     background-color: #525151 !important;
+
+.small-booking-button{
+  display: flex;
+  align-items: center;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.b-photo{
+  margin-right: 10px;
+}
+.b-name{
+  display: flex;
+  align-items: center;
 }
