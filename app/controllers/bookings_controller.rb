@@ -19,43 +19,36 @@ class BookingsController < ApplicationController
     end
   end
 
-  def set_restaurant
+  def restaurant_new_booking
+    @booking = Booking.new
     @restaurant = Restaurant.find(params[:restaurant_id])
-
-    if current_user.bookings.where(confirmed: false).empty?
-      @booking = Booking.new
-      @booking.restaurant = @restaurant
-      @booking.user = current_user
-      @booking.save
-    else
-      @booking = current_user.bookings.where(confirmed: false).last
-      @booking.update(restaurant_id: @restaurant.id)
-    end
-
-    if @booking.activity_id
-      redirect_to bookings_path
-    else
-      redirect_to activities_path
-    end
+    @booking.restaurant = @restaurant
+    @booking.user = current_user
+    @booking.save
+    redirect_to bookings_path
   end
 
-  def set_activity
-   @activity = Activity.find(params[:activity_id])
-    if current_user.bookings.where(confirmed: false).empty?
-      @booking = Booking.new
-      @booking.activity = @activity
-      @booking.user = current_user
-      @booking.save
-    else
-      @booking = current_user.bookings.where(confirmed: false).last
-      @booking.update(activity_id: @activity.id)
-    end
+  def activity_new_booking
+    @booking = Booking.new
+    @activity = Activity.find(params[:activity_id])
+    @booking.activity = @activity
+    @booking.user = current_user
+    @booking.save
+    redirect_to bookings_path
+  end
 
-    if @booking.restaurant_id
-      redirect_to bookings_path
-    else
-      redirect_to restaurants_path
-    end
+  def add_restaurant
+    booking = Booking.find(params[:booking_id])
+    restaurant = Restaurant.find(params[:restaurant_id])
+    booking.update(restaurant_id: restaurant.id)
+    redirect_to bookings_path
+  end
+
+  def add_activity
+    booking = Booking.find(params[:booking_id])
+    activity = Activity.find(params[:activity_id])
+    booking.update(activity_id: activity.id)
+    redirect_to bookings_path
   end
 
   def update
