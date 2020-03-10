@@ -101,6 +101,11 @@
   margin-left: -2200px
 }
 
+
+#activity-name{
+  a {
+    padding-left: 0;
+
 .wrapper {
   position:relative;
 
@@ -115,11 +120,14 @@
     top:36px;
     right: 0;
     color: #fff
+
   }
 }
 
-
-
+#activity-review{
+  font-size: 12px;
+  margin-bottom: 20px;
+}
 
 
 
