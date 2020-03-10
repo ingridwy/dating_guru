@@ -306,7 +306,7 @@ a_five.photo.attach(io: five, filename: "05_national-gallery-view-from-trafalgar
 
 
 a_fifteen = Activity.create(
-  name: "Mile End Climbing Wal",
+  name: "Mile End Climbing Wall",
   address: "Haverfield Rd, London E3 5BE",
   open_hour: "11:00-21:00",
   phone_number: "020 7183 1979",

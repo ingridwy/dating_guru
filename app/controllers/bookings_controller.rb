@@ -60,7 +60,7 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(confirmed: true)
+    @booking.update(confirmed: true, date: params[:booking][:date])
     redirect_to booking_path(@booking)
   end
 

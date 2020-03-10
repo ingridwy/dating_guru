@@ -8,6 +8,8 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= require sweetalert2-rails
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
