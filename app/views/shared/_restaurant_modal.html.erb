@@ -16,15 +16,15 @@
         <p>
         <%= link_to "Create new plan", restaurant_new_booking_path(restaurant_id: @restaurant.id), method: :post, class: 'small-booking-button' %>
         </p>
-        <p>
         <% current_user.bookings.where(restaurant: nil).each do |booking| %>
-          <p class="d-flex justify-content-between b-card-item">
-           <%= booking.activity.name %>
+          <div class="d-flex justify-content-between b-card-item">
+            <div style="flex: 1" class="b-name">
+              <%= booking.activity.name %>
+            </div>
            <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 100, width: 150 %>
            <%= link_to "Add to plan", add_restaurant_path(booking_id: booking.id, restaurant_id: @restaurant), method: :patch, class: 'small-booking-button' %>
-          </p>
-          </p>
-          <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
