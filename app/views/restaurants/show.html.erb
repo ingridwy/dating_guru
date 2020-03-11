@@ -57,7 +57,7 @@ The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,
       <%= f.input :rating %>
       <%= f.input :content %>
       <%= f.input :restaurant_id, as: :hidden, input_html: { value:  @restaurant.id  }%>
-      <%= f.submit %>
+      <%= f.submit class: "btn btn-dark"%>
     <% end %>
   </div>
 
