@@ -34,6 +34,7 @@ import "bootstrap";
 // geocoding
 import { initMapbox } from './init_mapbox';
 import { initSweetalert } from './init_sweetalert';
+import "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
