@@ -39,7 +39,7 @@
         <% end %>
       <% end %>
         <p>Estimated cost of your date:</p>
-        <p>Between £<%= "#{@booking.activity.minimum_price + @booking.restaurant.minimum_price} - #{@booking.activity.price + @booking.restaurant.price}" %></p>
+        <p>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></p>
     </div>
 
 
