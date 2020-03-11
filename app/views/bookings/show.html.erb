@@ -23,15 +23,15 @@
       <div class="card-booking-restaurant">
          <% if @booking.restaurant_id %>
           <%= link_to restaurant_path(@booking.restaurant) do %>
-            <%= cl_image_tag @booking.restaurant.photo.key, height: 250, width: 380 %>
-          <% end %>
-        <div class="booking-restaurant-info">
-          <h5>Restaurant : <%= @booking.restaurant.name %></h5>
-          <p>Address : <%= @booking.restaurant.address %></p>
-          <p>Open Hours : <%= @booking.restaurant.open_hour %></p>
-          <p>Phone Number : <%= @booking.restaurant.phone_number %></p>
+              <%= cl_image_tag @booking.restaurant.photo.key, height: 250, width: 380 %>
+            <% end %>
+            <div class="booking-restaurant-info">
+              <h5>Restaurant : <%= @booking.restaurant.name %></h5>
+              <p>Address : <%= @booking.restaurant.address %></p>
+              <p>Open Hours : <%= @booking.restaurant.open_hour %></p>
+              <p>Phone Number : <%= @booking.restaurant.phone_number %></p>
+            </div>
         <% end %>
-        </div>
       </div>
 
       <div class="booking-confirm">
