@@ -1,19 +1,22 @@
 .booking-plan{
-  width: 80%;
+  width: 70%;
   border:  1px #B8B8B8;
   background-color: white;
+  margin: 0 auto;
   margin-bottom: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 30px 30px;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .booking-index-function{
   a{
   display: flex;
   }
-
 }
-
 
 .bookings-index-content{
   display: flex;
@@ -39,10 +42,11 @@
 .booking-index-activity{
   display: flex;
   flex-direction: column;
-
 }
 
-
+.booking-cards-sm {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
 
 
