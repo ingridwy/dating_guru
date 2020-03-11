@@ -34,7 +34,6 @@ class ActivitiesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { activity: @activity })
       }
     @review = Review.new
-    # raise
   end
 end
 

@@ -7,27 +7,29 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+
         <h5 class="modal-title" id="exampleModalLongTitle">Add to plan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div>
-          <%= link_to "Go to plan", restaurant_new_booking_path(restaurant_id: @restaurant.id), method: :post, class: 'booking-button' %>
-        </div>
-        <div>
-          <%= link_to "Choose an activity",  activities_path, class: 'booking-button' %>
-        </div>
+
         <% current_user.bookings.where(restaurant: nil).each do |booking| %>
           <div class="d-flex justify-content-between b-card-item">
-            <div style="flex: 1" class="b-name">
+
+            <div style="flex: 1" class="b-name ml-4">
               <%= booking.activity.name %>
             </div>
            <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 100, width: 150 %>
            <%= link_to "Add to plan", add_restaurant_path(booking_id: booking.id, restaurant_id: @restaurant), method: :patch, class: 'small-booking-button' %>
           </div>
+          <hr class="mb-4 mt-4">
         <% end %>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-info "><%= link_to "Choose an activity", restaurant_redirect_booking_path(restaurant_id: @restaurant.id), method: :post, class: "booking-button" %></button>
+        </div>
       </div>
     </div>
   </div>
