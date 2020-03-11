@@ -1,7 +1,7 @@
 <div class="container text-center justify-content-center ">
   <h1 class="text-center m-4">Your date plan.</h1>
     <div class="card-deck text-center row justify-content-center m-4">
-      <div class="card w-25 col-6 m-4">
+      <div class="card w-25 col-6 m-4", id="booking-show-card">
          <% if @booking.restaurant_id %>
           <h2 class="m-3 booking-card-title">Restaurant Details</h2>
           <div class="m-2">
@@ -15,7 +15,7 @@
           </div>
       </div>
 
-      <div class="card w-25 col-sm-6 m-4">
+      <div class="card w-25 col-sm-6 m-4", id="booking-show-card">
         <% if @booking.activity_id %>
           <h2 class="m-3 booking-card-title">Activity Details</h2>
           <div class="m-2">
