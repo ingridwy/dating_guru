@@ -109,32 +109,33 @@
 
 .wrapper {
   position:relative;
-
-  #carouselTriggerLeft {
-    position: absolute;
-    top:65px;
-    left: 0;
-    color: #fff
-  }
-  #carouselTriggerRight {
-    position: absolute;
-    top:65px;
-    right: 0;
-    color: #fff;
-  }
 }
+
+#carouselTriggerLeft {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  color: #fff
+}
+
+#carouselTriggerRight {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  color: #fff
+  }
 
 
 #activity-review{
   font-size: 12px;
   margin-bottom: 20px;
-  color: #E7711B;
+  color: #f2d163;
 }
 
 .index-map{
   position: sticky;
   width: 400px;
-  // top: 0;
+  top: 0;
   @media (max-width: 992px) {
     position:absolute;
     width: 690px
