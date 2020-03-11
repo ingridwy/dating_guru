@@ -1,4 +1,4 @@
-<div class="container"> <!-- container for whole page -->
+<div class="container text-align-center"> <!-- container for whole page -->
 <h1 class="text-center mt-4 mb-5">Your date plans.</h1>
 
 
@@ -7,16 +7,16 @@
     <div class="booking-plan">
       <div class="booking-index-function">
         <% if booking.date %>
-          <p><%= booking.date%></p>
+          <p class="text-center"><%= booking.date%></p>
         <% else %>
-          <p>Not yet chosen</p>
+          <p class="text-center">No date set</p>
         <% end %>
 
       <!-- Booking confirm -->
         <% if booking.confirmed %>
-          <p>Booking Confirmed <i class="fas fa-calendar-check"></i></p>
+          <p class="text-center">Booking Confirmed <i class="fas fa-calendar-check"></i></p>
          <% else %>
-          <p>Not yet confirmed <i class="fas fa-exclamation-triangle"></i></p>
+          <p class="text-center">Not yet confirmed <i class="fas fa-exclamation-triangle"></i></p>
         <% end %>
       </div>
 
@@ -27,7 +27,7 @@
         <div class="booking-index-activity">
           <% if booking.activity %>
             <%= booking.activity.name %>
-            <%= cl_image_tag booking.activity.photo.key, height: 200, width: 280 %>
+            <%= cl_image_tag booking.activity.photo.key, height: 200, width: 280, class: "booking-cards-sm" %>
           <% end %>
         </div>
 
@@ -35,7 +35,7 @@
         <div class="booking-index-resto">
           <% if booking.restaurant %>
             <%= booking.restaurant.name %>
-            <%= cl_image_tag booking.restaurant.photo.key, height: 200, width: 280 %>
+            <%= cl_image_tag booking.restaurant.photo.key, height: 200, width: 280, class: "booking-cards-sm" %>
           <% end %>
         </div>
       </div>

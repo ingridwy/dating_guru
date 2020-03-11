@@ -39,10 +39,10 @@
           <p>Plans confirmed for: </p>
           <h5><%= @booking.date %></h5>
           <p class="mt-5">Estimated cost of your date:</p>
-          <h5>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></h5>
+          <h5>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant&.price || 0)}" %></h5>
         <% else %>
           <p>Estimated cost of your date:</p>
-          <h5>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></h5>
+          <h5>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant&.price || 0)}" %></h5>
 
          <%= simple_form_for @booking do |f| %>
           <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today, class: "datepicker"} %>
