@@ -32,15 +32,15 @@
       </div>
     </div>
 
-      <div>
-        <% if @booking.confirmed %>
-          <p>Plans confirmed for: </p>
-          <p><%= @booking.date %></p>
-        <% else %>
-          <%= simple_form_for @booking do |f| %>
-            <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today } %>
-            <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
-          <% end %>
+    <div class="text-center plan-confirm">
+      <% if @booking.confirmed %>
+        <p>Plans confirmed for: </p>
+        <p><%= @booking.date %></p>
+      <% else %>
+        <%= simple_form_for @booking do |f| %>
+          <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today, class: "datepicker"} %>
+          <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
+
         <% end %>
         <p>Estimated cost of your date:</p>
         <p>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></p>
