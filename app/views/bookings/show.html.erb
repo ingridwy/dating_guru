@@ -14,8 +14,16 @@
           <p>Address : <%= @booking.activity.address %></p>
           <p>Open Hours : <%= @booking.activity.open_hour %></p>
           <p>Phone Number : <%= @booking.activity.phone_number %></p>
-        <% end %>
         </div>
+        <% else %>
+            <%= link_to activities_path do %>
+              <img src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583946934/shawn-ang-nmpW_WwwVSc-unsplash_j7d6nv.jpg" alt="Italian Trulli" class="blank-choice-resto">
+              <div class="booking-activity-info">
+                <h5>Activity : Choose your Activity  </h5>
+              </div>
+            <% end %>
+        <% end %>
+
       </div>
 
 
@@ -31,6 +39,14 @@
               <p>Open Hours : <%= @booking.restaurant.open_hour %></p>
               <p>Phone Number : <%= @booking.restaurant.phone_number %></p>
             </div>
+
+          <% else %>
+            <%= link_to restaurants_path do %>
+              <img src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583946934/shawn-ang-nmpW_WwwVSc-unsplash_j7d6nv.jpg" alt="test_2_mondxb.png" class="blank-choice-resto">
+              <!-- <div class="booking-restaurant-info">
+               --> <!--  <h5>Choose your restaurant</h5> -->
+              <!-- </div> -->
+            <% end %>
         <% end %>
       </div>
 

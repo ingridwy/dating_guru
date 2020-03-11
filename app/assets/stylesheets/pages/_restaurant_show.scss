@@ -1,28 +1,27 @@
-.restaurant-image-map {
+.restaurant-image{
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
-  text-align: center;
+   @media(max-width: 790px) {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 18px;
+  }
 }
 
 .restaurant-information {
   text-align: left;
+  padding-left: 20px;
+  ol{
+    padding: 0;
+    list-style: none;
+  }
+
 }
 
-.restaurant-information, .show-ratings, .restaurant-review-form {
+.show-ratings, .restaurant-review-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.restaurant-centering {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 20px;
-  text-align: center;
-}
-
-.resto-grid-info-review{
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-}
