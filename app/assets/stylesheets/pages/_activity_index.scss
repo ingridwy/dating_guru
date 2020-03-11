@@ -135,7 +135,7 @@
 .index-map{
   position: sticky;
   width: 400px;
-  // top: 0;
+  top: 0;
   @media (max-width: 992px) {
     position:absolute;
     width: 690px

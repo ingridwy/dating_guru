@@ -55,7 +55,7 @@
       <%= f.input :rating %>
       <%= f.input :content %>
       <%= f.input :restaurant_id, as: :hidden, input_html: { value:  @restaurant.id  }%>
-      <%= f.submit %>
+      <%= f.submit class: "btn btn-dark"%>
     <% end %>
   </div>
 
