@@ -4,7 +4,6 @@
 //   background-color: #495057;
 //   border-color: #495057;
 // }
-
 .add-booking-button {
   border: solid 2px;
   border-radius: 5px;
@@ -22,9 +21,10 @@
 
 .btn-dark:hover {
     background-color: #525151 !important;
-  }
+}
 
-.small-booking-button{
+
+.small-booking-button {
   display: flex;
   align-items: center;
   border: solid 1px;
@@ -32,7 +32,8 @@
   padding: 5px 10px;
   margin-bottom: 10px;
 }
-.booking-button{
+
+.booking-button {
  width:200px;
  border: solid 1px;
   border-radius: 5px;
@@ -40,14 +41,17 @@
   display : flex;
   margin-bottom: 10px;
 }
-.b-photo{
+
+.b-photo {
   margin-right: 10px;
 }
-.b-name{
+
+.b-name {
   display: flex;
   align-items: center;
 }
-.b-card-item{
+
+.b-card-item {
   align-items: center;
 }
 

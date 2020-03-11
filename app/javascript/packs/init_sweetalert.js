@@ -1,26 +1,27 @@
 import Swal from 'sweetalert2'
 
 const initSweetalert = (selector, options = {}) => {
-  const swalButton = document.querySelector(selector);
-  if (swalButton) { // protect other pages
-    swalButton.addEventListener('click', (event) => {
-      event.preventDefault()
-      swalWithBootstrapButtons.fire(options).then((result) => {
-    if (result.value) {
-      document.querySelector('.target').click()
-    } else if (
-      /* Read more about handling dismissals below */
-      result.dismiss === Swal.DismissReason.cancel
-    ) {
-      swalWithBootstrapButtons.fire(
-        'Cancelled',
-        'Your imaginary file is safe :)',
-      'error'
-      )
-      }
+  const swalButtons = document.querySelectorAll(selector);
+  swalButtons.forEach(swalButton => {
+    // protect other pages
+      swalButton.addEventListener('click', (event) => {
+        event.preventDefault()
+        swalWithBootstrapButtons.fire(options).then((result) => {
+      if (result.value) {
+        document.querySelector('.target').click()
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+        'error'
+        )
+        }
+      });
     });
-  });
-  }
+  })
 };
 
 
