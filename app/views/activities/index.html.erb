@@ -4,12 +4,13 @@
 
     <h4>Looking for something else?</h4>
 
-    <div class="wrapper" style=" overflow-x: hidden">
-      <i class="fas fa-arrow-alt-circle-left arrows" id="carouselTriggerLeft"></i>
-      <i class="fas fa-arrow-circle-right arrows" id="carouselTriggerRight"></i>
-      <div class="activity-category-cards">
+    <!-- arrows for wrapper fontawesome -->
+      <div class="wrapper", style=" overflow-x: hidden">
+        <i class="fas fas fa-chevron-left fa-3x" id="carouselTriggerLeft"></i>
+        <i class="fas fa-chevron-right fa-3x" id="carouselTriggerRight"></i>
+        <div class="activity-category-cards">
           <%= render "activities-carousel" %>
-      </div>
+        </div>
     </div>
 
 
@@ -31,8 +32,6 @@
                 <h3 id="activity-name"><%= link_to activity.name, activity_path(activity)  %></h3>
               </div>
                 <div id="activity-review">
-
-
                   <% rand(3..5).times do %>
                     <i class="fas fa-star"></i>
                   <% end %>
