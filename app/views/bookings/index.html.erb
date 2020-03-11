@@ -1,20 +1,20 @@
 <h1 class="text-center mt-4 mb-5">Your date plans.</h1>
 
-<div class="book-index-container container">
+<div>
   <% @bookings.each do |booking| %>
-  <div class ="book-cards">
+  <div>
       <%= link_to booking_path(booking) do %>
-        <p class="booking-date"><%= booking.date%></p>
+        <p><%= booking.date%></p>
 
         <% if booking.restaurant %>
-          <div class="d-flex justify-content-between b-card-item">
+          <div>
             <%= booking.restaurant.name %>
-            <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
+              <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 150, width: 200 %>
           </div>
         <% end %>
 
         <% if booking.activity %>
-          <div class="d-flex justify-content-between b-card-item">
+          <div>
             <%= booking.activity.name %>
             <%= cl_image_tag booking.activity.photo.key,class: "b-photo", height: 150, width: 200 %>
           </div>
@@ -39,4 +39,5 @@
 <!-- if your date is confirmed and past date
  -->
   <%# end %>
+
 
