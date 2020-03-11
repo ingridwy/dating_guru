@@ -37,12 +37,13 @@
 
   <div class="show-middle-container">
     <div>
+      <h5>Reviews</h5>
      <% if @activity.reviews.blank? %>
       Be the first one to leave a comment for <%= @activity.name %>
     <% else %>
       <% @activity.reviews.each do |review|%>
   <!--       <div class="border ratings-table"> -->
-
+      <div class="mb-4">
           <p>
           <% if review.user.profile_photo.attached?%>
             <%= cl_image_tag review.user.profile_photo.key,height: 50, width: 20%>
@@ -61,11 +62,15 @@
         </div>
       <% end %>
     <% end %>
+    </div>
+    <div>
+    <hr>
     <p class="pt-4"><%= @activity.details_description %></p>
+    </div>
   </div>
 
   <div class="show-ratings mb-4">
-    <h4 class="mb-4">User Reviews</h4>
+    <h4 class="mb-4">Leave a review</h4>
     <div class="activity-review-form mb-5">
       <%= simple_form_for [@review] do |f| %>
         <%= f.input :rating, collection: 1..5 %>
