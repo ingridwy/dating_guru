@@ -46,7 +46,7 @@ const initMapbox = () => {
         'line-cap': 'round'
         },
         'paint': {
-        'line-color': '#888',
+        'line-color': '#ffa34d',
         'line-width': 8
         }
         });

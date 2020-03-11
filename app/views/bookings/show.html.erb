@@ -1,54 +1,68 @@
-<div class="container text-center justify-content-center ">
+
+<div class="container">
   <h1 class="text-center m-4">Your date plan.</h1>
-    <div class="card-deck text-center row justify-content-center m-4">
-      <div class="card w-25 col-6 m-4">
+
+
+
+
+
+
+    <div class="boooking-activity-restaurant">
+      <!-- activity card -->
+      <div>
+        <% if @booking.activity_id %>
+          <h2>Activity</h2>
+
+            <p><%= @booking.activity.name %></p>
+            <%= cl_image_tag @booking.activity.photo.key,class: "b-photo", height: 350, width: 450 %>
+            <p><%= @booking.activity.address %></p>
+            <p><%= @booking.activity.open_hour %></p>
+            <p><%= @booking.activity.phone_number %></p>
+            <% end %>
+
+      </div>
+
+      <!-- booking card -->
+      <div>
          <% if @booking.restaurant_id %>
-          <h2 class="m-3 booking-card-title">Restaurant Details</h2>
-          <div class="m-2">
+          <h2>Restaurant</h2>
+
             <p><%= @booking.restaurant.name %></p>
+            <%= cl_image_tag @booking.restaurant.photo.key,class: "b-photo", height: 350, width: 450 %>
             <p><%= @booking.restaurant.address %></p>
             <p><%= @booking.restaurant.price %></p>
             <p><%= @booking.restaurant.open_hour %></p>
             <p><%= @booking.restaurant.phone_number %></p>
             <p><%= @booking.restaurant.category %></p>
             <% end %>
-          </div>
-      </div>
-
-      <div class="card w-25 col-sm-6 m-4">
-        <% if @booking.activity_id %>
-          <h2 class="m-3 booking-card-title">Activity Details</h2>
-          <div class="m-2">
-            <p><%= @booking.activity.name %></p>
-            <p><%= @booking.activity.address %></p>
-            <p><%= @booking.activity.open_hour %></p>
-            <p><%= @booking.activity.phone_number %></p>
-            <% end %>
-          </div>
       </div>
     </div>
 
-    <div class="text-center plan-confirm">
-      <% if @booking.confirmed %>
-        <p>Plans confirmed for: </p>
-        <p><%= @booking.date %></p>
-      <% else %>
-        <%= simple_form_for @booking do |f| %>
-          <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today } %>
-          <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
+      <div>
+        <% if @booking.confirmed %>
+          <p>Plans confirmed for: </p>
+          <p><%= @booking.date %></p>
+        <% else %>
+          <%= simple_form_for @booking do |f| %>
+            <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today } %>
+            <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
+          <% end %>
         <% end %>
-      <% end %>
         <p>Estimated cost of your date:</p>
-        <p>Between £<%= "#{@booking.activity.minimum_price + @booking.restaurant.minimum_price} - #{@booking.activity.price + @booking.restaurant.price}" %></p>
-    </div>
+        <p>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></p>
+      </div>
+  </div>
 
 
-  <div id="map" class="map-nonsticky mt-5"
+
+  <div id="map" class="mt-5"
       style="height: 400px !important; width: 1000px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       data-routes="true">
   </div>
+
+
 </div>
 
 
