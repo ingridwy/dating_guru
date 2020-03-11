@@ -8,7 +8,7 @@
     <div class="modal-content">
       <div class="modal-header">
 
-        <h5 class="modal-title" id="exampleModalLongTitle">Which plan would you like to add?</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Next step</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -27,7 +27,7 @@
           <% end %>
 
         <div class="text-center">
-          <button type="button" class="btn btn-dark "><%= link_to "Choose a restaurant",  activity_redirect_booking_path(activity_id: @activity.id), method: :post %></button>
+          <button type="button" class="btn btn-dark "><%= link_to "Match with a restaurant",  activity_redirect_booking_path(activity_id: @activity.id), method: :post %></button>
         </div>
       </div>
     </div>
