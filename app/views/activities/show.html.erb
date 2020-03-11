@@ -65,13 +65,13 @@
   </div>
 
   <div class="show-ratings mb-4">
-    <h3 class="mb-4">User Reviews</h3>
+    <h4 class="mb-4">User Reviews</h4>
     <div class="activity-review-form mb-5">
       <%= simple_form_for [@review] do |f| %>
         <%= f.input :rating, collection: 1..5 %>
         <%= f.input :content %>
         <%= f.input :activity_id, as: :hidden, input_html: { value:  @activity.id }%>
-        <%= f.submit %>
+        <%= f.submit class: "btn btn-dark" %>
       <% end %>
     </div>
 

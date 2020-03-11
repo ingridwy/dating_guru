@@ -1,16 +1,3 @@
-
-// .btn-date.dropdown-toggle {
-//   color: #FFF;
-//   background-color: #495057;
-//   border-color: #495057;
-// }
-.add-booking-button {
-  border: solid 2px;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-top: 10px;
-}
-
 .arrows {
   font-size: 50px;
   color: lightgrey;
@@ -21,6 +8,12 @@
 
 .btn-dark:hover {
     background-color: #525151 !important;
+}
+
+.btn-dark {
+  a {
+    color: white;
+  }
 }
 
 
@@ -53,5 +46,26 @@
 
 .b-card-item {
   align-items: center;
+}
+
+// kenneth
+
+.fa-chevron-left{
+background-color: none;
+z-index: 1;
+padding: 36px 0px;
+background-color: rgba(0, 0, 0, 0.2);
+  &:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+.fa-chevron-right{
+background-color: none;
+z-index: 1;
+padding: 36px 0px;
+background-color: rgba(0, 0, 0, 0.2);
+  &:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 

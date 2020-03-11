@@ -1,7 +1,47 @@
-
 .boooking-activity-restaurant{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-gap: 40px;
+  margin-top: 40px;
 }
 
+.card-booking-activity{
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 380px;
+}
+
+
+.card-booking-restaurant{
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 380px;
+}
+
+
+.booking-activity-info{
+  padding: 20px 20px;
+}
+
+.booking-restaurant-info{
+  padding: 20px 20px;
+}
+
+.booking-confirm{
+    padding: 20px 20px;
+    margin: 0px 0px;
+    font-weight: bold;
+    height: 280px;
+    width: 250px;
+    border: solid 3px #B8B8B8;
+    border-radius: 10px;
+}
+
+.map-booking-show{
+  // width: 900px !important;
+  margin: auto;
+}
+
+.mapboxgl-canvas {
+  width: 100% !important;
+}

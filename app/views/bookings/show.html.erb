@@ -1,56 +1,59 @@
+
 <div class="container">
   <h1 class="text-center m-4">Your date plan.</h1>
 
     <div class="boooking-activity-restaurant">
       <!-- activity card -->
-      <div>
+      <div class="card-booking-activity">
         <% if @booking.activity_id %>
-          <h2>Activity</h2>
-
-            <p><%= @booking.activity.name %></p>
-            <%= cl_image_tag @booking.activity.photo.key,class: "b-photo", height: 350, width: 450 %>
-            <p><%= @booking.activity.address %></p>
-            <p><%= @booking.activity.open_hour %></p>
-            <p><%= @booking.activity.phone_number %></p>
-            <% end %>
-
+        <%= link_to activity_path(@booking.activity) do %>
+          <%= cl_image_tag @booking.activity.photo.key, class: "booking-activity-image", height: 250, width: 380 %>
+        <% end %>
+        <div class="booking-activity-info">
+          <h5>Activity : <%= @booking.activity.name %></h5>
+          <p>Address : <%= @booking.activity.address %></p>
+          <p>Open Hours : <%= @booking.activity.open_hour %></p>
+          <p>Phone Number : <%= @booking.activity.phone_number %></p>
+        <% end %>
+        </div>
       </div>
+
 
       <!-- booking card -->
-      <div>
+      <div class="card-booking-restaurant">
          <% if @booking.restaurant_id %>
-          <h2>Restaurant</h2>
-
-            <p><%= @booking.restaurant.name %></p>
-            <%= cl_image_tag @booking.restaurant.photo.key,class: "b-photo", height: 350, width: 450 %>
-            <p><%= @booking.restaurant.address %></p>
-            <p><%= @booking.restaurant.price %></p>
-            <p><%= @booking.restaurant.open_hour %></p>
-            <p><%= @booking.restaurant.phone_number %></p>
-            <p><%= @booking.restaurant.category %></p>
+          <%= link_to restaurant_path(@booking.restaurant) do %>
+              <%= cl_image_tag @booking.restaurant.photo.key, height: 250, width: 380 %>
             <% end %>
+            <div class="booking-restaurant-info">
+              <h5>Restaurant : <%= @booking.restaurant.name %></h5>
+              <p>Address : <%= @booking.restaurant.address %></p>
+              <p>Open Hours : <%= @booking.restaurant.open_hour %></p>
+              <p>Phone Number : <%= @booking.restaurant.phone_number %></p>
+            </div>
+        <% end %>
       </div>
-    </div>
 
-    <div class="text-center plan-confirm">
-      <% if @booking.confirmed %>
-        <p>Plans confirmed for: </p>
-        <p><%= @booking.date %></p>
-      <% else %>
-        <%= simple_form_for @booking do |f| %>
+      <div class="booking-confirm">
+        <% if @booking.confirmed %>
+          <p>Plans confirmed for: </p>
+          <h5><%= @booking.date %></h5>
+          <p class="mt-5">Estimated cost of your date:</p>
+          <h5>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></h5>
+        <% else %>
+          <p>Estimated cost of your date:</p>
+          <h5>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></h5>
+
+         <%= simple_form_for @booking do |f| %>
           <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today, class: "datepicker"} %>
           <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
-
+          <% end %>
         <% end %>
-        <p>Estimated cost of your date:</p>
-        <p>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></p>
       </div>
-  </div>
+    </div><!--  this div for grid -->
 
-
-
-  <div id="map" class="mt-5"
-      style="height: 400px !important; width: 1000px;"
+  <div id="map" class="mt-5 map-booking-show"
+      style="height: 400px !important; width: 900px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       data-routes="true">
