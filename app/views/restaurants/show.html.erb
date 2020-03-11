@@ -2,21 +2,12 @@
   <h2 class="restaurant-header m-5 text-center"><%= @restaurant.name %></h2>
 
 <!-- div of restaurant-image and map -->
-  <div class="restaurant-image-map mb-5">
+  <div class="restaurant-image mb-5">
     <%= cl_image_tag @restaurant.photo.key, height: 500, width: 750 %>
-    <div id="map" class="map-nonsticky"
-      style="height: 500px !important; width: 330px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
 
-
-<!-- class for information  -->
-<div class="restaurant-centering">
-  <div class="restaurant-information">
+    <div class="restaurant-information">
     <h4 class="pb-4"><%= @restaurant.name %></h4>
-      <ol style="list-style: none">
+      <ol>
         <li>
           <b>Address: </b><%= @restaurant.address %>
         </li>
@@ -42,48 +33,56 @@
         </li>
       </ol>
       <%= render partial: "shared/restaurant_modal" %>
-
-  <p class="pt-4"><%= @restaurant.details_description %></p>
   </div>
-
-
-  <div class="show-ratings mb-4">
-
-    <h4 class="mb-4">User Reviews</h4>
-     <div class="restaurant-review-form mb-5">
-    <%= simple_form_for [@review] do |f| %>
-      <%= f.input :rating %>
-      <%= f.input :content %>
-      <%= f.input :restaurant_id, as: :hidden, input_html: { value:  @restaurant.id  }%>
-      <%= f.submit class: "btn btn-dark"%>
-    <% end %>
-  </div>
-
+<div class="show-middle-container">
+    <div>
     <% if @restaurant.reviews.blank? %>
       Be the first one to leave a comment for <%= @restaurant.name %>
     <% else %>
       <% @restaurant.reviews.each do |review|%>
        <hr>
-  <!--       <div class="border ratings-table"> -->
-           <div>
+  <!--    <div class="border ratings-table"> -->
+           <p>
+          <% if review.user.profile_photo.attached?%>
+            <%= cl_image_tag review.user.profile_photo.key,height: 50, width: 20%>
+          <% else %>
+            <i class="fas fa-user"></i>
+          <% end %>
+          <span class="ml-2 mr-4"><%= review.user.user_name %></span>
           <% review.rating.times do %>
             <i class="fas fa-star"></i>
           <% end %>
           <% (5 - review.rating).times do %>
             <i class="far fa-star"></i>
           <% end %>
-          </div>
+          </p>
           <p><%= review.content %></p>
-          <p><%= review.user.user_name %></p>
-          <% if review.user.profile_photo.attached?%>
-            <p><%= cl_image_tag review.user.profile_photo.key,height: 50, width: 20%></p>
-          <% else %>
-            <p><i class="fas fa-user"></i></p>
-          <% end %>
-        <% end %>
+        </div>
+      <% end %>
     <% end %>
+     <p class="pt-4"><%= @restaurant.details_description %></p>
+  </div>
+<!-- class for information  -->
+
+  <div class="show-ratings mb-4">
+
+    <h3 class="mb-4">User Reviews</h3>
+     <div class="restaurant-review-form mb-5">
+    <%= simple_form_for [@review] do |f| %>
+      <%= f.input :rating, collection: 1..5  %>
+      <%= f.input :content %>
+      <%= f.input :restaurant_id, as: :hidden, input_html: { value:  @restaurant.id  }%>
+      <%= f.submit class: "btn btn-dark" %>
+    <% end %>
+  </div>
+
 
   </div>
+  <div id="map" class="show-map"
+      style="height: 500px !important;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 <!--   </div> -->
 <br>
 
