@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   patch "add_activity", to: "bookings#add_activity", as: :add_activity
   post "activity_new_booking", to: "bookings#activity_new_booking", as: :activity_new_booking
   post "restaurant_new_booking", to: "bookings#restaurant_new_booking", as: :restaurant_new_booking
+
+  post "activity_redirect_booking", to: "bookings#activity_redirect_booking", as: :activity_redirect_booking
+  post "restaurant_redirect_booking", to: "bookings#restaurant_redirect_booking", as: :restaurant_redirect_booking
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
