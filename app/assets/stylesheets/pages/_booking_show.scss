@@ -1,8 +1,6 @@
-
-
 .boooking-activity-restaurant{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr;
   grid-gap: 40px;
   margin-top: 40px;
 }
@@ -10,14 +8,14 @@
 .card-booking-activity{
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 400px;
+  width: 380px;
 }
 
 
 .card-booking-restaurant{
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 400px;
+  width: 380px;
 }
 
 
@@ -31,13 +29,26 @@
 
 .booking-confirm{
     padding: 20px 20px;
-    margin: 0px 20px;
+    margin: 0px 0px;
     font-weight: bold;
-    height: 250px;
+    height: 280px;
+    width: 250px;
     border: solid 3px #B8B8B8;
     border-radius: 10px;
 }
 
+.booking-activity-image{
+  a {
+     padding-left: 0;
+  }
+}
+
+
 #map{
-  // text-align: center;
+  // width: 900px !important;
+  margin: auto;
+}
+
+.mapboxgl-canvas {
+  width: 100% !important;
 }
