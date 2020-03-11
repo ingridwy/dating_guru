@@ -45,6 +45,7 @@ puts "creating new restaurant"
   open_hour: "12:30-15:00, 17:00-22:00 ",
   phone_number: "0232 983 9862",
   description: "Housemade pasta & clay-oven pizzas are among the offerings at this stylish Italian eatery & bar.",
+  details_description:"Housemade pasta & clay-oven pizzas are among the offerings at this stylish Italian eatery & bar.",
   minimum_price: 40
   )
     first_restaurant.photo.attach(io: first_file, filename: "resto1_revise_mtuhwm.jpg" , content_type: 'image/jpg')
@@ -57,6 +58,7 @@ puts "creating new restaurant"
   open_hour: "11:30-22:00",
   phone_number: "0208 983 9862",
   description: "Japanese spot for Hakata-style ramen also offers dumplings, sushi and steak in casual, modern digs.",
+  details_description: "Japanese spot for Hakata-style ramen also offers dumplings, sushi and steak in casual, modern digs.",
   minimum_price: 40
   )
     second_restaurant.photo.attach(io: second_file, filename: "md3cimqoxws8cy9boyfj.png" , content_type: 'image/jpg')
@@ -69,6 +71,7 @@ puts "creating new restaurant"
   open_hour: "11:30-21:00",
   phone_number: "0208 983 9862",
   description: "Compact and casual venue serving a range of classic noodle soup dishes from Vietnam.",
+  details_description:"Compact and casual venue serving a range of classic noodle soup dishes from Vietnam.",
   minimum_price: 20
   )
     third_restaurant.photo.attach(io: third_file, filename: "jwqhc0n6qge1o0apmcsm.jpg" , content_type: 'image/jpg')
@@ -81,6 +84,7 @@ puts "creating new restaurant"
   open_hour: "11:30-23:30",
   phone_number: "0208 983 9862",
   description: "Unlimited spit-roasted meat from a Brazilian Churrascaria barbecue, carved at your table.",
+  details_description: "Unlimited spit-roasted meat from a Brazilian Churrascaria barbecue, carved at your table.",
   minimum_price: 40
   )
     fourth_restaurant.photo.attach(io: fourth_file, filename: "c700x420_eycdpw.jpg" , content_type: 'image/jpg')
@@ -93,6 +97,7 @@ puts "creating new restaurant"
   open_hour: "11:30-23:30",
   phone_number: "0208 983 9862",
   description: "Upscale chain restaurant serving sustainably sourced British fish & seafood, plus some meat dishes.",
+  details_description: "Upscale chain restaurant serving sustainably sourced British fish & seafood, plus some meat dishes.",
   minimum_price: 60
   )
     fifth_restaurant.photo.attach(io: fifth_file, filename: "ivi8abpmkq3durbxc6sx.jpg" , content_type: 'image/jpg')
@@ -105,6 +110,7 @@ puts "creating new restaurant"
   open_hour: "11:30-22:00",
   phone_number: "0208 983 9862",
   description: "Plant-based British comfort food classics head up the Vegan menu at this edgy, fast-casual venue.",
+  details_description:"Plant-based British comfort food classics head up the Vegan menu at this edgy, fast-casual venue.",
   minimum_price: 20
   )
     sixth_restaurant.photo.attach(io: sixth_file, filename: "Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg" , content_type: 'image/jpg')
@@ -117,6 +123,7 @@ puts "creating new restaurant"
   open_hour: "11:30-0:00",
   phone_number: "0208 983 9862",
   description: "Contemporary bar/restaurant with a waterside terrace and a menu of Japanese food and cocktails.",
+  details_description: "Contemporary bar/restaurant with a waterside terrace and a menu of Japanese food and cocktails.",
   minimum_price: 40
   )
     seventh_restaurant.photo.attach(io: seventh_file, filename: "169591_qxwjwp.jpg" , content_type: 'image/jpg')
@@ -129,6 +136,7 @@ puts "creating new restaurant"
   open_hour: "11:30-23:30",
   phone_number: "0208 983 9862",
   description: "A menu focused on classic Sicilian cooking & fare in a modern, cozy setting with exposed brick.",
+  details_description: "A menu focused on classic Sicilian cooking & fare in a modern, cozy setting with exposed brick.",
   minimum_price: 40
   )
     eighth_restaurant.photo.attach(io: eighth_file, filename: "rsz_firezza_-1_lpckbq.png" , content_type: 'image/jpg')
@@ -141,6 +149,7 @@ puts "creating new restaurant"
   open_hour: "11:30-21:30",
   phone_number: "0208 983 9862",
   description: "Burgers, whole lobster or lobster rolls with chips and salad for set price in American-style diner.",
+  details_description: "Burgers, whole lobster or lobster rolls with chips and salad for set price in American-style diner.",
   minimum_price: 40
   )
     ninth_restaurant.photo.attach(io: ninth_file, filename: "nqq1j4shbdvxajvyj0jt.jpg" , content_type: 'image/jpg')
@@ -153,6 +162,7 @@ tenth_restaurant = Restaurant.create(
   open_hour: "12:00-21:30",
   phone_number: "0208 983 9692",
   description: "Venetian sharing plates, cheese and meat in marble, wood and terracotta room with large group table.",
+  details_description: "Venetian sharing plates, cheese and meat in marble, wood and terracotta room with large group table.",
   minimum_price: 40
   )
     tenth_restaurant.photo.attach(io: tenth_file, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
@@ -165,6 +175,7 @@ eleventh_restaurant = Restaurant.create(
   open_hour: "09:00-22:00",
   phone_number: "0208 983 9692",
   description: "Homey, dog-friendly setting for vegan eats with a Brazilian flair, baked goods, coffee & BYOB..",
+  details_description: "Homey, dog-friendly setting for vegan eats with a Brazilian flair, baked goods, coffee & BYOB.",
   minimum_price: 30
   )
     eleventh_restaurant.photo.attach(io: eleventh_file, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
@@ -177,6 +188,7 @@ twelfth_restaurant = Restaurant.create(
   open_hour: "17:00-22:30",
   phone_number: "0208 983 9692",
   description: "Cozy, stylish restaurant with a Zen-like vibe for artful sushi, select sake & creative cocktails..",
+  details_description: "Cozy, stylish restaurant with a Zen-like vibe for artful sushi, select sake & creative cocktails.",
   minimum_price: 100
   )
     twelfth_restaurant.photo.attach(io: twelfth_file, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
@@ -189,6 +201,7 @@ thirteenth_restaurant = Restaurant.create(
   open_hour: "12:00-21:30",
   phone_number: "0208 983 9692",
   description: "Modern outpost serving katsu, sushi rolls & other classic Japanese entrees in a minimalist interior.",
+  details_description:"Modern outpost serving katsu, sushi rolls & other classic Japanese entrees in a minimalist interior.",
   minimum_price: 40
   )
     thirteenth_restaurant.photo.attach(io: thirteenth, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
@@ -228,6 +241,9 @@ a_one = Activity.create(
   description:"Blockbuster exhibitions and permanent decorative arts collection, with design shop and ornate cafe.",
   phone_number: "020 7942 2000",
   category: "Museum",
+  details_description: "The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects.[4] It was founded in 1852 and named after Queen Victoria and Prince Albert.
+  The V&A is located in the Brompton district of the Royal Borough of Kensington and Chelsea, in an area that has become known as 'Albertopolis' because of its association with Prince Albert, the Albert Memorial and the major cultural institutions with which he was associated. These include the Natural History Museum, the Science Museum, the Royal Albert Hall and Imperial College London. The museum is a non-departmental public body sponsored by the Department for Digital, Culture, Media and Sport. As with other national British museums, entrance is free.
+  The V&A covers 12.5 acres (5.1 ha)[5] and 145 galleries. Its collection spans 5,000 years of art, from ancient times to the present day, from the cultures of Europe, North America, Asia and North Africa. However, the art of antiquity in most areas is not collected. The holdings of ceramics, glass, textiles, costumes, silver, ironwork, jewellery, furniture, medieval objects, sculpture, prints and printmaking, drawings and photographs are among the largest and most comprehensive in the world.",
   minimum_price: 0
 )
 a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London_yqxpqc.jpg" , content_type: 'image/jpg')
@@ -241,6 +257,7 @@ a_two = Activity.create(
   phone_number: "020 7323 8299",
   category: "Theatre",
   description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
+  details_description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
   price: 0,
   minimum_price: 0
 )
@@ -254,6 +271,7 @@ a_ten = Activity.create(
   phone_number: "020 7770 6028",
   category: "Market",
   description: "London street running from London Fields to the Regent's Canal in the London Borough of Hackney.",
+  details_description: "London street running from London Fields to the Regent's Canal in the London Borough of Hackney.",
   price:0,
   minimum_price: 0
 )
@@ -269,6 +287,7 @@ a_three = Activity.create(
   phone_number: "020 7887 8888",
   category: "Museum",
   description: "Modern-art gallery with international works on display, plus a cafe with panoramic river views.",
+  details_description: "Modern-art gallery with international works on display, plus a cafe with panoramic river views.",
   price:0,
   minimum_price: 0
 )
@@ -284,6 +303,7 @@ a_four = Activity.create(
   phone_number: "020 7942 5000",
   category: "Museum",
   description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
+  details_description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
   price:0,
   minimum_price: 0
 )
@@ -298,6 +318,7 @@ a_five = Activity.create(
   phone_number: "020 7747 2885",
   category: "Museum",
   description: "Modern-art gallery with international works on display, plus a cafe with panoramic river views.",
+  details_description: "Modern-art gallery with international works on display, plus a cafe with panoramic river views.",
   price:0,
   minimum_price: 0
 )
@@ -312,6 +333,7 @@ a_fifteen = Activity.create(
   phone_number: "020 7183 1979",
   category: "Sport",
   description: "Bringing London's climbers together since 1986. Gift Vouchers. Give the gift of climbing to your loved ones.",
+  details_description: "Bringing London's climbers together since 1986. Gift Vouchers. Give the gift of climbing to your loved ones.",
   price: 50,
   minimum_price: 30
 )
@@ -326,6 +348,7 @@ a_six = Activity.create(
   phone_number: "020 3862 5900",
   category: "Museum",
   description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
+  details_description: "Huge showcase for global antiquities, including Egyptian mummies and ancient Greek sculptures.",
   price:0,
   minimum_price: 0
 )
@@ -341,6 +364,7 @@ a_seven = Activity.create(
   phone_number: "020 7770 6028",
   category: "Market",
   description: "London street running from London Fields to the Regent's Canal in the London Borough of Hackney.",
+  details_description: "London street running from London Fields to the Regent's Canal in the London Borough of Hackney.",
   price: 0,
   minimum_price: 0
 )
@@ -355,6 +379,7 @@ a_eight = Activity.create(
   phone_number: "020 7770 6028",
   category: "Market",
   description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
+  details_description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
   price: 0,
   minimum_price: 0
 )
@@ -369,6 +394,7 @@ a_nine = Activity.create(
   phone_number: "020 7770 6028",
   category: "Market",
   description: "Brick Lane Market is a London market centred on Brick Lane, in Tower Hamlets in east London.",
+  details_description: "Brick Lane Market is a London market centred on Brick Lane, in Tower Hamlets in east London.",
   price: 0,
   minimum_price: 0
 )
@@ -385,6 +411,7 @@ a_eleven = Activity.create(
   phone_number: "020 7770 6028",
   category: "Market",
   description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
+  details_description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
   price:0,
   minimum_price: 0
 )
@@ -400,6 +427,7 @@ a_twelve = Activity.create(
   phone_number: "020 7183 1979",
   category: "Sport",
   description: "8 bowling lanes and DJ plus pizzas and burgers in American diner, with private karaoke booths.",
+  details_description: "8 bowling lanes and DJ plus pizzas and burgers in American diner, with private karaoke booths.",
   price: 40,
   minimum_price: 20
 )
@@ -413,6 +441,7 @@ a_fourteen = Activity.create(
   phone_number: "020 7183 1979",
   category: "Sport",
   description: "Community Tennis club online court booking. Shadwell, Victoria Park, Canary Wharf - East London.",
+  details_description:"Community Tennis club online court booking. Shadwell, Victoria Park, Canary Wharf - East London.",
   price: 40,
   minimum_price: 20
 )
@@ -475,33 +504,3 @@ Restaurant.all.each do |restaurant|
    review2.save!
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

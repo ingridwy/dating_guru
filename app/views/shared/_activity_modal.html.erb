@@ -1,4 +1,4 @@
-<button type="button" class="add-booking-button" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong">
   Add to plan
 </button>
 
@@ -14,21 +14,20 @@
         </button>
       </div>
       <div class="modal-body">
+          <% current_user.bookings.where(activity: nil).each do |booking| %>
+            <div class="d-flex justify-content-between b-card-item">
 
-        <% current_user.bookings.where(activity: nil).each do |booking| %>
-          <div class="d-flex justify-content-between b-card-item">
-          <div style="flex: 1" class="b-name ml-4">
-           <%= booking.restaurant.name %>
-          </div>
-           <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 100, width: 150 %>
-           <%= link_to "Add to plan", add_activity_path(booking_id: booking.id, activity_id: @activity.id), method: :patch, class: 'small-booking-button' %>
-          </div>
-          <hr class="mb-4 mt-4">
-
+              <div style="flex: 1" class="b-name ml-4">
+               <%= booking.restaurant.name %>
+              </div>
+               <%= cl_image_tag booking.restaurant.photo.key,class: "b-photo", height: 100, width: 150 %>
+               <%= link_to "Add to plan", add_activity_path(booking_id: booking.id, activity_id: @activity.id), method: :patch, class: 'small-booking-button' %>
+            </div>
+            <hr class="mb-4 mt-4">
           <% end %>
-          <div class="text-center">
-          <%#= link_to "", activity_new_booking_path(activity_id: @activity.id), method: :post, class: 'small-booking-button' %>
-          <button type="button" class="btn btn-info "><%= link_to "Create a new plan",  restaurants_path %></button>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-dark "><%= link_to "Choose a restaurant",  activity_redirect_booking_path(activity_id: @activity.id), method: :post, class: "small-booking-button" %></button>
         </div>
       </div>
     </div>
