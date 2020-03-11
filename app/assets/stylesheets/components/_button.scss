@@ -21,5 +21,25 @@
 }
 
 .btn-dark:hover {
-    background-color: #525151 !important;
+  margin-left: 100px;
+  }
+
+// wrapper arrows/chevrons shadow
+.fa-chevron-left{
+background-color: none;
+z-index: 1;
+padding: 36px 0px;
+  &:hover {
+  background-color: rgba(73, 80, 87, 0.5);
+  }
 }
+
+.fa-chevron-right{
+background-color: none;
+z-index: 1;
+padding: 36px 0px;
+  &:hover {
+  background-color: rgba(73, 80, 87, 0.5);
+  }
+}
+

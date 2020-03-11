@@ -8,6 +8,11 @@
   transition: transform .5s;
 }
 
+// logo prevent underlining
+.navbar-logo:hover {
+    border-bottom: 3px solid transparent !important;
+  }
+
 .navbar-lewagon a {
   float: left;
   display: block;
@@ -16,6 +21,8 @@
   padding: 10px 30px;
   text-decoration: none;
   border-bottom: 3px solid transparent;
+
+
 }
 
 .navbar-nav .nav-link {
