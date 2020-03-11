@@ -34,7 +34,6 @@
         </div>
       </div>
 
-
       <div class="booking-confirm">
         <% if @booking.confirmed %>
           <p>Plans confirmed for: </p>
@@ -45,15 +44,13 @@
           <p>Estimated cost of your date:</p>
           <h5>Between £<%= "#{(@booking.activity&.minimum_price || 0) + (@booking.restaurant&.minimum_price || 0)} - #{(@booking.activity&.price || 0) + (@booking.restaurant.price || 0)}" %></h5>
 
-          <%= simple_form_for @booking do |f| %>
-            <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today } %>
-            <%= f.submit "  Confirm  ", class: 'btn btn-dark active mb-4 p-12 active toggle'   %>
+         <%= simple_form_for @booking do |f| %>
+          <%= f.input :date, html5: true, input_html: { value: Date.today, min: Date.today, class: "datepicker"} %>
+          <%= f.submit "  Confirm  ", class: 'btn btn-dark btn-lg active mb-4 p-12 active toggle'   %>
           <% end %>
         <% end %>
       </div>
     </div><!--  this div for grid -->
-
-
 
   <div id="map" class="mt-5"
       style="height: 400px !important; width: 900px;"

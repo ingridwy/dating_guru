@@ -38,6 +38,23 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  def restaurant_redirect_booking
+    @booking = Booking.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking.restaurant = @restaurant
+    @booking.user = current_user
+    @booking.save
+    redirect_to activities_path
+  end
+  def activity_redirect_booking
+    @booking = Booking.new
+    @activity = Activity.find(params[:activity_id])
+    @booking.activity = @activity
+    @booking.user = current_user
+    @booking.save
+    redirect_to restaurants_path
+  end
+
   def add_restaurant
     booking = Booking.find(params[:booking_id])
     restaurant = Restaurant.find(params[:restaurant_id])
