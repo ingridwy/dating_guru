@@ -27,8 +27,8 @@ const initSweetalert = (selector, options = {}) => {
 
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
-    confirmButton: 'btn btn-light ml-3',
-    cancelButton: 'btn btn-dart'
+    confirmButton: 'btn btn-dark ml-3',
+    cancelButton: 'btn btn-outline-dark'
   },
   buttonsStyling: false
 })
