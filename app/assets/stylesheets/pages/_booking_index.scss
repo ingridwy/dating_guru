@@ -1,42 +1,102 @@
-.book-index-container{
+.booking-plan{
+  width: 80%;
+  border:  1px #B8B8B8;
+  background-color: white;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 30px 30px;
+}
+
+.booking-index-function{
+  a{
+  display: flex;
+  }
+
+}
+
+
+.bookings-index-content{
+  display: flex;
+  grid-gap: 0px;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.booking-index-resto{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.booking-index-resto{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: rgb(254, 255, 254);
-  width: 50%;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
-  border-radius: 3%;
+  margin-left: 60px;
 }
 
-.booking-date {
-  text-align: center;
-  font-weight: 700;
-  font-size: 20px;
-  padding-bottom: 10px;
+.booking-index-activity{
+  display: flex;
+  flex-direction: column;
+
 }
 
-.book-cards{
-  width: 500px;
-  height: auto;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  border-bottom: solid 1px #bdbdbd;
-}
 
-.book-cards i{
-  font-size: 18px;
-}
 
-.b-card-item{
-  margin-bottom:15px;
-}
 
-.b-photo{
-   border-radius:5px;
-   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
-}
 
-.plan-confirm {
-  font-weight: 700;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+// .book-index-container{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: rgb(254, 255, 254);
+//   width: 50%;
+//   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+//   border-radius: 3%;
+// }
+
+// .booking-date {
+//   text-align: center;
+//   font-weight: 700;
+//   font-size: 20px;
+//   padding-bottom: 10px;
+// }
+
+// .book-cards{
+//   width: 500px;
+//   height: auto;
+//   font-family: 'Quicksand', sans-serif;
+//   font-weight: 700;
+//   border-bottom: solid 1px #bdbdbd;
+// }
+
+// .book-cards i{
+//   font-size: 18px;
+// }
+
+// .b-card-item{
+//   margin-bottom:15px;
+// }
+
+// .b-photo{
+//    border-radius:5px;
+//    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+// }
+
+// .plan-confirm {
+//   font-weight: 700;
+// }
 
