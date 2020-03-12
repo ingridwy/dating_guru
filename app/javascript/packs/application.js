@@ -34,10 +34,14 @@ import "bootstrap";
 // geocoding
 import { initMapbox } from './init_mapbox';
 import { initSweetalert } from './init_sweetalert';
-import "../plugins/flatpickr";
+import { initFlatpickr } from "../plugins/flatpickr";
+
+import "flatpickr/dist/flatpickr.min.css"
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initFlatpickr()
   initSweetalert('#sweet-alert-demo', {
     title: 'Are you sure?',
     text: "You won't be able to revert this!",

@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
 
-
     @markers = [ @booking.restaurant, @booking.activity].map do |thing|
       next if thing.nil?
       {
@@ -18,6 +17,7 @@ class BookingsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { thing: thing })
       }
     end
+    @markers.reject!(&:nil?)
   end
 
   def restaurant_new_booking
