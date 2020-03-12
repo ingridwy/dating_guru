@@ -304,7 +304,7 @@ fourteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v15840198
 fifteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/15_climbing_ipqkb1.jpg")
 sport_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584022991/Untitled_design_1_gmgbxd.png")
 sport_three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008735/zapspace_x6qjyj.jpg")
-sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584009533/cjcpkg767c7i2ratf2u3cw2fhca6.jpg")
+
 sport_five = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024341/vince-fleming-PhwLrQ40XG0-unsplash_tw806i.jpg")
 sport_six = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024336/flo-karr-nCj0zBLIaAk-unsplash_ccpvra.jpg")
 sport_seven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024968/kayaking_sport_pszju7.jpg")
@@ -329,19 +329,7 @@ a_eight = Activity.create(
 a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
-a_sport_four = Activity.create(
-  name: "Bat and Ball",
-  address: "Westfield stratford city, The Street, London E20 1EN",
-  open_hour: "11:00-19:00",
-  phone_number: "020 3058 3020",
-  category: "Sport",
-  description: "Spread across two huge floors and home to 10 championship sized ping pong tables ",
-  details_description: "Spread across two huge floors and home to 10 championship sized ping pong tables ",
-  price: 40,
-  minimum_price: 20
-)
 
-a_sport_four.photo.attach(io: sport_four, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
 
 
