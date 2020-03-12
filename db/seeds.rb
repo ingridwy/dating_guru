@@ -30,6 +30,7 @@ Activity.destroy_all
 Booking.destroy_all
 Review.destroy_all
 puts "all old data deleted"
+
 user_1 = User.create! user_name: "Tony", email: "tony@gmail.com", password: "123456"
 user_2 = User.create! user_name: "cat", email: "cat@gmail.com", password: "123456"
 puts "creating new restaurant"
@@ -52,13 +53,13 @@ puts "creating new restaurant"
 
   second_restaurant = Restaurant.create(
   name: "Ippudo",
-  address: "83 Upper St, London",
+  address: "Hoxton St, London N1 6SH",
   category: "Japanese",
   price: 60,
   open_hour: "11:30-22:00",
   phone_number: "0208 983 9862",
   description: "Japanese spot for Hakata-style ramen also offers dumplings, sushi and steak in casual, modern digs.",
-  details_description: "Japanese spot for Hakata-style ramen also offers dumplings, sushi and steak in casual, modern digs.",
+  details_description: "Ippudo, started in Daimyo Fukuoka (Hakata), renowned for its reinvented Hakata-style tonkotsu (pork-based) ramen. They introduced Aka-Maru (red circle) and Shiro-maru (white circle) as two main Ramen to chose from. Aka-maru has stronger broth and Shiro-maru a bit milder. Over the years, this two taste approach along with clean contemporary atmosphere and good service created new audience, especially women, and proved to work internationally as well. Ippudo brings high quality of service, environment, and good Ramen.",
   minimum_price: 40
   )
     second_restaurant.photo.attach(io: second_file, filename: "md3cimqoxws8cy9boyfj.png" , content_type: 'image/jpg')
@@ -183,7 +184,7 @@ eleventh_restaurant = Restaurant.create(
 
 twelfth_restaurant = Restaurant.create(
   name: "Nanashi Shoreditch",
-  address: "300 Oxford St, Marylebone, London",
+  address: "130 Hoxton St, London",
   category: "Japanese",
   price: 120,
   open_hour: "17:00-22:30",
@@ -196,7 +197,7 @@ twelfth_restaurant = Restaurant.create(
 
 thirteenth_restaurant = Restaurant.create(
   name: "Tanakatsu",
-  address: "101 Oxford St, Marylebone, London",
+  address: "101 Kingsland Rd, Hackney, London E2 8DJ",
   category: "Japanese",
   price: 60,
   open_hour: "12:00-21:30",
@@ -230,7 +231,8 @@ fifteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v158350176
 sport_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008534/rowing_tw2hy3.jpg")
 sport_two = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008534/rowing_tw2hy3.jpg")
 sport_three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008735/zapspace_x6qjyj.jpg")
-sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008541/batandball_evqzbh.jpg")# a_six = URI.open()
+sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008541/batandball_evqzbh.jpg")
+
 
 
 # activity seeding(museum data)
@@ -246,7 +248,10 @@ a_eight = Activity.create(
   price: 0,
   minimum_price: 0
 )
+
 a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
 a_sport_four = Activity.create(
   name: "Bat and Ball",
   address: "Westfield stratford city, The Street, London E20 1EN",
@@ -258,7 +263,12 @@ a_sport_four = Activity.create(
   price: 40,
   minimum_price: 20
 )
+
 a_sport_four.photo.attach(io: sport_four, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
+
+
 a_one = Activity.create(
   name: "Victoria and Albert Museum",
   address: "Cromwell Rd, South Kensington, London SW7 5BD",
@@ -273,6 +283,13 @@ a_one = Activity.create(
   minimum_price: 0
 )
 a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London_yqxpqc.jpg" , content_type: 'image/jpg')
+
+
+
+
+
+
+
 a_two = Activity.create(
   name: "British Museum",
   address: "Great Russell St, Bloomsbury, London WC1B 3DG",
@@ -297,6 +314,7 @@ a_ten = Activity.create(
   minimum_price: 0
 )
 a_ten.photo.attach(io: ten, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
 a_sport_one = Activity.create(
   name: "Krav Maga Class",
   address: "43 Hoxton St, Hackney, London N1 6QN",
@@ -308,7 +326,11 @@ a_sport_one = Activity.create(
   price: 60,
   minimum_price: 30
 )
+
+
 a_sport_one.photo.attach(io: sport_one, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
 a_three = Activity.create(
   name: "Tate Modern",
   address: "Bankside, London SE1 9TG",
@@ -333,6 +355,10 @@ a_four = Activity.create(
   minimum_price: 0
 )
 a_four.photo.attach(io: four, filename: "4_muse_Natural-History-Museum_bddygg.jpg" , content_type: 'image/jpg')
+
+
+
+
 a_sport_two = Activity.create(
   name: "Rowing in the Park",
   address: "Bow, London E9 7DE",
@@ -344,7 +370,12 @@ a_sport_two = Activity.create(
   price: 30,
   minimum_price: 10
 )
+
 a_sport_two.photo.attach(io: sport_two, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
+
+
 a_five = Activity.create(
   name: "The National Gallery",
   address: "Trafalgar Square, Charing Cross, London WC2N 5DN",
@@ -394,6 +425,10 @@ a_seven = Activity.create(
   minimum_price: 0
 )
 a_seven.photo.attach(io: seven, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+
+
 a_sport_three = Activity.create(
   name: "ZAPspace Trampoline Park",
   address: "369 High St, London E15 4QZ",
@@ -405,7 +440,13 @@ a_sport_three = Activity.create(
   price: 30,
   minimum_price: 10
 )
+
 a_sport_three.photo.attach(io: sport_three, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
+
+
+
 a_nine = Activity.create(
   name: "Victoria Park Market",
   address: "56-57, Gore Rd, London E9 7HN",
