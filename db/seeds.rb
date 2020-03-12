@@ -30,7 +30,8 @@ Activity.destroy_all
 Booking.destroy_all
 Review.destroy_all
 puts "all old data deleted"
-user_1 = User.create! user_name: "tony", email: "tony@gmail.com", password: "123456"
+
+user_1 = User.create! user_name: "Tony", email: "tony@gmail.com", password: "123456"
 user_2 = User.create! user_name: "cat", email: "cat@gmail.com", password: "123456"
 puts "creating new restaurant"
 
@@ -129,7 +130,6 @@ We pride ourselves with the high standard in food and service we offer to our cu
   minimum_price: 40
   )
     seventh_restaurant.photo.attach(io: seventh_file, filename: "169591_qxwjwp.jpg" , content_type: 'image/jpg')
-
     eighth_restaurant = Restaurant.create(
   name: "Brxton Italian",
   address: "Bow",
@@ -232,8 +232,7 @@ sport_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008
 sport_two = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008534/rowing_tw2hy3.jpg")
 sport_three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008735/zapspace_x6qjyj.jpg")
 sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008541/batandball_evqzbh.jpg")
-# a_six = URI.open()
-# a_six = URI.open()
+
 
 
 # activity seeding(museum data)
@@ -253,7 +252,6 @@ a_eight = Activity.create(
 a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
-
 a_sport_four = Activity.create(
   name: "Bat and Ball",
   address: "Westfield stratford city, The Street, London E20 1EN",
@@ -267,7 +265,6 @@ a_sport_four = Activity.create(
 )
 
 a_sport_four.photo.attach(io: sport_four, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
-
 
 
 
@@ -292,6 +289,7 @@ a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London
 
 
 
+
 a_two = Activity.create(
   name: "British Museum",
   address: "Great Russell St, Bloomsbury, London WC1B 3DG",
@@ -303,9 +301,7 @@ a_two = Activity.create(
   price: 0,
   minimum_price: 0
 )
-
 a_two.photo.attach(io: two, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
-
 a_ten = Activity.create(
   name: "Brick Lane Market",
   address: "Brick Ln, Spitalfields, London E1 6QR",
@@ -317,9 +313,7 @@ a_ten = Activity.create(
   price:0,
   minimum_price: 0
 )
-
 a_ten.photo.attach(io: ten, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
 
 a_sport_one = Activity.create(
   name: "Krav Maga Class",
@@ -333,8 +327,8 @@ a_sport_one = Activity.create(
   minimum_price: 30
 )
 
-a_sport_one.photo.attach(io: sport_one, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
+a_sport_one.photo.attach(io: sport_one, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
 
 a_three = Activity.create(
@@ -348,11 +342,7 @@ a_three = Activity.create(
   price:0,
   minimum_price: 0
 )
-
 a_three.photo.attach(io: three, filename: "03_muse_RIB-0019996-1360x765_zma1gz.jpg" , content_type: 'image/jpg')
-
-
-
 a_four = Activity.create(
   name: "Natural History Museum",
   address: "Cromwell Rd, South Kensington, London SW7 5BD",
@@ -364,8 +354,9 @@ a_four = Activity.create(
   price:0,
   minimum_price: 0
 )
-
 a_four.photo.attach(io: four, filename: "4_muse_Natural-History-Museum_bddygg.jpg" , content_type: 'image/jpg')
+
+
 
 
 a_sport_two = Activity.create(
@@ -396,10 +387,7 @@ a_five = Activity.create(
   price:0,
   minimum_price: 0
 )
-
 a_five.photo.attach(io: five, filename: "05_national-gallery-view-from-trafalgar-square-p3346_007_w3faci.jpg" , content_type: 'image/jpg')
-
-
 a_fifteen = Activity.create(
   name: "Mile End Climbing Wall",
   address: "Haverfield Rd, London E3 5BE",
@@ -411,10 +399,7 @@ a_fifteen = Activity.create(
   price: 50,
   minimum_price: 30
 )
-
 a_fifteen.photo.attach(io: fifteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
-
 a_six = Activity.create(
   name: "Design Museum",
   address: "224-238 Kensington High St, Kensington, London W8 6AG",
@@ -426,11 +411,8 @@ a_six = Activity.create(
   price:0,
   minimum_price: 0
 )
-
 a_six.photo.attach(io: six, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
 # weekend market
-
 a_seven = Activity.create(
   name: "Broadway Market",
   address: "Broadway Market, E8 4QJ",
@@ -442,8 +424,9 @@ a_seven = Activity.create(
   price: 0,
   minimum_price: 0
 )
-
 a_seven.photo.attach(io: seven, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
 
 
 a_sport_three = Activity.create(
@@ -463,6 +446,7 @@ a_sport_three.photo.attach(io: sport_three, filename: "02_replace_british_museum
 
 
 
+
 a_nine = Activity.create(
   name: "Victoria Park Market",
   address: "56-57, Gore Rd, London E9 7HN",
@@ -474,12 +458,7 @@ a_nine = Activity.create(
   price: 0,
   minimum_price: 0
 )
-
 a_nine.photo.attach(io: nine, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
-
-
-
 a_eleven = Activity.create(
   name: "Old Spitalfields Market",
   address: "16 Commercial St, Spitalfields, London E1 6EW",
@@ -491,10 +470,7 @@ a_eleven = Activity.create(
   price:0,
   minimum_price: 0
 )
-
 a_eleven.photo.attach(io: eleven, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
-
 #sport
 a_twelve = Activity.create(
   name: "Bloomsbury Lanes",
@@ -507,9 +483,7 @@ a_twelve = Activity.create(
   price: 40,
   minimum_price: 20
 )
-
 a_twelve.photo.attach(io: twelve, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
 a_fourteen = Activity.create(
   name: "Tower Hamlets Tennis",
   address: "Victoria Park, London E9 5DY",
@@ -521,9 +495,7 @@ a_fourteen = Activity.create(
   price: 40,
   minimum_price: 20
 )
-
 a_fourteen.photo.attach(io: fourteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
 
 
 

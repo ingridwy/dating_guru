@@ -57,6 +57,9 @@
           <% (5 - review.rating).times do %>
             <i class="far fa-star"></i>
           <% end %>
+          <% if review.user = current_user %>
+
+          <% end %>
           </p>
           <p><%= review.content %></p>
         </div>
