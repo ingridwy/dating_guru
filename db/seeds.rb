@@ -310,7 +310,6 @@ sport_six = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024
 sport_seven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024968/kayaking_sport_pszju7.jpg")
 sport_eight = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024350/DClk6WmXUAATPoD_rzh5o9.jpg")
 sport_nine = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024348/Couples-Yoga_lxwsjb.jpg")
-sport_ten = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584009539/lix1zninb10dm32u33pr5b8yemhk.jpg")
 
 # activity seeding(museum data)
 
@@ -327,9 +326,6 @@ a_eight = Activity.create(
 )
 
 a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
-
-
-
 
 
 
@@ -619,17 +615,6 @@ a_sport_nine = Activity.create(
 
 a_sport_nine.photo.attach(io: sport_nine, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
-a_sport_ten = Activity.create(
-  name: "Rowing in the Park",
-  address: "Bow, London E9 7DE",
-  open_hour: "11:00-17:00",
-  phone_number: "07852 127895",
-  category: "Sport",
-  description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
-  details_description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
-  price: 30,
-  minimum_price: 10
-)
 
 a_sport_ten.photo.attach(io: sport_ten, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
