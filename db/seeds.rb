@@ -21,6 +21,11 @@ tenth_file = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v158349
 eleventh_file = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583497714/resto_11_amhsw2.jpg")
 twelfth_file = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583497713/resto_12_lll1im.jpg")
 thirteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583497763/resto_13revised_bcpnww.jpg")
+fourteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584021720/japanese_resto_aquakyoto_phdose.jpg")
+fifteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584021717/japanese_restaurant_akira_eetnvv.jpg")
+sixteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584022347/shoryu_resto_x6iw9m.jpg")
+seventeenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584021714/hotstone_japanese_l1a306.jpg")
+eightteenth = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584021709/Wright_Brothers_fish_kk8ank.jpg")
 
 
 
@@ -121,7 +126,7 @@ puts "creating new restaurant"
   address: "Cremer St, London E2 8HD",
   category: "Japanese",
   price: 60,
-  open_hour: "11:30-0:00",
+  open_hour: "11:30-00:00",
   phone_number: "0208 983 9862",
   description: "Contemporary bar/restaurant with a waterside terrace and a menu of Japanese food and cocktails.",
   details_description: "Sushi Salsa Restaurant is a Contemporary Japanese Cuisine newly introduced located in London.
@@ -208,6 +213,75 @@ thirteenth_restaurant = Restaurant.create(
   )
     thirteenth_restaurant.photo.attach(io: thirteenth, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
 
+fourteenth_restaurant = Restaurant.create(
+  name: "Aqua Kyoto",
+  address: "120 Hoxton St, London N1 6SH",
+  category: "Japanese",
+  price: 100,
+  open_hour: "12:00-23:00",
+  phone_number: "0208 983 9692",
+  description: "Cocktails and Japanese dishes with a contemporary spin in an ultra-glossy designer rooftop setting.",
+  details_description:"Cocktails and Japanese dishes with a contemporary spin in an ultra-glossy designer rooftop setting.",
+  minimum_price: 80
+  )
+    fourteenth_restaurant.photo.attach(io: fourteenth, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
+
+fifteenth_restaurant = Restaurant.create(
+  name: "Akira At Japan House London",
+  address: "348 Old St, Hackney, London EC1V 9NQ",
+  category: "Japanese",
+  price: 120,
+  open_hour: "18:00-23:00",
+  phone_number: "020 3971 4646",
+  description: "Japanese restaurant at a cultural venue plating sushi & grilled dishes on traditional tableware.",
+  details_description:"Japanese restaurant at a cultural venue plating sushi & grilled dishes on traditional tableware.",
+  minimum_price: 100
+  )
+    fifteenth_restaurant.photo.attach(io: fifteenth, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
+
+sixteenth_restaurant = Restaurant.create(
+  name: "Hot Stone Steak and Sushi Bar",
+  address: "101 Kingsland Rd, Hackney, London E2 8AG",
+  category: "Japanese",
+  price: 80,
+  open_hour: "18:00-22:00",
+  phone_number: "020 3302 8226",
+  description: "Pared-down Japanese joint serving sushi, sashimi & kobe beef grilled on tableside stones.",
+  details_description:"Pared-down Japanese joint serving sushi, sashimi & kobe beef grilled on tableside stones.",
+  minimum_price: 60
+  )
+    sixteenth_restaurant.photo.attach(io: sixteenth, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
+
+seventeenth_restaurant = Restaurant.create(
+  name: "Shoryu Ramen Shoreditch",
+  address: "45 Great Eastern St, Hackney, London EC2A 4NR",
+  category: "Japanese",
+  price: 60,
+  open_hour: "11:30-23:30",
+  phone_number: "020 3302 8226",
+  description: "Contemporary noodle restaurant serving a menu of ramen dishes, choice sakes and cocktails.",
+  details_description:"Contemporary noodle restaurant serving a menu of ramen dishes, choice sakes and cocktails..",
+  minimum_price: 40
+  )
+    seventeenth_restaurant.photo.attach(io: seventeenth, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
+
+eightteenth_restaurant = Restaurant.create(
+  name: "Wright Brothers",
+  address: "100 East Rd, Hoxton, London N1 6AA",
+  category: "Seafood",
+  price: 80,
+  open_hour: "17:00-23:00",
+  phone_number: "020 7324 7730",
+  description: "Located in Spitalfields Market, this seafood spot with a marble bar is known for its oysters.",
+  details_description:"Located in Spitalfields Market, this seafood spot with a marble bar is known for its oysters.",
+  minimum_price: 60
+  )
+    eightteenth_restaurant.photo.attach(io: eightteenth, filename: "resto10_juyclh.jpg" , content_type: 'image/jpg')
+
+
+
+
+
 
 
 # activity seeding(museum picture)
@@ -226,14 +300,17 @@ ten = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/10
 eleven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/11_oldspitalfield_market_bdvidp.jpg")
 twelve = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501020/12_bloombury_lane_n3ezx0.jpg")
 thirteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/13_bounce_old_street_tixjez.jpg")
-fourteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/14_tenniscourt_gff5ee.jpg")
+fourteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584019884/ben-hershey-4_n_qvud5tk-unsplash_f5uqbp.jpg")
 fifteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/15_climbing_ipqkb1.jpg")
-sport_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008534/rowing_tw2hy3.jpg")
-sport_two = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008534/rowing_tw2hy3.jpg")
+sport_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584022991/Untitled_design_1_gmgbxd.png")
 sport_three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008735/zapspace_x6qjyj.jpg")
-sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008541/batandball_evqzbh.jpg")
-
-
+sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584009533/cjcpkg767c7i2ratf2u3cw2fhca6.jpg")
+sport_five = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024341/vince-fleming-PhwLrQ40XG0-unsplash_tw806i.jpg")
+sport_six = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024336/flo-karr-nCj0zBLIaAk-unsplash_ccpvra.jpg")
+sport_seven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024968/kayaking_sport_pszju7.jpg")
+sport_eight = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024350/DClk6WmXUAATPoD_rzh5o9.jpg")
+sport_nine = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024348/Couples-Yoga_lxwsjb.jpg")
+sport_ten = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584009539/lix1zninb10dm32u33pr5b8yemhk.jpg")
 
 # activity seeding(museum data)
 
@@ -283,9 +360,6 @@ a_one = Activity.create(
   minimum_price: 0
 )
 a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London_yqxpqc.jpg" , content_type: 'image/jpg')
-
-
-
 
 
 
@@ -343,6 +417,7 @@ a_three = Activity.create(
   minimum_price: 0
 )
 a_three.photo.attach(io: three, filename: "03_muse_RIB-0019996-1360x765_zma1gz.jpg" , content_type: 'image/jpg')
+
 a_four = Activity.create(
   name: "Natural History Museum",
   address: "Cromwell Rd, South Kensington, London SW7 5BD",
@@ -357,25 +432,6 @@ a_four = Activity.create(
 a_four.photo.attach(io: four, filename: "4_muse_Natural-History-Museum_bddygg.jpg" , content_type: 'image/jpg')
 
 
-
-
-a_sport_two = Activity.create(
-  name: "Rowing in the Park",
-  address: "Bow, London E9 7DE",
-  open_hour: "11:00-17:00",
-  phone_number: "07852 127895",
-  category: "Sport",
-  description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
-  details_description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
-  price: 30,
-  minimum_price: 10
-)
-
-a_sport_two.photo.attach(io: sport_two, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
-
-
-
-
 a_five = Activity.create(
   name: "The National Gallery",
   address: "Trafalgar Square, Charing Cross, London WC2N 5DN",
@@ -388,6 +444,7 @@ a_five = Activity.create(
   minimum_price: 0
 )
 a_five.photo.attach(io: five, filename: "05_national-gallery-view-from-trafalgar-square-p3346_007_w3faci.jpg" , content_type: 'image/jpg')
+
 a_fifteen = Activity.create(
   name: "Mile End Climbing Wall",
   address: "Haverfield Rd, London E3 5BE",
@@ -484,6 +541,7 @@ a_twelve = Activity.create(
   minimum_price: 20
 )
 a_twelve.photo.attach(io: twelve, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
 a_fourteen = Activity.create(
   name: "Tower Hamlets Tennis",
   address: "Victoria Park, London E9 5DY",
@@ -498,6 +556,94 @@ a_fourteen = Activity.create(
 a_fourteen.photo.attach(io: fourteen, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
+#new seeding
+
+
+
+a_sport_five = Activity.create(
+  name: "Archery Fit",
+  address: "Hatfield House, Merryweather Place, London, SE10 8EW",
+  open_hour: "12:00-21:00",
+  phone_number: "020 789 3544",
+  category: "Sport",
+  description: "Archery Fit is the best indoor archery club in London, UK. We are conveniently located in west Greenwich.",
+  details_description: "Archery Fit is the best indoor archery club in London, UK. We are conveniently located in west Greenwich.",
+  price: 60,
+  minimum_price: 40
+)
+
+a_sport_five.photo.attach(io: sport_five, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+a_sport_six = Activity.create(
+  name: "CC-London CYCLING",
+  address: "30 Gresham Street, London EC2V 7PG",
+  open_hour: "12:00-21:00",
+  phone_number: "020 324 3543",
+  category: "Sport",
+  description: "We organise a selection of club rides every weekend to suit all abilities, as well as meeting in Regent’s Park.",
+  details_description: "We organise a selection of club rides every weekend to suit all abilities, as well as meeting in Regent’s Park.",
+  price: 40,
+  minimum_price: 20
+)
+
+a_sport_six.photo.attach(io: sport_six, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
+a_sport_seven = Activity.create(
+  name: "Kayaking London",
+  address: "106 Cheyne Walk, Chelsea, London SW10 0DG",
+  open_hour: "11:00-19:00",
+  phone_number: "07976 753924",
+  category: "Sport",
+  description: "Kayak on one of the world's most iconic stretches of water.",
+  details_description: "Kayak on one of the world's most iconic stretches of water.",
+  price: 40,
+  minimum_price: 20
+)
+
+a_sport_seven.photo.attach(io: sport_seven, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+a_sport_eight = Activity.create(
+  name: "London Fields Lido",
+  address: "30 Gresham Street, London EC2V 7PG",
+  open_hour: "10:00-18:00",
+  phone_number: "020 7254 9038",
+  category: "Sport",
+  description: "London Fields Lido is heated outdoor swimming pool open all year round and located in Hackney.",
+  details_description: "London Fields Lido is heated outdoor swimming pool open all year round and located in Hackney.",
+  price: 30,
+  minimum_price: 10
+)
+
+a_sport_eight.photo.attach(io: sport_eight, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+a_sport_nine = Activity.create(
+  name: "AcroYogaDance Studio",
+  address: "49 Tanner St, Bermondsey, London SE1 3PL",
+  open_hour: "11:00-16:00",
+  phone_number: "020 3322 2573",
+  category: "Sport",
+  description: "First AcroYoga Studio based in London Bridge.The Studio offers Courses, Academy, Workshops & Teacher Training.",
+  details_description: "First AcroYoga Studio based in London Bridge.The Studio offers Courses, Academy, Workshops & Teacher Training.",
+  price: 60,
+  minimum_price: 40
+)
+
+a_sport_nine.photo.attach(io: sport_nine, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+a_sport_ten = Activity.create(
+  name: "Rowing in the Park",
+  address: "Bow, London E9 7DE",
+  open_hour: "11:00-17:00",
+  phone_number: "07852 127895",
+  category: "Sport",
+  description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
+  details_description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
+  price: 30,
+  minimum_price: 10
+)
+
+a_sport_ten.photo.attach(io: sport_ten, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
 
 # a_thirteen = Activity.create(
