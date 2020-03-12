@@ -37,7 +37,7 @@ Review.destroy_all
 puts "all old data deleted"
 
 user_1 = User.create! user_name: "Tony", email: "tony@gmail.com", password: "123456"
-user_2 = User.create! user_name: "cat", email: "cat@gmail.com", password: "123456"
+user_2 = User.create! user_name: "Katie", email: "cat@gmail.com", password: "123456"
 puts "creating new restaurant"
 
 
@@ -122,17 +122,17 @@ puts "creating new restaurant"
     sixth_restaurant.photo.attach(io: sixth_file, filename: "Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg" , content_type: 'image/jpg')
 
     seventh_restaurant = Restaurant.create(
-  name: "Sushi Salsa",
+  name: "Sushi Kyoto",
   address: "Cremer St, London E2 8HD",
   category: "Japanese",
-  price: 60,
+  price: 80,
   open_hour: "11:30-00:00",
   phone_number: "0208 983 9862",
   description: "Contemporary bar/restaurant with a waterside terrace and a menu of Japanese food and cocktails.",
-  details_description: "Sushi Salsa Restaurant is a Contemporary Japanese Cuisine newly introduced located in London.
-Sushi Salsa offers all the traditional dishes freshly prepared and cooked by our chefs from the popular in London. Our chefs have many years experience to cater for any need so come and enjoy one of the delicious meals with friends or family whilst relaxing in a tranquil yet modern dining area.
-We pride ourselves with the high standard in food and service we offer to our customers. We had a lot of customer feedback for good service and texture in food. Sushi Salsa is among the Best Japanese Restaurant in London.",
-  minimum_price: 40
+  details_description: "Sushi Kyoto Restaurant is a Contemporary Japanese Cuisine newly introduced located in London.
+Sushi Kyoto offers all the traditional dishes freshly prepared and cooked by our chefs from the popular in London. Our chefs have many years experience to cater for any need so come and enjoy one of the delicious meals with friends or family whilst relaxing in a tranquil yet modern dining area.
+We pride ourselves with the high standard in food and service we offer to our customers. We had a lot of customer feedback for good service and texture in food. Sushi Kyoto is among the Best Japanese Restaurant in London.",
+  minimum_price: 60
   )
     seventh_restaurant.photo.attach(io: seventh_file, filename: "169591_qxwjwp.jpg" , content_type: 'image/jpg')
     eighth_restaurant = Restaurant.create(
@@ -310,7 +310,7 @@ sport_six = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024
 sport_seven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024968/kayaking_sport_pszju7.jpg")
 sport_eight = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024350/DClk6WmXUAATPoD_rzh5o9.jpg")
 sport_nine = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024348/Couples-Yoga_lxwsjb.jpg")
-sport_ten = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584030603/rowing_rlktp0.jpg")
+sport_ten = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584033322/rowing1_wioxre.jpg")
 
 # activity seeding(museum data)
 
@@ -676,11 +676,11 @@ Activity.all.each do |activity|
   1.times do
   review = Review.new(
     content: ["Nice staff and atmosphere, cool exhibitions and very easy to reach location", "A place to remember.We had great time there! Interesting people, cool atmosphere"].sample,
-    rating: [3,4,5].sample,
+    rating: [4,5].sample,
 
     activity: activity,
     )
-  review.user = user_1
+  review.user = user_2
   review.save!
 
   end
@@ -691,10 +691,10 @@ Restaurant.all.each do |restaurant|
  review2 = Review.new(
     content: ["Delicious restaurant!!! The food is really interesting, a culinary experience at an af-fordable price! The mix of cuisines is surprisingly perfect and the owners are abso-lutely lovely. I very strongly recommend!! (This is my first ever food review, it shows how much i liked this place),
       The food is amazing! The burger is incredible!! The place is very nice and the peo-ple working there are very friendly. It has been such a great experience! I recomendit to everybody!!!"].sample,
-    rating: [3,4,5].sample,
+    rating: [4,5].sample,
     restaurant: restaurant,
     )
-   review2.user = user_1
+   review2.user = user_2
    review2.save!
   end
 end
