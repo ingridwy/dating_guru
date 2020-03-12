@@ -2,7 +2,7 @@
 <h1 class="text-center mt-4 mb-5">Your date plans</h1>
 
 
-  <% @bookings.each do |booking| %>
+  <% @bookings.order(date: :desc).each do |booking| %>
 
 
     <%= link_to booking_path(booking) do %>
