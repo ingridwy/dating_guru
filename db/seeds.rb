@@ -304,12 +304,13 @@ fourteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v15840198
 fifteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/15_climbing_ipqkb1.jpg")
 sport_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584022991/Untitled_design_1_gmgbxd.png")
 sport_three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008735/zapspace_x6qjyj.jpg")
-
+sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584028674/sport_four_replaced_doumve.jpg")
 sport_five = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024341/vince-fleming-PhwLrQ40XG0-unsplash_tw806i.jpg")
 sport_six = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024336/flo-karr-nCj0zBLIaAk-unsplash_ccpvra.jpg")
 sport_seven = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024968/kayaking_sport_pszju7.jpg")
 sport_eight = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024350/DClk6WmXUAATPoD_rzh5o9.jpg")
 sport_nine = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584024348/Couples-Yoga_lxwsjb.jpg")
+sport_ten = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584030603/rowing_rlktp0.jpg")
 
 # activity seeding(museum data)
 
@@ -326,6 +327,21 @@ a_eight = Activity.create(
 )
 
 a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+a_sport_four = Activity.create(
+  name: "Bat and Ball",
+  address: "Westfield stratford city, The Street, London E20 1EN",
+  open_hour: "11:00-19:00",
+  phone_number: "020 3058 3020",
+  category: "Sport",
+  description: "Spread across two huge floors and home to 10 championship sized ping pong tables ",
+  details_description: "Spread across two huge floors and home to 10 championship sized ping pong tables ",
+  price: 40,
+  minimum_price: 20
+)
+
+a_sport_four.photo.attach(io: sport_four, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
 
 
@@ -615,6 +631,17 @@ a_sport_nine = Activity.create(
 
 a_sport_nine.photo.attach(io: sport_nine, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
+a_sport_ten = Activity.create(
+  name: "Rowing in the Park",
+  address: "Bow, London E9 7DE",
+  open_hour: "11:00-17:00",
+  phone_number: "07852 127895",
+  category: "Sport",
+  description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
+  details_description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
+  price: 30,
+  minimum_price: 10
+)
 
 a_sport_ten.photo.attach(io: sport_ten, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
 
