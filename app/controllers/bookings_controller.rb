@@ -71,7 +71,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(confirmed: true, date: params[:booking][:date])
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path
   end
 
   def destroy
