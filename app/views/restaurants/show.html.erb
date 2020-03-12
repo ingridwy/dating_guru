@@ -44,26 +44,32 @@
     <% else %>
       <% @restaurant.reviews.each do |review|%>
   <!--    <div class="border ratings-table"> -->
-    <div class="mb-4">
-           <p>
-          <% if review.user.profile_photo.attached?%>
-            <%= cl_image_tag review.user.profile_photo.key,class: "avatar"%>
-          <% else %>
-            <i class="fas fa-user"></i>
-          <% end %>
-          <span class="ml-2 mr-4"><%= review.user.user_name %></span>
-          <% review.rating.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - review.rating).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
+        <div class="mb-4">
+          <p>
+            <% if review.user.profile_photo.attached?%>
+              <%= cl_image_tag review.user.profile_photo.key,class: "avatar"%>
+            <% else %>
+              <i class="fas fa-user"></i>
+            <% end %>
+            <span class="ml-2 mr-4"><%= review.user.user_name %></span>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% if review.user == current_user %>
+              <%= link_to review_path(review), method: :delete do %>
+                <i class="fas fa-trash ml-4 review-bin"></i>
+              <% end %>
+            <% end %>
           </p>
           <p><%= review.content %></p>
         </div>
       <% end %>
     <% end %>
-    </div>
+</div>
+
     <div>
     <hr>
      <p class="pt-4"><%= @restaurant.details_description %></p>
@@ -89,7 +95,7 @@
       style="height: 500px !important;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+  </div>
 <!--   </div> -->
 <br>
 
