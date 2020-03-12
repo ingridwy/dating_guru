@@ -14,7 +14,7 @@ third_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v158324
 fourth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246331/c700x420_eycdpw.jpg")
 fifth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241727/ivi8abpmkq3durbxc6sx.jpg")
 sixth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246174/Veggie-rice-bowl-1400x919-mini-ba621247-21ff-419b-9604-3a27a255b90b-0-1400x919_lqtfuy.jpg")
-seventh_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583245930/169591_qxwjwp.jpg")
+seventh_file = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008607/sushisalsa_gyxlpb.jpg")
 eighth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583246102/rsz_firezza_-1_lpckbq.png")
 ninth_file = URI.open("https://res.cloudinary.com/dg3jy8byy/image/upload/v1583241704/nqq1j4shbdvxajvyj0jt.jpg")
 tenth_file = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583493036/resto10_juyclh.jpg")
@@ -30,7 +30,7 @@ Activity.destroy_all
 Booking.destroy_all
 Review.destroy_all
 puts "all old data deleted"
-user_1 = User.create! user_name: "vicky", email: "vicky@gmail.com", password: "123456"
+user_1 = User.create! user_name: "tony", email: "tony@gmail.com", password: "123456"
 user_2 = User.create! user_name: "cat", email: "cat@gmail.com", password: "123456"
 puts "creating new restaurant"
 
@@ -52,13 +52,13 @@ puts "creating new restaurant"
 
   second_restaurant = Restaurant.create(
   name: "Ippudo",
-  address: "83 Upper St, London",
+  address: "Hoxton St, London N1 6SH",
   category: "Japanese",
   price: 60,
   open_hour: "11:30-22:00",
   phone_number: "0208 983 9862",
   description: "Japanese spot for Hakata-style ramen also offers dumplings, sushi and steak in casual, modern digs.",
-  details_description: "Japanese spot for Hakata-style ramen also offers dumplings, sushi and steak in casual, modern digs.",
+  details_description: "Ippudo, started in Daimyo Fukuoka (Hakata), renowned for its reinvented Hakata-style tonkotsu (pork-based) ramen. They introduced Aka-Maru (red circle) and Shiro-maru (white circle) as two main Ramen to chose from. Aka-maru has stronger broth and Shiro-maru a bit milder. Over the years, this two taste approach along with clean contemporary atmosphere and good service created new audience, especially women, and proved to work internationally as well. Ippudo brings high quality of service, environment, and good Ramen.",
   minimum_price: 40
   )
     second_restaurant.photo.attach(io: second_file, filename: "md3cimqoxws8cy9boyfj.png" , content_type: 'image/jpg')
@@ -117,13 +117,15 @@ puts "creating new restaurant"
 
     seventh_restaurant = Restaurant.create(
   name: "Sushi Salsa",
-  address: "Camden Town",
+  address: "Cremer St, London E2 8HD",
   category: "Japanese",
   price: 60,
   open_hour: "11:30-0:00",
   phone_number: "0208 983 9862",
   description: "Contemporary bar/restaurant with a waterside terrace and a menu of Japanese food and cocktails.",
-  details_description: "Contemporary bar/restaurant with a waterside terrace and a menu of Japanese food and cocktails.",
+  details_description: "Sushi Salsa Restaurant is a Contemporary Japanese Cuisine newly introduced located in London.
+Sushi Salsa offers all the traditional dishes freshly prepared and cooked by our chefs from the popular in London. Our chefs have many years experience to cater for any need so come and enjoy one of the delicious meals with friends or family whilst relaxing in a tranquil yet modern dining area.
+We pride ourselves with the high standard in food and service we offer to our customers. We had a lot of customer feedback for good service and texture in food. Sushi Salsa is among the Best Japanese Restaurant in London.",
   minimum_price: 40
   )
     seventh_restaurant.photo.attach(io: seventh_file, filename: "169591_qxwjwp.jpg" , content_type: 'image/jpg')
@@ -182,7 +184,7 @@ eleventh_restaurant = Restaurant.create(
 
 twelfth_restaurant = Restaurant.create(
   name: "Nanashi Shoreditch",
-  address: "300 Oxford St, Marylebone, London",
+  address: "130 Hoxton St, London",
   category: "Japanese",
   price: 120,
   open_hour: "17:00-22:30",
@@ -195,7 +197,7 @@ twelfth_restaurant = Restaurant.create(
 
 thirteenth_restaurant = Restaurant.create(
   name: "Tanakatsu",
-  address: "101 Oxford St, Marylebone, London",
+  address: "101 Kingsland Rd, Hackney, London E2 8DJ",
   category: "Japanese",
   price: 60,
   open_hour: "12:00-21:30",
@@ -226,12 +228,49 @@ twelve = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501020
 thirteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501019/13_bounce_old_street_tixjez.jpg")
 fourteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/14_tenniscourt_gff5ee.jpg")
 fifteen = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1583501761/15_climbing_ipqkb1.jpg")
-# a_six = URI.open()
+sport_one = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008534/rowing_tw2hy3.jpg")
+sport_two = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008534/rowing_tw2hy3.jpg")
+sport_three = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008735/zapspace_x6qjyj.jpg")
+sport_four = URI.open("https://res.cloudinary.com/dhhorrhuq/image/upload/v1584008541/batandball_evqzbh.jpg")
 # a_six = URI.open()
 # a_six = URI.open()
 
 
 # activity seeding(museum data)
+
+a_eight = Activity.create(
+  name: "Netil Market",
+  address: "13-23 Westgate Street, E8 3RL",
+  open_hour: "Saturdays, 11:00-18:00",
+  phone_number: "020 7770 6028",
+  category: "Market",
+  description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
+  details_description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
+  price: 0,
+  minimum_price: 0
+)
+
+a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+
+
+
+a_sport_four = Activity.create(
+  name: "Bat and Ball",
+  address: "Westfield stratford city, The Street, London E20 1EN",
+  open_hour: "11:00-19:00",
+  phone_number: "020 3058 3020",
+  category: "Sport",
+  description: "Spread across two huge floors and home to 10 championship sized ping pong tables ",
+  details_description: "Spread across two huge floors and home to 10 championship sized ping pong tables ",
+  price: 40,
+  minimum_price: 20
+)
+
+a_sport_four.photo.attach(io: sport_four, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
+
+
 
 a_one = Activity.create(
   name: "Victoria and Albert Museum",
@@ -247,6 +286,9 @@ a_one = Activity.create(
   minimum_price: 0
 )
 a_one.photo.attach(io: one, filename: "01_muse_Victoria-and-Albert-museum-London_yqxpqc.jpg" , content_type: 'image/jpg')
+
+
+
 
 
 
@@ -279,6 +321,21 @@ a_ten = Activity.create(
 a_ten.photo.attach(io: ten, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
+a_sport_one = Activity.create(
+  name: "Krav Maga Class",
+  address: "43 Hoxton St, Hackney, London N1 6QN",
+  open_hour: "15:00-21:00",
+  phone_number: "020 8432 2023",
+  category: "Sport",
+  description: "Krav Maga is a military self-defence and fighting system developed for the Israel Defense Forces",
+  details_description: "Krav Maga was developed in the 1930s by Imi Lichtenfeld, who in 1948 became Chief Instructor of Physical Fitness and Krav Maga for the Israeli Defence Force (IDF). After he started the IKMA in 1978, the FBI sent 22 people to Israel to attend a Krav Maga Basic Instructor Course, since which time it has expanded all over the world. ",
+  price: 60,
+  minimum_price: 30
+)
+
+a_sport_one.photo.attach(io: sport_one, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
 
 a_three = Activity.create(
   name: "Tate Modern",
@@ -309,6 +366,23 @@ a_four = Activity.create(
 )
 
 a_four.photo.attach(io: four, filename: "4_muse_Natural-History-Museum_bddygg.jpg" , content_type: 'image/jpg')
+
+
+a_sport_two = Activity.create(
+  name: "Rowing in the Park",
+  address: "Bow, London E9 7DE",
+  open_hour: "11:00-17:00",
+  phone_number: "07852 127895",
+  category: "Sport",
+  description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
+  details_description: "After 30 years Regal Boat Hire has returned rowing boats & pedalos to Victoria park.",
+  price: 30,
+  minimum_price: 10
+)
+
+a_sport_two.photo.attach(io: sport_two, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
 
 
 a_five = Activity.create(
@@ -372,19 +446,21 @@ a_seven = Activity.create(
 a_seven.photo.attach(io: seven, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
 
 
-a_eight = Activity.create(
-  name: "Netil Market",
-  address: "13-23 Westgate Street, E8 3RL",
-  open_hour: "Saturdays, 11:00-18:00",
-  phone_number: "020 7770 6028",
-  category: "Market",
-  description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
-  details_description: "Creative community of traders in arts, fashion and food, with a bar and Saturday stalls.",
-  price: 0,
-  minimum_price: 0
+a_sport_three = Activity.create(
+  name: "ZAPspace Trampoline Park",
+  address: "369 High St, London E15 4QZ",
+  open_hour: "11:00-17:00",
+  phone_number: "020 8555 7029",
+  category: "Sport",
+  description: "Jump Up. Get Down. At the new Trampoline Park in East London. .",
+  details_description: "Jump Up. Get Down. At the new Trampoline Park in East London. ",
+  price: 30,
+  minimum_price: 10
 )
 
-a_eight.photo.attach(io: eight, filename: "Untitled_design_rtvzta.png" , content_type: 'image/png')
+a_sport_three.photo.attach(io: sport_three, filename: "02_replace_british_museum_cim7lu.jpg" , content_type: 'image/jpg')
+
+
 
 
 a_nine = Activity.create(

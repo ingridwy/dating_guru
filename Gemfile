@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+¥source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
@@ -43,8 +43,6 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
-
-
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
