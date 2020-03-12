@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get "category", to: "pages#category", as: :category
   patch "add_restaurant", to: "bookings#add_restaurant", as: :add_restaurant
   patch "add_activity", to: "bookings#add_activity", as: :add_activity
-  post "activity_new_booking", to: "bookings#activity_new_booking", as: :activity_new_booking
-  post "restaurant_new_booking", to: "bookings#restaurant_new_booking", as: :restaurant_new_booking
 
   post "activity_redirect_booking", to: "bookings#activity_redirect_booking", as: :activity_redirect_booking
   post "restaurant_redirect_booking", to: "bookings#restaurant_redirect_booking", as: :restaurant_redirect_booking

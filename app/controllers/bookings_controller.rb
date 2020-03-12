@@ -20,24 +20,6 @@ class BookingsController < ApplicationController
     @markers.reject!(&:nil?)
   end
 
-  def restaurant_new_booking
-    @booking = Booking.new
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @booking.restaurant = @restaurant
-    @booking.user = current_user
-    @booking.save
-    redirect_to bookings_path
-  end
-
-  def activity_new_booking
-    @booking = Booking.new
-    @activity = Activity.find(params[:activity_id])
-    @booking.activity = @activity
-    @booking.user = current_user
-    @booking.save
-    redirect_to bookings_path
-  end
-
   def restaurant_redirect_booking
     @booking = Booking.new
     @restaurant = Restaurant.find(params[:restaurant_id])
