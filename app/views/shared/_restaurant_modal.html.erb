@@ -15,7 +15,7 @@
       </div>
       <div class="modal-body">
 
-        <% current_user.bookings.where(restaurant: nil).each do |booking| %>
+        <% current_user.bookings.where(restaurant: nil).where.not(confirmed: true).each do |booking| %>
           <div class="d-flex justify-content-between b-card-item">
 
             <div style="flex: 1" class="b-name ml-4">
