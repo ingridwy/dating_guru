@@ -17,7 +17,7 @@ Using:
 * Relational database
 * Authentication
 * Geocoding
-* Image upload via cloudinary
+* Client side photo upload via cloudinary
 
 LinkedIn: [Ingrid Cheng](https://www.linkedin.com/in/ingrid-cheng/)<br>
 Website: [Dating Guru](http://www.dating-guru.site)
